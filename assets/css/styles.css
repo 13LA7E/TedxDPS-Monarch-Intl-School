@@ -489,7 +489,10 @@ nav a:hover{
 .cta:hover{
   color:var(--darker);
   transform:translateY(-3px);
-  animation:ctaGlow 2s ease-in-out infinite;
+  box-shadow:
+    0 0 30px rgba(255, 107, 53, 0.6),
+    0 0 60px rgba(255, 107, 53, 0.3),
+    inset 0 0 30px rgba(255, 107, 53, 0.2);
 }
 
 .grid{
