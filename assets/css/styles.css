@@ -47,7 +47,7 @@ body{
     radial-gradient(ellipse at 20% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
     radial-gradient(ellipse at 80% 80%, rgba(230, 43, 30, 0.08) 0%, transparent 50%);
   background-attachment:fixed;
-  padding-top:110px;
+  padding-top:90px;
   position:relative;
   overflow-x:hidden;
   min-height:100vh;
@@ -122,7 +122,7 @@ body::after{
 
 .header{
   position:fixed;
-  top:16px;
+  top:12px;
   left:50%;
   transform:translateX(-50%);
   z-index:1000;
@@ -160,10 +160,7 @@ body::after{
 .header:hover::before{
   opacity:0.15;
 }
-@keyframes slideDown{
-  from{top:-100px;opacity:0}
-  to{top:16px;opacity:1}
-}
+
 @keyframes slideDown{
   from{
     top:-100px;
@@ -171,14 +168,10 @@ body::after{
     transform:translateX(-50%) scale(0.95);
   }
   to{
-    top:16px;
+    top:12px;
     opacity:1;
     transform:translateX(-50%) scale(1);
   }
-}
-
-.header:hover::before{
-  opacity:0.1;
 }
 
 .header .container{
