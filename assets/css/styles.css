@@ -457,6 +457,7 @@ nav a:hover{
   overflow:hidden;
   animation:fadeInUp 0.8s ease-out 0.7s both;
   font-size:0.9rem;
+  isolation:isolate;
 }
 
 .cta::before{
@@ -467,7 +468,7 @@ nav a:hover{
   width:100%;
   height:100%;
   background:var(--vibrant-orange);
-  transition:left 0.4s ease;
+  transition:left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   z-index:-1;
 }
 
@@ -773,6 +774,7 @@ label{
   position:relative;
   overflow:hidden;
   font-size:0.9rem;
+  isolation:isolate;
 }
 
 .btn::before{
@@ -783,7 +785,7 @@ label{
   width:100%;
   height:100%;
   background:var(--vibrant-orange);
-  transition:left 0.4s ease;
+  transition:left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   z-index:-1;
 }
 
