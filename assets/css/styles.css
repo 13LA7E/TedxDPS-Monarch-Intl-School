@@ -197,11 +197,6 @@ body::after{
   align-items:center;
   gap:12px;
   animation:fadeInLeft 0.8s ease-out 0.2s both;
-  font-family:'Inter', sans-serif;
-  font-weight:800;
-  color:var(--vibrant-orange);
-  text-transform:uppercase;
-  letter-spacing:2px;
 }
 
 @keyframes fadeInLeft{
@@ -215,7 +210,15 @@ body::after{
   }
 }
 
-.brand svg{height:40px; filter:drop-shadow(0 0 10px var(--vibrant-orange))}
+.brand img{
+  height:50px;
+  filter:drop-shadow(0 0 10px rgba(255, 107, 53, 0.3));
+  transition:filter 0.3s ease;
+}
+
+.brand img:hover{
+  filter:drop-shadow(0 0 15px rgba(255, 107, 53, 0.6));
+}
 
 nav{
   animation:fadeInRight 0.8s ease-out 0.3s both;
