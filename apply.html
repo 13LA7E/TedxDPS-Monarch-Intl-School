@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="theme-color" content="#050812">
-  <title>Apply to Speak - TEDxDPS Monarch Intl School Youth</title>
+  <title>Register to Attend - TEDxDPS Monarch Intl School Youth</title>
   <link rel="stylesheet" href="./assets/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="talks.html">Talks</a></li>
           <li><a href="team.html">Team</a></li>
-          <li><a href="apply.html">Apply</a></li>
+          <li><a href="apply.html">Register</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -38,9 +38,9 @@
   <div class="container">
 
     <section class="section">
-      <h1 style="font-family:'Inter', sans-serif;font-size:2.8rem;margin-bottom:20px;font-weight:900;text-transform:uppercase;letter-spacing:3px">Ready to Defy?</h1>
-      <p style="color:var(--vibrant-orange);margin-bottom:24px;font-size:1.2rem;font-weight:700">Your idea could spark a revolution.</p>
-      <p style="color:var(--light-blue);margin-bottom:48px;font-size:1.05rem;line-height:1.8">Do you have an idea that challenges the norm? A perspective that makes people uncomfortable? A vision that defies conventional wisdom? We're not looking for safe. We're looking for <strong style="color:var(--primary-red)">revolutionary</strong>.</p>
+      <h1 style="font-family:'Inter', sans-serif;font-size:2.8rem;margin-bottom:20px;font-weight:900;text-transform:uppercase;letter-spacing:3px">Register to Attend</h1>
+      <p style="color:var(--vibrant-orange);margin-bottom:24px;font-size:1.2rem;font-weight:700">Be part of the revolution.</p>
+      <p style="color:var(--light-blue);margin-bottom:48px;font-size:1.05rem;line-height:1.8">Join us for an unforgettable experience of thought-provoking talks, bold ideas, and revolutionary perspectives. Witness young voices that dare to <strong style="color:var(--primary-red)">defy</strong> and <em style="font-family:'Playfair Display',serif;color:var(--vibrant-orange)">define</em>.</p>
 
       <div style="max-width:600px;margin:0 auto">
         <form id="applyForm" style="display:flex;flex-direction:column">
@@ -55,42 +55,50 @@
           </div>
 
           <div class="form-row">
-            <label for="grade">Grade/Year</label>
-            <input type="text" id="grade" name="grade">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
           </div>
 
           <div class="form-row">
-            <label for="topic">Talk Topic *</label>
-            <input type="text" id="topic" name="topic" placeholder="e.g., AI Ethics, Climate Action, Mental Health" required>
+            <label for="affiliation">Affiliation *</label>
+            <select id="affiliation" name="affiliation" required>
+              <option value="">Select...</option>
+              <option value="student">DPS Monarch Student</option>
+              <option value="parent">Parent/Guardian</option>
+              <option value="teacher">Teacher/Staff</option>
+              <option value="guest">Guest/Other</option>
+            </select>
           </div>
 
           <div class="form-row">
-            <label for="description">Brief Description (200 words max) *</label>
-            <textarea id="description" name="description" rows="6" required></textarea>
+            <label for="guests">Number of Attendees *</label>
+            <input type="number" id="guests" name="guests" min="1" max="5" value="1" required>
           </div>
 
           <div class="form-row">
-            <label for="why">Why is this idea worth spreading?</label>
-            <textarea id="why" name="why" rows="4"></textarea>
+            <label for="dietary">Dietary Requirements (if any)</label>
+            <input type="text" id="dietary" name="dietary" placeholder="e.g., Vegetarian, Vegan, Allergies">
           </div>
 
           <div class="form-row">
-            <label for="experience">Previous Speaking Experience (if any)</label>
-            <textarea id="experience" name="experience" rows="3"></textarea>
+            <label for="message">Any Questions or Special Requests?</label>
+            <textarea id="message" name="message" rows="4"></textarea>
           </div>
 
-          <button type="submit" class="btn cta" style="margin-top:10px">Submit Application</button>
-          <small style="margin-top:12px">* Required fields. We'll review your application and get back to you within 2 weeks.</small>
+          <button type="submit" class="btn cta" style="margin-top:10px">Register Now</button>
+          <small style="margin-top:12px">* Required fields. You'll receive a confirmation email with event details.</small>
         </form>
 
-        <div style="margin-top:64px;padding:24px;background:var(--glass-bg);border-radius:20px;border:1px solid var(--glass-border)">
-          <h3 style="color:var(--white);font-family:'Playfair Display',serif">Speaker Guidelines</h3>
-          <ul style="color:var(--light-blue);line-height:2;padding-left:20px">
-            <li>Talk length: 8-15 minutes</li>
-            <li>Original content only (no promotional material)</li>
-            <li>Ideas should be thought-provoking and relevant</li>
-            <li>Open to all DPS Monarch students</li>
+        <div style="margin-top:64px;padding:28px;background:rgba(230, 43, 30, 0.1);border-left:4px solid var(--vibrant-orange)">
+          <h3 style="color:var(--vibrant-orange);font-family:'Inter',sans-serif;font-weight:800;margin-bottom:16px">Event Information</h3>
+          <ul style="color:var(--white);line-height:2;list-style:none;padding:0">
+            <li>📅 <strong>Date:</strong> Coming Soon</li>
+            <li>📍 <strong>Venue:</strong> DPS Monarch International School</li>
+            <li>⏰ <strong>Time:</strong> TBA</li>
+            <li>🎟️ <strong>Entry:</strong> Free (Registration Required)</li>
+            <li>👥 <strong>Capacity:</strong> Limited Seating</li>
           </ul>
+          <p style="color:var(--light-blue);margin-top:20px;font-size:0.95rem">Note: Our speakers have already been selected. This registration is for event attendance only.</p>
         </div>
       </div>
     </section>

@@ -53,22 +53,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Form validation (apply page)
+  // Form validation (registration form)
   const applyForm = document.getElementById('applyForm');
   if (applyForm) {
     applyForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
-      const topic = document.getElementById('topic').value.trim();
+      const affiliation = document.getElementById('affiliation')?.value;
+      const guests = document.getElementById('guests')?.value;
 
-      if (!name || !email || !topic) {
+      if (!name || !email) {
         alert('Please fill all required fields.');
         return;
       }
 
+      if (affiliation && !affiliation) {
+        alert('Please select your affiliation.');
+        return;
+      }
+
+      if (guests && (guests < 1 || guests > 5)) {
+        alert('Number of attendees must be between 1 and 5.');
+        return;
+      }
+
       // In production, send to your backend/Formspree
-      alert('Application submitted! (Demo mode)');
+      alert('Registration successful! Check your email for confirmation. (Demo mode)');
       applyForm.reset();
     });
   }
