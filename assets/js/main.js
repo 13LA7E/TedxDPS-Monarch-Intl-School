@@ -1,39 +1,57 @@
-// Mobile menu and form validation
+// Mobile Navigation Toggle with Hamburger Menu
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.querySelector('.menu-btn');
-  const nav = document.querySelector('nav ul');
+  const nav = document.querySelector('nav');
+  const navOverlay = document.querySelector('.nav-overlay');
+  const navLinks = document.querySelectorAll('nav a');
 
-  // Toggle mobile menu
-  if (menuBtn) {
-    menuBtn.addEventListener('click', () => {
-      const isVisible = nav.style.display === 'flex';
-      nav.style.display = isVisible ? 'none' : 'flex';
-      
-      if (window.innerWidth <= 800 && !isVisible) {
-        nav.style.flexDirection = 'column';
-        nav.style.position = 'fixed';
-        nav.style.top = '80px';
-        nav.style.left = '50%';
-        nav.style.transform = 'translateX(-50%)';
-        nav.style.width = 'calc(100% - 32px)';
-        nav.style.maxWidth = 'calc(var(--maxw) - 48px)';
-        nav.style.background = 'rgba(15, 23, 32, 0.95)';
-        nav.style.backdropFilter = 'blur(20px) saturate(180%)';
-        nav.style.padding = '16px';
-        nav.style.borderRadius = '12px';
-        nav.style.border = '1px solid rgba(255, 255, 255, 0.1)';
-        nav.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.4)';
-        nav.style.zIndex = '998';
-      }
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (window.innerWidth <= 800 && !menuBtn.contains(e.target) && !nav.contains(e.target)) {
-        nav.style.display = 'none';
-      }
-    });
+  // Toggle menu function
+  function toggleMenu() {
+    menuBtn.classList.toggle('active');
+    nav.classList.toggle('active');
+    if (navOverlay) {
+      navOverlay.classList.toggle('active');
+    }
+    
+    // Prevent body scroll when menu is open
+    if (nav.classList.contains('active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
+
+  // Close menu function
+  function closeMenu() {
+    menuBtn.classList.remove('active');
+    nav.classList.remove('active');
+    if (navOverlay) {
+      navOverlay.classList.remove('active');
+    }
+    document.body.style.overflow = '';
+  }
+
+  // Toggle on hamburger click
+  if (menuBtn) {
+    menuBtn.addEventListener('click', toggleMenu);
+  }
+
+  // Close on overlay click
+  if (navOverlay) {
+    navOverlay.addEventListener('click', closeMenu);
+  }
+
+  // Close menu when clicking on a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('active')) {
+      closeMenu();
+    }
+  });
 
   // Form validation (apply page)
   const applyForm = document.getElementById('applyForm');
