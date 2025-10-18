@@ -1,5 +1,6 @@
 /* Detroit: Become Human Inspired - Triangle Geometric Theme */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+/* Optimized font loading - only load essential weights */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:ital@1&display=swap');
 
 :root{
   --primary-red:#E62B1E;
@@ -39,6 +40,12 @@ html{
   scroll-behavior:smooth;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+}
+
+/* Performance: Allow browser to skip rendering off-screen content */
+.card, .section{
+  content-visibility:auto;
+  contain-intrinsic-size:0 500px;
 }
 
 @keyframes scanline{
@@ -733,6 +740,8 @@ nav a:hover{
   
   body{
     padding-top:80px;
+    /* Disable fixed background for performance */
+    background-attachment:scroll;
   }
   
   .header{
@@ -804,30 +813,92 @@ nav a:hover{
     padding:16px;
   }
   
-  /* Reduce animations for performance */
-  *{
-    animation-duration:0.4s !important;
+  /* AGGRESSIVE PERFORMANCE OPTIMIZATIONS */
+  
+  /* Disable ALL animations on mobile */
+  *, *::before, *::after{
+    animation:none !important;
+    transition:none !important;
   }
   
-  /* Disable expensive effects on mobile */
-  body::before{
-    opacity:0.3;
-    animation:none;
+  /* Remove expensive visual effects */
+  body::before, body::after{
+    display:none !important;
   }
   
+  .hero::before{
+    display:none !important;
+  }
+  
+  /* Remove all backdrop-filter blur (most expensive) */
+  .header, .card, .footer, input, textarea, select{
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+  }
+  
+  /* Simplify header */
   .header{
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
+    background:rgba(10, 14, 26, 0.98);
+    box-shadow:0 2px 10px rgba(0, 0, 0, 0.5);
   }
   
+  /* Simplify cards */
   .card{
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
+    background:rgba(10, 14, 26, 0.95);
+    box-shadow:0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Remove all text-shadow effects */
+  .hero h1 .defy, .section h2, label, .icon-peak{
+    text-shadow:none !important;
+  }
+  
+  /* Remove glow effects from buttons */
+  .cta, .btn{
+    box-shadow:none !important;
+  }
+  
+  /* Disable hover effects on mobile */
+  .cta:hover, .btn:hover, .card:hover, nav a:hover{
+    transform:none !important;
+    box-shadow:none !important;
+  }
+  
+  /* Remove pseudo-element animations */
+  .card::before, .card::after, .footer::before{
+    display:none !important;
+  }
+  
+  /* Simplify inputs */
+  input, textarea, select{
+    background:rgba(10, 14, 26, 0.95);
+    box-shadow:none;
+  }
+  
+  input:focus, textarea:focus, select:focus{
+    box-shadow:none;
+    transform:none;
+  }
+  
+  /* Remove expensive clip-paths on mobile - use simple borders */
+  .header, .card, .cta, .btn, nav a, input, textarea, select{
+    clip-path:none !important;
+    border-radius:4px;
+  }
+  
+  /* Disable will-change to save memory */
+  *{
+    will-change:auto !important;
   }
 }
 
-/* Small phones */
+  /* Small phones */
 @media (max-width:480px){
+  /* Disable smooth scroll on mobile for performance */
+  html{
+    scroll-behavior:auto;
+  }
+  
   .hero h1{
     font-size:2rem;
   }
@@ -852,9 +923,7 @@ nav a:hover{
   input, textarea, select{
     font-size:16px; /* Prevents zoom on iOS */
   }
-}
-
-/* Forms */
+}/* Forms */
 .form-row{
   display:flex;
   flex-direction:column;
