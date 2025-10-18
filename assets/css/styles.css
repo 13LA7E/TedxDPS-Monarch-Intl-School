@@ -99,27 +99,34 @@ body::before{
   animation:triangleFloat 20s linear infinite;
 }
 
+/* Add rebellious warning stripes accent */
+body::after{
+  content:'';
+  position:fixed;
+  top:0;
+  right:0;
+  width:8px;
+  height:100%;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--primary-red) 0px,
+      var(--primary-red) 10px,
+      var(--darker) 10px,
+      var(--darker) 20px
+    );
+  opacity:0.7;
+  z-index:1000;
+  pointer-events:none;
+  box-shadow:-2px 0 10px rgba(230, 43, 30, 0.5);
+}
+
 @keyframes triangleFloat{
   0%{background-position:0 0, 40px 0, 0 70px}
   100%{background-position:80px 0, 120px 0, 80px 70px}
 }
 
-/* Grid overlay */
-body::after{
-  content:'';
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 107, 53, 0.02) 2px, rgba(255, 107, 53, 0.02) 4px),
-    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 107, 53, 0.02) 2px, rgba(255, 107, 53, 0.02) 4px);
-  background-size:50px 50px;
-  opacity:0.5;
-  z-index:0;
-  pointer-events:none;
-}
+/* Remove grid overlay - keep it clean and rebellious */
 
 .container{
   max-width:var(--maxw);
@@ -411,15 +418,26 @@ nav a:hover{
   font-weight:900;
   color:var(--vibrant-orange);
   font-family:'Inter', sans-serif;
-  letter-spacing:8px;
+  letter-spacing:12px;
+  font-size:5rem;
   position:relative;
   animation:glowPulse 3s ease-in-out infinite, glitchText 5s ease-in-out infinite;
   text-shadow:
-    0 0 10px var(--vibrant-orange),
     0 0 20px var(--vibrant-orange),
-    0 0 30px var(--primary-red),
-    2px 2px 0 var(--light-blue),
-    -2px -2px 0 var(--primary-red);
+    0 0 40px var(--vibrant-orange),
+    0 0 60px var(--primary-red),
+    4px 4px 0 var(--light-blue),
+    -4px -4px 0 var(--primary-red);
+  transform:scaleY(1.1);
+}
+
+.hero h1 .defy::before{
+  content:'DEFY';
+  position:absolute;
+  top:0;
+  left:2px;
+  color:rgba(125, 211, 252, 0.3);
+  z-index:-1;
 }
 
 .hero h1 .define{
@@ -447,6 +465,61 @@ nav a:hover{
   animation:fadeInUp 0.8s ease-out 0.6s both;
   font-family:'Inter', sans-serif;
   font-weight:400;
+}
+
+.hero-tagline{
+  font-size:1.2rem !important;
+  color:var(--cool-gray) !important;
+  font-weight:500;
+  margin-bottom:32px !important;
+  line-height:1.9;
+}
+
+.manifesto{
+  background:rgba(230, 43, 30, 0.1);
+  border-left:4px solid var(--vibrant-orange);
+  padding:24px 28px;
+  margin:32px 0;
+  animation:fadeInUp 0.8s ease-out 0.65s both;
+  position:relative;
+  overflow:hidden;
+}
+
+.manifesto::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 107, 53, 0.03) 10px,
+      rgba(255, 107, 53, 0.03) 20px
+    );
+  pointer-events:none;
+}
+
+.manifesto p{
+  color:var(--white) !important;
+  font-size:1.05rem !important;
+  margin:8px 0 !important;
+  font-weight:600;
+  letter-spacing:0.5px;
+  position:relative;
+  z-index:1;
+  animation:none !important;
+}
+
+.manifesto strong{
+  color:var(--primary-red);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  text-shadow:0 0 10px rgba(230, 43, 30, 0.5);
 }
 
 @keyframes ctaGlow{
@@ -510,6 +583,13 @@ nav a:hover{
   content:'▶';
   font-size:0.8rem;
   transition:transform 0.3s ease;
+}
+
+/* Make CTA more defiant */
+.cta{
+  text-shadow:0 0 20px rgba(255, 107, 53, 0.4);
+  font-size:1rem !important;
+  letter-spacing:3px;
 }
 
 .cta:hover::after{
@@ -636,12 +716,22 @@ nav a:hover{
   font-size:2.5rem;
   font-weight:900;
   text-transform:uppercase;
-  letter-spacing:3px;
+  letter-spacing:4px;
   margin-bottom:40px;
   position:relative;
   display:inline-block;
   animation:fadeInLeft 0.8s ease-out both;
-  text-shadow:0 0 20px var(--vibrant-orange);
+  text-shadow:
+    0 0 30px var(--vibrant-orange),
+    2px 2px 0 var(--primary-red);
+}
+
+.section h2::before{
+  content:'▶';
+  position:absolute;
+  left:-40px;
+  color:var(--vibrant-orange);
+  animation:blink 2s step-end infinite;
 }
 
 .section h2::after{
@@ -649,10 +739,10 @@ nav a:hover{
   position:absolute;
   bottom:-12px;
   left:0;
-  width:80%;
-  height:3px;
-  background:linear-gradient(90deg, var(--vibrant-orange), var(--primary-red), transparent);
-  box-shadow:0 0 15px var(--vibrant-orange);
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg, var(--primary-red), var(--vibrant-orange), transparent);
+  box-shadow:0 0 20px var(--vibrant-orange);
   animation:slideIn 1s ease-out both;
 }
 
