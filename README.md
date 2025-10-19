@@ -1,7 +1,9 @@
 # TEDxDPS Monarch Intl School Youth — Website
 
 This is a full-featured static website for the TEDx event at DPS Monarch International School Youth, ready to deploy on **GitHub Pages**.
+
 Active Link: https://13la7e.github.io/TedxDPS-Monarch-Intl-School/
+
 ## 📁 Contents
 - `index.html` — Landing page
 - `about.html` — About the event
