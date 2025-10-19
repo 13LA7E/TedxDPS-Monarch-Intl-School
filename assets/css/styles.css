@@ -109,7 +109,7 @@ body::after{
   height:100%;
   background:
     repeating-linear-gradient(
-      0deg,
+      45deg,
       var(--primary-red) 0px,
       var(--primary-red) 20px,
       var(--darker) 20px,
