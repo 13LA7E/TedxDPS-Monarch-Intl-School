@@ -99,7 +99,7 @@ body::before{
   animation:triangleFloat 20s linear infinite;
 }
 
-/* Add rebellious warning stripes accent */
+/* Add rebellious warning stripes accent - Barber pole style */
 body::after{
   content:'';
   position:fixed;
@@ -107,21 +107,24 @@ body::after{
   right:0;
   width:8px;
   height:100%;
-  background-color:#050812;
-  background-image:
+  background:
     repeating-linear-gradient(
-      45deg,
-      var(--primary-red) 0px,
-      var(--primary-red) 8px,
-      transparent 8px,
-      transparent 16px
+      135deg,
+      var(--primary-red),
+      var(--primary-red) 10px,
+      #0A0E1A 10px,
+      #0A0E1A 20px
     );
-  background-size:100% 40px;
   opacity:0.9;
   z-index:1000;
   pointer-events:none;
   box-shadow:-2px 0 10px rgba(230, 43, 30, 0.5);
-  animation:stripeMove 1.5s linear infinite, stripeGlow 3s ease-in-out infinite;
+  animation:barberPole 2s linear infinite, stripeGlow 3s ease-in-out infinite;
+}
+
+@keyframes barberPole{
+  0%{background-position:0 0}
+  100%{background-position:0 28.28px}
 }
 
 @keyframes triangleFloat{
@@ -129,9 +132,9 @@ body::after{
   100%{background-position:80px 0, 120px 0, 80px 70px}
 }
 
-@keyframes stripeMove{
+@keyframes barberPole{
   0%{background-position:0 0}
-  100%{background-position:0 40px}
+  100%{background-position:0 28.28px}
 }
 
 @keyframes stripeGlow{
