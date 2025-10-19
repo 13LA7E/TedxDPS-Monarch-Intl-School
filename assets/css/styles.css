@@ -112,11 +112,11 @@ body::after{
     repeating-linear-gradient(
       45deg,
       transparent 0px,
-      transparent 10px,
-      var(--primary-red) 10px,
-      var(--primary-red) 14px,
-      transparent 14px,
-      transparent 30px
+      transparent 4px,
+      var(--primary-red) 4px,
+      var(--primary-red) 12px,
+      transparent 12px,
+      transparent 20px
     );
   background-size:100% 40px;
   opacity:0.9;
