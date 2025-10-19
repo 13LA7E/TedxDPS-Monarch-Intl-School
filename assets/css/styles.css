@@ -115,15 +115,33 @@ body::after{
       var(--darker) 10px,
       var(--darker) 20px
     );
+  background-size:100% 40px;
   opacity:0.7;
   z-index:1000;
   pointer-events:none;
   box-shadow:-2px 0 10px rgba(230, 43, 30, 0.5);
+  animation:stripeMove 1.5s linear infinite, stripeGlow 3s ease-in-out infinite;
 }
 
 @keyframes triangleFloat{
   0%{background-position:0 0, 40px 0, 0 70px}
   100%{background-position:80px 0, 120px 0, 80px 70px}
+}
+
+@keyframes stripeMove{
+  0%{background-position:0 0}
+  100%{background-position:0 40px}
+}
+
+@keyframes stripeGlow{
+  0%, 100%{
+    box-shadow:-2px 0 10px rgba(230, 43, 30, 0.5);
+    opacity:0.7;
+  }
+  50%{
+    box-shadow:-4px 0 20px rgba(230, 43, 30, 0.8), -8px 0 40px rgba(255, 107, 53, 0.4);
+    opacity:0.9;
+  }
 }
 
 /* Remove grid overlay - keep it clean and rebellious */
