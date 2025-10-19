@@ -109,11 +109,11 @@ body::after{
   height:100%;
   background:
     repeating-linear-gradient(
-      45deg,
+      0deg,
       var(--primary-red) 0px,
-      var(--primary-red) 10px,
-      var(--darker) 10px,
-      var(--darker) 20px
+      var(--primary-red) 20px,
+      var(--darker) 20px,
+      var(--darker) 40px
     );
   background-size:100% 40px;
   opacity:0.7;
@@ -739,9 +739,6 @@ nav a:hover{
   position:relative;
   display:inline-block;
   animation:fadeInLeft 0.8s ease-out both;
-  text-shadow:
-    0 0 30px var(--vibrant-orange),
-    2px 2px 0 var(--primary-red);
 }
 
 .section h2::before{
@@ -760,7 +757,6 @@ nav a:hover{
   width:100%;
   height:4px;
   background:linear-gradient(90deg, var(--primary-red), var(--vibrant-orange), transparent);
-  box-shadow:0 0 20px var(--vibrant-orange);
   animation:slideIn 1s ease-out both;
 }
 
