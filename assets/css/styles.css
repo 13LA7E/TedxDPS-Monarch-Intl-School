@@ -864,6 +864,16 @@ nav a:hover{
 
 /* Mobile */
 @media (max-width:800px){
+  /* Fix horizontal overflow */
+  html, body{
+    overflow-x:hidden;
+    max-width:100%;
+  }
+  
+  body{
+    position:relative;
+  }
+  
   .menu-btn{
     display:flex;
   }
@@ -935,10 +945,17 @@ nav a:hover{
   }
   
   .header{
-    width:calc(100% - 16px);
-    max-width:calc(100% - 16px);
+    width:calc(100vw - 16px);
+    max-width:calc(100vw - 16px);
     top:8px;
-    padding:8px 20px;
+    padding:8px 16px;
+    left:8px;
+    transform:none;
+  }
+  
+  .header .container{
+    padding:0;
+    max-width:100%;
   }
   
   .brand img{
@@ -1003,16 +1020,44 @@ nav a:hover{
     padding:16px;
   }
   
+  /* Keep manifesto visible on mobile */
+  .manifesto{
+    padding:20px;
+    margin:24px 0;
+  }
+  
+  .manifesto p{
+    font-size:0.95rem !important;
+  }
+  
   /* AGGRESSIVE PERFORMANCE OPTIMIZATIONS */
   
-  /* Disable ALL animations on mobile */
+  /* Disable ALL animations on mobile except essential ones */
   *, *::before, *::after{
     animation:none !important;
     transition:none !important;
   }
   
+  /* Keep barber pole and hamburger menu animations */
+  body::after{
+    display:block !important;
+    animation:barberPole 2s linear infinite !important;
+  }
+  
+  .menu-btn, .menu-btn span{
+    transition:all 0.3s ease !important;
+  }
+  
+  nav{
+    transition:right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  
+  .nav-overlay{
+    transition:opacity 0.4s ease !important;
+  }
+  
   /* Remove expensive visual effects */
-  body::before, body::after{
+  body::before{
     display:none !important;
   }
   
