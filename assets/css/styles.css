@@ -217,8 +217,8 @@ body::after{
   left:-100%;
   width:100%;
   height:100%;
-  background:linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.15), transparent);
-  animation:headerShine 3s ease-in-out infinite;
+  background:linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.08), transparent);
+  animation:headerShine 4s ease-in-out infinite;
   pointer-events:none;
 }
 
@@ -229,9 +229,10 @@ body::after{
   right:10%;
   width:100px;
   height:100px;
-  background:radial-gradient(circle, rgba(230, 43, 30, 0.1) 0%, transparent 70%);
+  background:radial-gradient(circle, rgba(230, 43, 30, 0.05) 0%, transparent 70%);
   border-radius:50%;
   pointer-events:none;
+  filter:blur(15px);
 }
 
 @keyframes slideDown{
@@ -374,14 +375,17 @@ nav a:hover{
   position:absolute;
   top:10%;
   right:5%;
-  width:300px;
-  height:300px;
+  width:400px;
+  height:400px;
   background:
-    linear-gradient(135deg, transparent 40%, rgba(255, 107, 53, 0.06) 40%, rgba(255, 107, 53, 0.06) 60%, transparent 60%);
+    radial-gradient(circle at 30% 30%, rgba(255, 107, 53, 0.04) 0%, transparent 50%),
+    linear-gradient(135deg, transparent 40%, rgba(255, 107, 53, 0.03) 40%, rgba(255, 107, 53, 0.03) 60%, transparent 60%);
   border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
   animation:morphBlob 8s ease-in-out infinite;
   pointer-events:none;
   z-index:-1;
+  filter:blur(40px);
+  opacity:0.7;
 }
 
 .hero::after{
@@ -389,14 +393,17 @@ nav a:hover{
   position:absolute;
   bottom:15%;
   left:8%;
-  width:250px;
-  height:250px;
+  width:350px;
+  height:350px;
   background:
-    linear-gradient(225deg, transparent 40%, rgba(230, 43, 30, 0.05) 40%, rgba(230, 43, 30, 0.05) 60%, transparent 60%);
+    radial-gradient(circle at 70% 70%, rgba(230, 43, 30, 0.03) 0%, transparent 50%),
+    linear-gradient(225deg, transparent 40%, rgba(230, 43, 30, 0.025) 40%, rgba(230, 43, 30, 0.025) 60%, transparent 60%);
   border-radius:70% 30% 30% 70% / 70% 70% 30% 30%;
   animation:morphBlob 10s ease-in-out infinite reverse;
   pointer-events:none;
   z-index:-1;
+  filter:blur(35px);
+  opacity:0.6;
 }
 
 @keyframes morphBlob{
@@ -690,10 +697,11 @@ nav a:hover{
   width:100%;
   height:100%;
   background:
-    radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+    radial-gradient(circle, rgba(255, 107, 53, 0.08) 0%, transparent 70%);
   border-radius:50%;
-  transition:all 0.6s ease;
+  transition:all 0.8s ease;
   opacity:0;
+  filter:blur(20px);
 }
 
 .card::after{
@@ -704,12 +712,13 @@ nav a:hover{
   width:60%;
   height:60%;
   background:
-    radial-gradient(circle, rgba(230, 43, 30, 0.1) 0%, transparent 70%);
+    radial-gradient(circle, rgba(230, 43, 30, 0.06) 0%, transparent 70%);
   border-radius:50%;
-  transition:all 0.6s ease;
+  transition:all 0.8s ease;
   opacity:0;
   overflow:hidden;
   animation:fadeInUp 0.8s ease-out both;
+  filter:blur(20px);
 }
 
 .card:nth-child(1){animation-delay:0.2s}
@@ -718,13 +727,13 @@ nav a:hover{
 .card:nth-child(4){animation-delay:0.5s}
 
 .card:hover::before{
-  opacity:1;
+  opacity:0.8;
   top:-20%;
   right:-20%;
 }
 
 .card:hover::after{
-  opacity:1;
+  opacity:0.7;
   bottom:-10%;
   left:-10%;
 }
