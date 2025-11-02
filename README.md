@@ -52,6 +52,32 @@ npx serve -l 8000
 
 Then open `http://localhost:8000` in your browser.
 
+## 🔄 Cache-Busting System
+
+This project includes an automatic cache-busting system to ensure users always see the latest version of your CSS and JavaScript files without needing to manually force-refresh.
+
+### How it works:
+- All CSS and JS files include a version parameter (e.g., `styles.css?v=1762096827182`)
+- The version is automatically updated whenever you deploy via GitHub Actions
+- Users' browsers will automatically fetch the latest files on each deployment
+
+### Manual Build:
+If you want to update the cache-busting version locally:
+
+```powershell
+npm run build
+```
+
+This will update all HTML files with a new timestamp-based version parameter.
+
+### Automatic Deployment:
+When you push changes to GitHub, the GitHub Actions workflow automatically:
+1. Runs the cache-busting build
+2. Updates all HTML files with new version parameters
+3. Deploys the updated site to GitHub Pages
+
+**No more force-refreshing needed!** 🎉
+
 ## ✏️ Customizing
 
 ### Content

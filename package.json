@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Static website scaffold for TEDxDPS Monarch Intl School Youth",
   "scripts": {
-    "start": "npx serve -l 8000"
+    "start": "npx serve -l 8000",
+    "build": "node build.js",
+    "prebuild": "echo Building with cache-busting..."
   },
   "author": "Your Name",
   "license": "MIT",
