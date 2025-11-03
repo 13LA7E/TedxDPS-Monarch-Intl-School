@@ -1,0 +1,11 @@
+#!/bin/sh
+# Pre-commit hook to automatically update cache-busting version numbers
+
+echo "🔄 Running cache-busting build..."
+npm run build
+
+# Add the updated HTML files to the commit
+git add *.html
+
+echo "✅ Cache-busting version updated!"
+exit 0

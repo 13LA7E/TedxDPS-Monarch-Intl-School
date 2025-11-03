@@ -56,13 +56,31 @@ Then open `http://localhost:8000` in your browser.
 
 This project includes an automatic cache-busting system to ensure users always see the latest version of your CSS and JavaScript files without needing to manually force-refresh.
 
-### How it works:
-- All CSS and JS files include a version parameter (e.g., `styles.css?v=1762096827182`)
-- The version is automatically updated whenever you deploy via GitHub Actions
-- Users' browsers will automatically fetch the latest files on each deployment
+### Automatic Setup (Recommended):
 
-### Manual Build:
-If you want to update the cache-busting version locally:
+**A Git pre-commit hook is included** that automatically updates cache-busting version numbers before every commit.
+
+To set it up, run:
+
+```powershell
+# Windows (PowerShell)
+.\setup-hooks.ps1
+
+# Linux/Mac (Bash)
+./setup-hooks.sh
+```
+
+Once installed, every time you commit, the version numbers will be automatically updated! No manual steps needed.
+
+### How it works:
+- All CSS and JS files include a version parameter (e.g., `styles.css?v=1762176751716`)
+- The pre-commit hook runs `npm run build` automatically before each commit
+- Version numbers are timestamp-based, so they change with every commit
+- Users' browsers automatically fetch the latest files on each deployment
+- Works with GitHub Actions deployment
+
+### Manual Build (Optional):
+If you need to update the cache-busting version without committing:
 
 ```powershell
 npm run build
@@ -70,10 +88,10 @@ npm run build
 
 This will update all HTML files with a new timestamp-based version parameter.
 
-### Automatic Deployment:
+### Deployment:
 When you push changes to GitHub, the GitHub Actions workflow automatically:
 1. Runs the cache-busting build
-2. Updates all HTML files with new version parameters
+2. Updates version numbers
 3. Deploys the updated site to GitHub Pages
 
 **No more force-refreshing needed!** 🎉
