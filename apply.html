@@ -8,7 +8,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Register to Attend - TEDxDPS Monarch Intl School Youth</title>
-  <link rel="stylesheet" href="./assets/css/styles.css?v=1762177421001">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=1762177693906">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -60,7 +60,7 @@
 
           <div class="form-row">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="Phone" placeholder="+91 XXXXX XXXXX">
+            <input type="tel" id="phone" name="Phone" placeholder="+974 XXXXXXXX" pattern="[\+]?[0-9\s\-]+" title="Please enter a valid phone number">
           </div>
 
           <div class="form-row">
@@ -111,7 +111,7 @@
     </div>
   </footer>
 
-  <script src="./assets/js/main.js?v=1762177421001"></script>
+  <script src="./assets/js/main.js?v=1762177693906"></script>
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycby-2n02EJnKldM3z_lusJZMSu1DE1parFAiavmj1B8EEcnM6IVffSsfvrWyC7vx2GtfSw/exec';
     const form = document.forms['registrationForm'];
@@ -126,6 +126,7 @@
       // Show loading state
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
+      const originalStyle = submitBtn.style.cssText;
       submitBtn.textContent = 'Submitting...';
       submitBtn.disabled = true;
       formStatus.textContent = 'Submitting your registration...';
@@ -136,12 +137,23 @@
         body: new FormData(form)
       })
         .then(response => {
-          // Success
-          formStatus.textContent = '✅ Registration successful! Thank you for registering.';
-          formStatus.style.color = 'var(--vibrant-orange)';
+          // Success - turn button green with checkmark
+          submitBtn.textContent = '✓';
+          submitBtn.style.cssText = originalStyle + '; background: #10b981; border-color: #10b981; font-size: 2rem; padding: 8px;';
+          formStatus.textContent = 'Registration successful! Thank you for registering.';
+          formStatus.style.color = '#10b981';
+          
+          // Reset form
           form.reset();
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
+          
+          // Reset button after 3 seconds
+          setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.style.cssText = originalStyle;
+            submitBtn.disabled = false;
+            formStatus.textContent = '* Required fields. You\'ll receive a confirmation email with event details.';
+            formStatus.style.color = '';
+          }, 3000);
         })
         .catch(error => {
           // Error
@@ -149,6 +161,7 @@
           formStatus.textContent = '❌ Error submitting form. Please try again or contact us directly.';
           formStatus.style.color = 'var(--primary-red)';
           submitBtn.textContent = originalText;
+          submitBtn.style.cssText = originalStyle;
           submitBtn.disabled = false;
         });
     });
