@@ -43,6 +43,63 @@ function doPost(e) {
     // Append the data to the sheet
     sheet.appendRow(rowData);
     
+    // Send confirmation email to the registrant
+    try {
+      MailApp.sendEmail({
+        to: data.Email,
+        subject: "Registration Confirmed - TEDxDPS Monarch Intl School Youth",
+        htmlBody: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #e62b1e;">TEDxDPS Monarch Intl School Youth</h2>
+            <h3 style="color: #333;">Registration Confirmed!</h3>
+            
+            <p>Dear ${data.Name},</p>
+            
+            <p>Thank you for registering for TEDxDPS Monarch Intl School Youth!</p>
+            
+            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h4 style="color: #e62b1e; margin-top: 0;">Event Details:</h4>
+              <p><strong>📅 Date:</strong> December 13, 2025</p>
+              <p><strong>📍 Location:</strong> DPS Monarch International School</p>
+              <p><strong>🗺️ Map:</strong> <a href="https://maps.app.goo.gl/HrsLyatVDvd28BvXA">View on Google Maps</a></p>
+              <p><strong>⏰ Time:</strong> TBA (Will be updated soon)</p>
+              <p><strong>👥 Number of Attendees:</strong> ${data.Attendees}</p>
+              <p><strong>🎟️ Entry:</strong> Free</p>
+            </div>
+            
+            <p style="color: #666;">We're excited to have you join us for an unforgettable experience of thought-provoking talks and revolutionary perspectives!</p>
+            
+            <p style="margin-top: 30px;"><strong>Stay Connected:</strong></p>
+            <p>
+              📧 Email: <a href="mailto:tedxdpsmonarch@gmail.com">tedxdpsmonarch@gmail.com</a><br>
+              📱 Instagram: <a href="https://www.instagram.com/tedxdpsmonarchintlschool/">@tedxdpsmonarchintlschool</a>
+            </p>
+            
+            <p style="margin-top: 30px; color: #999; font-size: 12px;">
+              This independent TEDx event is operated under license from TED.<br>
+              © 2025 TEDxDPS Monarch Intl School Youth
+            </p>
+          </div>
+        `
+      });
+      
+      // Send notification to organizers
+      MailApp.sendEmail({
+        to: "tedxdpsmonarch@gmail.com",
+        subject: "New Registration: " + data.Name,
+        body: "New registration received:\n\n" +
+              "Name: " + data.Name + "\n" +
+              "Email: " + data.Email + "\n" +
+              "Phone: " + data.Phone + "\n" +
+              "Affiliation: " + data.Affiliation + "\n" +
+              "Attendees: " + data.Attendees + "\n" +
+              "Timestamp: " + data.Timestamp
+      });
+    } catch(emailError) {
+      Logger.log("Email error: " + emailError.toString());
+      // Continue even if email fails
+    }
+    
     // Return success response
     return ContentService
       .createTextOutput(JSON.stringify({ 'result': 'success' }))
@@ -122,25 +179,20 @@ function doPost(e) {
 - This is normal! The form should still work even with CORS warnings in console
 - The script uses `ContentService` which handles CORS automatically
 
-## Email Notifications (Optional)
+## Confirmation Emails
 
-To receive email notifications when someone registers, add this to your Apps Script after `sheet.appendRow(rowData);`:
+The script above automatically sends:
+1. **Confirmation email to registrant** - Professional HTML email with all event details
+2. **Notification to organizers** - Simple email to tedxdpsmonarch@gmail.com with registration details
 
-```javascript
-// Send email notification
-MailApp.sendEmail({
-  to: "your-email@example.com",
-  subject: "New TEDx Registration: " + data.Name,
-  body: "New registration received:\n\n" +
-        "Name: " + data.Name + "\n" +
-        "Email: " + data.Email + "\n" +
-        "Phone: " + data.Phone + "\n" +
-        "Affiliation: " + data.Affiliation + "\n" +
-        "Attendees: " + data.Attendees
-});
-```
+### Email Features:
+- ✅ Automatic confirmation emails sent immediately after registration
+- ✅ Includes event date, location, Google Maps link
+- ✅ Branded with TEDx colors and styling
+- ✅ Organizers get notified of each new registration
+- ✅ Registrants receive a professional confirmation
 
-Remember to redeploy after making changes to the script!
+**Important:** After updating the script, remember to click **Deploy** → **Manage deployments** → **Edit** (pencil icon) → **Deploy** to apply the changes!
 
 ## Security Notes
 
