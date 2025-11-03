@@ -8,7 +8,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Register to Attend - TEDxDPS Monarch Intl School Youth</title>
-  <link rel="stylesheet" href="./assets/css/styles.css?v=1762185357455">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=1762186485357">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -82,17 +82,17 @@
           <input type="hidden" name="Timestamp" id="timestamp">
 
           <button type="submit" class="btn cta" style="margin-top:10px">Register Now</button>
-          <small style="margin-top:12px" id="formStatus">* Required fields. You'll receive a confirmation email with event details.</small>
+          <small style="margin-top:12px" id="formStatus">* Required fields. Registration confirmation will be sent to your email.</small>
         </form>
 
         <div style="margin-top:64px;padding:28px;background:rgba(230, 43, 30, 0.1);border-left:4px solid var(--vibrant-orange)">
           <h3 style="color:var(--vibrant-orange);font-family:'Inter',sans-serif;font-weight:800;margin-bottom:16px">Event Information</h3>
           <ul style="color:var(--white);line-height:2;list-style:none;padding:0">
-            <li>📅 <strong>Date:</strong> Coming Soon</li>
+            <li>📅 <strong>Date:</strong> December 13, 2025</li>
             <li>📍 <strong>Venue:</strong> DPS Monarch International School</li>
             <li>⏰ <strong>Time:</strong> TBA</li>
             <li>🎟️ <strong>Entry:</strong> Free (Registration Required)</li>
-            <li>👥 <strong>Capacity:</strong> Limited Seating</li>
+            <li>👥 <strong>Capacity:</strong> 100 Seats</li>
           </ul>
           <p style="color:var(--light-blue);margin-top:20px;font-size:0.95rem">Note: Our speakers have already been selected. This registration is for event attendance only.</p>
         </div>
@@ -106,7 +106,7 @@
     </div>
   </footer>
 
-  <script src="./assets/js/main.js?v=1762185357455"></script>
+  <script src="./assets/js/main.js?v=1762186485357"></script>
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycby-2n02EJnKldM3z_lusJZMSu1DE1parFAiavmj1B8EEcnM6IVffSsfvrWyC7vx2GtfSw/exec';
     const form = document.forms['registrationForm'];
@@ -135,7 +135,7 @@
           // Success - turn button green with checkmark
           submitBtn.textContent = '✓';
           submitBtn.style.cssText = originalStyle + '; background: #10b981; border-color: #10b981; font-size: 2rem; padding: 8px;';
-          formStatus.textContent = 'Registration successful! Thank you for registering.';
+          formStatus.textContent = 'Registration successful! Confirmation email sent to your inbox.';
           formStatus.style.color = '#10b981';
           
           // Reset form
@@ -146,7 +146,7 @@
             submitBtn.textContent = originalText;
             submitBtn.style.cssText = originalStyle;
             submitBtn.disabled = false;
-            formStatus.textContent = '* Required fields. You\'ll receive a confirmation email with event details.';
+            formStatus.textContent = '* Required fields. Registration confirmation will be sent to your email.';
             formStatus.style.color = '';
           }, 3000);
         })
