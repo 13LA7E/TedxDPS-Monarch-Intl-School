@@ -14,7 +14,6 @@ Follow these steps to connect your registration form to Google Sheets.
    - `Phone`
    - `Affiliation`
    - `Attendees`
-   - `Message`
 
 ## Step 2: Create Google Apps Script
 
@@ -38,8 +37,7 @@ function doPost(e) {
       data.Email,
       data.Phone,
       data.Affiliation,
-      data.Attendees,
-      data.Message
+      data.Attendees
     ];
     
     // Append the data to the sheet
@@ -138,8 +136,7 @@ MailApp.sendEmail({
         "Email: " + data.Email + "\n" +
         "Phone: " + data.Phone + "\n" +
         "Affiliation: " + data.Affiliation + "\n" +
-        "Attendees: " + data.Attendees + "\n" +
-        "Message: " + data.Message
+        "Attendees: " + data.Attendees
 });
 ```
 
