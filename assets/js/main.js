@@ -146,9 +146,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const now = new Date().getTime();
     const distance = countdownDate - now;
     
+    console.log('Countdown Debug:', {
+      countdownDate: new Date(countdownDate),
+      now: new Date(now),
+      distance: distance,
+      days: Math.floor(distance / (1000 * 60 * 60 * 24))
+    });
+    
     if (distance < 0) {
       // Event has passed
-      document.getElementById('countdown')?.innerHTML = '<div class="countdown-item"><span class="countdown-number">Event Started!</span></div>';
+      const countdownEl = document.getElementById('countdown');
+      if (countdownEl) {
+        countdownEl.innerHTML = '<div class="countdown-item"><span class="countdown-number">Event Started!</span></div>';
+      }
       return;
     }
     
@@ -169,9 +179,13 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   
   // Update countdown immediately and then every second
-  if (document.getElementById('countdown')) {
+  const countdownEl = document.getElementById('countdown');
+  if (countdownEl) {
+    console.log('Countdown element found, starting timer...');
     updateCountdown();
     setInterval(updateCountdown, 1000);
+  } else {
+    console.log('Countdown element not found!');
   }
 
   // Parallax effect for specific elements
