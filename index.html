@@ -9,7 +9,7 @@
   <meta http-equiv="Expires" content="0">
   <title>TEDxDPS Monarch Intl School Youth</title>
   <meta name="description" content="Ideas worth spreading from DPS Monarch International School Youth">
-  <link rel="stylesheet" href="./assets/css/styles.css?v=1762230048052">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=1762282217951">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -30,6 +30,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="talks.html">Talks</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="team.html">Team</a></li>
           <li><a href="apply.html">Register</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -50,13 +51,41 @@
           <span class="define">to Define</span>
         </h1>
         <p class="hero-tagline">Break the mold. Challenge conventions. Rewrite the rules.<br>This is where ideas rebel against the ordinary.</p>
+        
+        <!-- Countdown Timer -->
+        <div class="countdown-container" id="countdown">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+
         <div class="manifesto">
           <p>🔺 <strong>DEFY</strong> expectations</p>
           <p>🔺 <strong>DEFY</strong> limitations</p>
           <p>🔺 <strong>DEFY</strong> boundaries</p>
           <p style="margin-top:16px;color:var(--vibrant-orange);font-size:1.2rem;font-weight:700;">Then <em style="font-family:'Playfair Display',serif;">define</em> your own path.</p>
         </div>
-        <a href="apply.html" class="cta">Register to Attend</a>
+        
+        <div style="display:flex;flex-direction:column;align-items:center;gap:15px;">
+          <a href="apply.html" class="cta cta-pulse">Register to Attend</a>
+          <div class="social-proof">
+            <span class="social-proof-icon">✓</span>
+            <span class="social-proof-text">Limited to 100 seats - Register now!</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -91,6 +120,6 @@
     </div>
   </footer>
 
-  <script src="./assets/js/main.js?v=1762230048052"></script>
+  <script src="./assets/js/main.js?v=1762282217951"></script>
 </body>
 </html>
