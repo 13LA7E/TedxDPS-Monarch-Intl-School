@@ -13,7 +13,8 @@ const htmlFiles = [
   'talks.html',
   'team.html',
   'apply.html',
-  'contact.html'
+  'contact.html',
+  'gallery.html'
 ];
 
 // Process each HTML file
