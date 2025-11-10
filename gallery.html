@@ -29,7 +29,7 @@
   <meta property="twitter:description" content="Explore photos from TEDxDPS Monarch events.">
   <meta property="twitter:image" content="https://13la7e.github.io/TedxDPS-Monarch-Intl-School/Gallery/IMG_1297.JPG">
   
-  <link rel="stylesheet" href="./assets/css/styles.css?v=1762794957262">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=1762795169912">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
@@ -106,28 +106,56 @@
     nav {
       display: flex;
       align-items: center;
+      animation: fadeInRight 0.8s ease-out 0.3s both;
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     nav ul {
       display: flex;
+      gap: 2px;
       list-style: none;
       margin: 0;
       padding: 0;
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin: 0;
     }
 
-    nav ul li a {
-      padding: 8px 12px;
-      border-radius: 4px;
-      transition: background 0.3s ease;
+    nav a {
+      color: var(--off-white);
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      padding: 10px 20px;
+      border-radius: 24px;
+      font-size: 0.9rem;
+      position: relative;
+      display: block;
     }
 
-    nav ul li a:hover,
-    nav ul li a.active {
+    nav a:hover {
+      background: rgba(255, 107, 53, 0.15);
+      color: var(--vibrant-orange);
+      transform: translateY(-2px);
+    }
+
+    nav a.active {
       background: rgba(230, 43, 30, 0.8);
+      color: #ffffff;
     }
 
     /* Section Styles */
@@ -375,7 +403,7 @@
     </div>
   </footer>
 
-  <script src="./assets/js/main.js?v=1762794957262"></script>
+  <script src="./assets/js/main.js?v=1762795169912"></script>
   <script>
     // Gallery images
     const images = [
