@@ -4,15 +4,15 @@
 
 :root{
   --primary-red:#E62B1E;
-  --vibrant-orange:#FF6B35;
+  --vibrant-orange:#E62B1E;
   --dark-bg:#0A0E1A;
   --darker:#050812;
   --glass-bg:rgba(20, 20, 30, 0.6);
   --glass-border:rgba(255, 255, 255, 0.1);
   --white:#FFFFFF;
   --gray:#B8C5D6;
-  --light-blue:#7DD3FC;
-  --cool-gray:#94A3B8;
+  --light-blue:#F5F5F0;
+  --cool-gray:#E8E8E0;
   --maxw:1100px;
 }
 
@@ -70,9 +70,9 @@ body{
   color:var(--white); 
   background:var(--darker);
   background-image:
-    linear-gradient(180deg, rgba(230, 43, 30, 0.05) 0%, transparent 100%),
-    radial-gradient(ellipse at 20% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(230, 43, 30, 0.08) 0%, transparent 50%);
+    linear-gradient(180deg, rgba(230, 43, 30, 0.12) 0%, transparent 100%),
+    radial-gradient(ellipse at 20% 20%, rgba(230, 43, 30, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(230, 43, 30, 0.15) 0%, transparent 50%);
   background-attachment:fixed;
   padding-top:75px;
   position:relative;
@@ -89,13 +89,13 @@ body::before{
   width:100%;
   height:100%;
   background-image:
-    linear-gradient(135deg, transparent 0%, rgba(255, 107, 53, 0.02) 25%, transparent 50%, rgba(230, 43, 30, 0.02) 75%, transparent 100%),
-    repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(255, 107, 53, 0.015) 100px, rgba(255, 107, 53, 0.015) 200px),
-    repeating-linear-gradient(-45deg, transparent, transparent 150px, rgba(230, 43, 30, 0.015) 150px, rgba(230, 43, 30, 0.015) 300px),
-    radial-gradient(circle at 30% 20%, rgba(255, 107, 53, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 70% 80%, rgba(230, 43, 30, 0.04) 0%, transparent 50%);
+    linear-gradient(135deg, transparent 0%, rgba(230, 43, 30, 0.08) 25%, transparent 50%, rgba(230, 43, 30, 0.08) 75%, transparent 100%),
+    repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(230, 43, 30, 0.05) 100px, rgba(230, 43, 30, 0.05) 200px),
+    repeating-linear-gradient(-45deg, transparent, transparent 150px, rgba(230, 43, 30, 0.05) 150px, rgba(230, 43, 30, 0.05) 300px),
+    radial-gradient(circle at 30% 20%, rgba(230, 43, 30, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(230, 43, 30, 0.1) 0%, transparent 50%);
   background-size:200% 100%, 400px 400px, 600px 600px, 800px 800px, 800px 800px;
-  opacity:0.8;
+  opacity:1;
   z-index:0;
   pointer-events:none;
   animation:flowingLight 15s ease-in-out infinite;
@@ -112,13 +112,13 @@ body::before{
   }
 }
 
-/* Add rebellious warning stripes accent - Barber pole style */
+/* Add rebellious warning stripes accent - Barber pole style on RIGHT */
 body::after{
   content:'';
   position:fixed;
   top:0;
   right:0;
-  width:8px;
+  width:10px;
   height:100%;
   background:
     repeating-linear-gradient(
@@ -128,11 +128,34 @@ body::after{
       #0A0E1A 10px,
       #0A0E1A 20px
     );
-  opacity:0.9;
+  opacity:1;
   z-index:1000;
   pointer-events:none;
-  box-shadow:-2px 0 10px rgba(230, 43, 30, 0.5);
-  animation:barberPole 2s linear infinite, stripeGlow 3s ease-in-out infinite;
+  box-shadow:-3px 0 15px rgba(230, 43, 30, 0.7);
+  animation:barberPole 2s linear infinite, stripeGlowRight 3s ease-in-out infinite;
+}
+
+/* Barber pole on LEFT side - using html element */
+html::after{
+  content:'';
+  position:fixed;
+  top:0;
+  left:0;
+  width:10px;
+  height:100%;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--primary-red),
+      var(--primary-red) 10px,
+      #0A0E1A 10px,
+      #0A0E1A 20px
+    );
+  opacity:1;
+  z-index:1000;
+  pointer-events:none;
+  box-shadow:3px 0 15px rgba(230, 43, 30, 0.7);
+  animation:barberPole 2s linear infinite, stripeGlowLeft 3s ease-in-out infinite;
 }
 
 @keyframes barberPole{
@@ -150,14 +173,25 @@ body::after{
   100%{background-position:0 28.28px}
 }
 
-@keyframes stripeGlow{
+@keyframes stripeGlowRight{
   0%, 100%{
-    box-shadow:-2px 0 10px rgba(230, 43, 30, 0.5);
-    opacity:0.7;
+    box-shadow:-3px 0 15px rgba(230, 43, 30, 0.7);
+    opacity:0.8;
   }
   50%{
-    box-shadow:-4px 0 20px rgba(230, 43, 30, 0.8), -8px 0 40px rgba(255, 107, 53, 0.4);
-    opacity:0.9;
+    box-shadow:-6px 0 25px rgba(230, 43, 30, 1), -12px 0 50px rgba(230, 43, 30, 0.6);
+    opacity:1;
+  }
+}
+
+@keyframes stripeGlowLeft{
+  0%, 100%{
+    box-shadow:3px 0 15px rgba(230, 43, 30, 0.7);
+    opacity:0.8;
+  }
+  50%{
+    box-shadow:6px 0 25px rgba(230, 43, 30, 1), 12px 0 50px rgba(230, 43, 30, 0.6);
+    opacity:1;
   }
 }
 
@@ -198,7 +232,7 @@ body::after{
   background:rgba(10, 14, 26, 0.95);
   backdrop-filter:blur(20px) saturate(180%);
   -webkit-backdrop-filter:blur(20px) saturate(180%);
-  border:2px solid rgba(255, 107, 53, 0.2);
+  border:2px solid rgba(230, 43, 30, 0.3);
   box-shadow:0 8px 32px rgba(0, 0, 0, 0.6);
   border-radius:60px;
   padding:12px 32px;
@@ -217,7 +251,7 @@ body::after{
   left:-100%;
   width:100%;
   height:100%;
-  background:linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.08), transparent);
+  background:linear-gradient(90deg, transparent, rgba(230, 43, 30, 0.12), transparent);
   animation:headerShine 4s ease-in-out infinite;
   pointer-events:none;
 }
