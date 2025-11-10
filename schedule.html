@@ -27,7 +27,7 @@
   <meta property="twitter:title" content="Event Schedule - TEDxDPS Monarch">
   <meta property="twitter:description" content="Event schedule for TEDxDPS Monarch on December 13, 2025.">
   
-  <link rel="stylesheet" href="./assets/css/styles.css?v=1762801334340">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=1762801553647">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
@@ -51,15 +51,15 @@
     .timeline-item {
       display: flex;
       justify-content: flex-end;
-      padding-right: calc(50% + 40px);
+      padding-right: calc(50% + 60px);
       padding-left: 0;
       position: relative;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
 
     .timeline-item:nth-child(even) {
       justify-content: flex-start;
-      padding-left: calc(50% + 40px);
+      padding-left: calc(50% + 60px);
       padding-right: 0;
     }
 
@@ -68,7 +68,7 @@
       padding: 25px 30px;
       border-radius: 12px;
       width: 100%;
-      max-width: 380px;
+      max-width: 360px;
       border: 1px solid rgba(230, 43, 30, 0.2);
       position: relative;
       transition: all 0.3s ease;
@@ -82,9 +82,7 @@
 
     .timeline-time {
       position: absolute;
-      left: 50%;
-      top: 15px;
-      transform: translateX(-50%);
+      top: 20px;
       background: var(--vibrant-orange);
       color: white;
       padding: 8px 16px;
@@ -97,11 +95,12 @@
     }
     
     .timeline-item .timeline-time {
-      left: calc(50% + 40px);
+      right: -85px;
     }
     
     .timeline-item:nth-child(even) .timeline-time {
-      left: calc(50% - 40px);
+      left: -85px;
+      right: auto;
     }
 
     .timeline-content h3 {
@@ -408,6 +407,6 @@
     </div>
   </footer>
 
-  <script src="./assets/js/main.js?v=1762801334340"></script>
+  <script src="./assets/js/main.js?v=1762801553647"></script>
 </body>
 </html>
