@@ -29,14 +29,14 @@
   <meta property="twitter:description" content="Explore photos from TEDxDPS Monarch events.">
   <meta property="twitter:image" content="https://13la7e.github.io/TedxDPS-Monarch-Intl-School/Gallery/IMG_1297.JPG">
   
-  <link rel="stylesheet" href="./assets/css/styles.css?v=1762792736294">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=1762793092196">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
+    /* Masonry Collage Layout */
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
+      column-count: 4;
+      column-gap: 15px;
       padding: 20px 0;
     }
 
@@ -47,26 +47,33 @@
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
+      border: 2px solid var(--glass-border);
+      margin-bottom: 15px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      display: inline-block;
+      width: 100%;
     }
 
     .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(230, 43, 30, 0.3);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(230, 43, 30, 0.4);
+      border-color: rgba(230, 43, 30, 0.6);
+      z-index: 10;
     }
 
     .gallery-item img {
       width: 100%;
-      height: 300px;
-      object-fit: cover;
+      height: auto;
       display: block;
-      transition: transform 0.5s ease;
+      transition: transform 0.5s ease, filter 0.3s ease;
       image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
     }
 
     .gallery-item:hover img {
-      transform: scale(1.1);
+      transform: scale(1.05);
+      filter: brightness(1.1);
     }
 
     .gallery-item-overlay {
@@ -74,8 +81,8 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(5, 8, 18, 0.9), transparent);
-      padding: 20px;
+      background: linear-gradient(to top, rgba(5, 8, 18, 0.95), rgba(5, 8, 18, 0.7) 50%, transparent);
+      padding: 15px;
       transform: translateY(100%);
       transition: transform 0.3s ease;
     }
@@ -181,14 +188,43 @@
       }
     }
 
-    @media (max-width: 768px) {
+    /* Responsive Masonry Breakpoints */
+    @media (max-width: 1400px) {
       .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 15px;
+        column-count: 3;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .gallery-grid {
+        column-count: 2;
+        column-gap: 12px;
       }
 
-      .gallery-item img {
-        height: 250px;
+      .gallery-item {
+        margin-bottom: 12px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        column-count: 2;
+        column-gap: 10px;
+      }
+
+      .gallery-item {
+        margin-bottom: 10px;
+        border-radius: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        column-count: 1;
+      }
+
+      .gallery-item {
+        margin-bottom: 12px;
       }
     }
   </style>
@@ -248,7 +284,7 @@
     </div>
   </footer>
 
-  <script src="./assets/js/main.js?v=1762792736294"></script>
+  <script src="./assets/js/main.js?v=1762793092196"></script>
   <script>
     // Gallery images
     const images = [
