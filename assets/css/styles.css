@@ -1236,6 +1236,84 @@ nav a:hover{
   *{
     will-change:auto !important;
   }
+  
+  /* Additional mobile padding and spacing fixes */
+  .section{
+    margin:0 8px;
+  }
+  
+  .footer{
+    padding:30px 12px;
+    margin-top:60px;
+  }
+  
+  .footer .container{
+    padding:0 8px;
+  }
+  
+  /* Form elements mobile padding */
+  form{
+    padding:0 12px;
+    max-width:100%;
+  }
+  
+  .form-row{
+    margin-bottom:16px;
+    padding:0 4px;
+  }
+  
+  input, textarea, select{
+    margin:8px 0;
+    padding:12px;
+    font-size:16px;
+    border-radius:8px;
+  }
+  
+  label{
+    font-size:0.9rem;
+    margin-bottom:6px;
+  }
+  
+  /* Speaker cards mobile */
+  .speaker-card, .team-member{
+    margin:0 8px 16px 8px;
+  }
+  
+  /* Timeline mobile */
+  .timeline{
+    padding:0 8px;
+  }
+  
+  /* FAQ mobile */
+  .faq-item{
+    margin:0 8px 12px 8px;
+    padding:16px;
+  }
+  
+  .faq-question{
+    font-size:1rem;
+  }
+  
+  .faq-answer{
+    font-size:0.9rem;
+    padding:12px 0;
+  }
+  
+  /* Any full-width sections */
+  .full-width{
+    padding:0 12px;
+  }
+  
+  /* About page mobile */
+  .manifesto{
+    margin:20px 8px;
+    padding:20px 16px;
+  }
+  
+  /* Contact page mobile */
+  .contact-info{
+    padding:0 12px;
+  }
 }
 
   /* Small phones */
@@ -1246,7 +1324,44 @@ nav a:hover{
   }
   
   .hero h1{
-    font-size:2rem;
+    font-size:1.8rem;
+  }
+  
+  .container{
+    padding:8px;
+  }
+  
+  .section{
+    margin:0 4px;
+    padding:30px 0;
+  }
+  
+  .card{
+    padding:16px;
+    margin:0 4px;
+  }
+  
+  .grid{
+    padding:0 4px;
+    gap:12px;
+  }
+  
+  .footer{
+    padding:24px 8px;
+  }
+  
+  form{
+    padding:0 4px;
+  }
+  
+  input, textarea, select{
+    padding:10px;
+    font-size:14px;
+  }
+  
+  .cta, .btn{
+    padding:10px 20px;
+    font-size:0.8rem;
   }
   
   .hero h1 .defy{

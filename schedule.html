@@ -27,7 +27,7 @@
   <meta property="twitter:title" content="Event Schedule - TEDxDPS Monarch">
   <meta property="twitter:description" content="Event schedule for TEDxDPS Monarch on December 13, 2025.">
   
-  <link rel="stylesheet" href="./assets/css/styles.css?v=1762803121549">
+  <link rel="stylesheet" href="./assets/css/styles.css?v=1762803590491">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
@@ -145,27 +145,57 @@
     }
 
     @media (max-width: 768px) {
+      .timeline {
+        padding: 0 8px;
+        margin: 40px auto;
+      }
+      
       .timeline::before {
         left: 30px;
       }
 
       .timeline-item {
-        padding-left: 80px;
-        padding-right: 0;
+        padding-left: 70px;
+        padding-right: 8px;
+        margin-bottom: 40px;
       }
 
       .timeline-item:nth-child(even) {
-        padding-left: 80px;
-        padding-right: 0;
+        padding-left: 70px;
+        padding-right: 8px;
       }
 
       .timeline-time {
         left: 30px;
         transform: translateX(-50%);
+        padding: 6px 12px;
+        font-size: 0.8rem;
       }
 
       .timeline-content {
         width: 100%;
+        padding: 20px;
+      }
+      
+      .timeline-content h3 {
+        font-size: 1.1rem;
+      }
+      
+      .timeline-content p {
+        font-size: 0.9rem;
+      }
+      
+      .event-header {
+        padding: 30px 16px;
+        margin: 0 8px 40px 8px;
+      }
+      
+      .event-header h2 {
+        font-size: 1.8rem;
+      }
+      
+      .event-header p {
+        font-size: 1rem;
       }
     }
   </style>
@@ -407,6 +437,6 @@
     </div>
   </footer>
 
-  <script src="./assets/js/main.js?v=1762803121549"></script>
+  <script src="./assets/js/main.js?v=1762803590491"></script>
 </body>
 </html>
