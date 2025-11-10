@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Countdown Timer
-  const countdownDate = new Date('December 13, 2025 16:00:00').getTime();
+  const countdownDate = new Date('December 13, 2025 15:00:00').getTime();
   
   const updateCountdown = () => {
     const now = new Date().getTime();
