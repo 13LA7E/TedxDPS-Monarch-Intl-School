@@ -1888,3 +1888,54 @@ small{
   }
 }
 
+/* TEDx Icon Styles - Replace emojis with branded icons */
+.tedx-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #000;
+  border: 2px solid var(--primary-red);
+  border-radius: 3px;
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--primary-red);
+  position: relative;
+  top: 3px;
+}
+
+.tedx-icon-triangle {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 14px solid var(--primary-red);
+  background: transparent;
+  border-radius: 0;
+}
+
+.tedx-icon-play {
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid var(--primary-red);
+  background: transparent;
+  border-radius: 0;
+  margin-left: 2px;
+}
+
+.tedx-icon-check {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.tedx-icon-large {
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+  margin: 0 auto 20px;
+}
+
