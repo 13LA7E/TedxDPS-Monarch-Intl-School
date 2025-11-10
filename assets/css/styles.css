@@ -4,12 +4,16 @@
 
 :root{
   --primary-red:#E62B1E;
+  --ted-red:#E62B1E;
   --vibrant-orange:#E62B1E;
   --dark-bg:#0A0E1A;
   --darker:#050812;
   --glass-bg:rgba(20, 20, 30, 0.6);
   --glass-border:rgba(255, 255, 255, 0.1);
   --white:#FFFFFF;
+  --off-white:#F5F5F0;
+  --off-white-light:#FAFAF8;
+  --off-white-dark:#E8E8E0;
   --gray:#B8C5D6;
   --light-blue:#F5F5F0;
   --cool-gray:#E8E8E0;
@@ -67,7 +71,7 @@ html{
 body{
   font-family:'Inter', sans-serif; 
   margin:0; 
-  color:var(--white); 
+  color:var(--ted-red); 
   background:var(--darker);
   background-image:
     linear-gradient(180deg, rgba(230, 43, 30, 0.12) 0%, transparent 100%),
@@ -360,7 +364,7 @@ nav ul{
 }
 
 nav a{
-  color:var(--white);
+  color:var(--off-white);
   text-decoration:none;
   font-weight:600;
   font-family:'Inter', sans-serif;
@@ -503,7 +507,7 @@ nav a:hover{
 .hero h1{
   font-size:4rem;
   margin:0 0 28px 0;
-  color:var(--white);
+  color:var(--ted-red);
   line-height:1;
   font-family:'Inter', sans-serif;
   font-weight:900;
@@ -527,7 +531,7 @@ nav a:hover{
 .hero h1 .define{
   display:inline-block;
   font-weight:900;
-  color:var(--white);
+  color:var(--off-white);
   font-family:'Inter', sans-serif;
   letter-spacing:8px;
   font-size:4rem;
@@ -558,7 +562,7 @@ nav a:hover{
 }
 
 .hero p{
-  color:var(--light-blue);
+  color:var(--off-white);
   font-size:1.1rem;
   line-height:1.8;
   margin-bottom:36px;
@@ -569,7 +573,7 @@ nav a:hover{
 
 .hero-tagline{
   font-size:1.2rem !important;
-  color:var(--cool-gray) !important;
+  color:var(--off-white-dark) !important;
   font-weight:500;
   margin-bottom:32px !important;
   line-height:1.9;
@@ -604,7 +608,7 @@ nav a:hover{
 }
 
 .manifesto p{
-  color:var(--white) !important;
+  color:var(--off-white) !important;
   font-size:1.05rem !important;
   margin:8px 0 !important;
   font-weight:600;
@@ -615,7 +619,7 @@ nav a:hover{
 }
 
 .manifesto strong{
-  color:var(--primary-red);
+  color:var(--ted-red);
   font-weight:800;
   text-transform:uppercase;
   letter-spacing:2px;
@@ -806,7 +810,7 @@ nav a:hover{
 }
 
 .card p{
-  color:var(--light-blue);
+  color:var(--off-white);
   line-height:1.8;
   position:relative;
   z-index:1;
@@ -821,7 +825,7 @@ nav a:hover{
 }
 
 .section h2{
-  color:var(--white);
+  color:var(--ted-red);
   font-family:'Inter', sans-serif;
   font-size:2.5rem;
   font-weight:900;
@@ -859,7 +863,7 @@ nav a:hover{
 
 .footer{
   padding:40px 0;
-  color:var(--gray);
+  color:var(--off-white-dark);
   background:rgba(10, 14, 26, 0.95);
   backdrop-filter:blur(30px);
   -webkit-backdrop-filter:blur(30px);
@@ -1267,7 +1271,7 @@ input,textarea,select{
   border:2px solid rgba(255, 107, 53, 0.3);
   padding:16px;
   border-radius:12px;
-  color:var(--white);
+  color:var(--off-white);
   font-family:'Inter', sans-serif;
   font-size:1rem;
   font-weight:500;
@@ -1276,7 +1280,7 @@ input,textarea,select{
 }
 
 input::placeholder,textarea::placeholder{
-  color:var(--cool-gray);
+  color:var(--off-white-dark);
   opacity:0.7;
   font-family:'Inter', sans-serif;
 }
@@ -1323,7 +1327,7 @@ label{
 }
 
 small{
-  color:var(--gray);
+  color:var(--off-white-dark);
   line-height:1.6;
   font-family:'Inter', sans-serif;
 }
@@ -1505,7 +1509,7 @@ small{
 
 .countdown-label {
   font-size: 0.9rem;
-  color: var(--gray);
+  color: var(--off-white);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-top: 10px;
@@ -1530,7 +1534,7 @@ small{
 }
 
 .social-proof-text {
-  color: var(--light-blue);
+  color: var(--off-white);
   font-size: 0.95rem;
 }
 
@@ -1657,7 +1661,7 @@ small{
   align-items: center;
   font-weight: 700;
   font-size: 1.05rem;
-  color: var(--white);
+  color: var(--ted-red);
   transition: all 0.3s ease;
 }
 
@@ -1680,7 +1684,7 @@ small{
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
   padding: 0 25px;
-  color: var(--gray);
+  color: var(--off-white);
   line-height: 1.8;
 }
 
