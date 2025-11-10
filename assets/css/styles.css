@@ -159,22 +159,22 @@ html::after{
   z-index:1000;
   pointer-events:none;
   box-shadow:3px 0 15px rgba(230, 43, 30, 0.7);
-  animation:barberPole 2s linear infinite, stripeGlowLeft 3s ease-in-out infinite;
+  animation:barberPoleLeft 2s linear infinite, stripeGlowLeft 3s ease-in-out infinite;
 }
 
 @keyframes barberPole{
   0%{background-position:0 0}
   100%{background-position:0 28.28px}
+}
+
+@keyframes barberPoleLeft{
+  0%{background-position:0 0}
+  100%{background-position:0 -28.28px}
 }
 
 @keyframes triangleFloat{
   0%{background-position:0 0, 40px 0, 0 70px}
   100%{background-position:80px 0, 120px 0, 80px 70px}
-}
-
-@keyframes barberPole{
-  0%{background-position:0 0}
-  100%{background-position:0 28.28px}
 }
 
 @keyframes stripeGlowRight{
@@ -1055,61 +1055,73 @@ nav a:hover{
   }
   
   .hero{
-    padding:60px 0 40px 0;
+    padding:40px 0 30px 0;
+    margin:0 8px;
   }
   
   .hero h1{
-    font-size:2.5rem;
-    margin-bottom:20px;
+    font-size:2rem;
+    margin-bottom:16px;
   }
   
   .hero h1 .defy{
-    letter-spacing:4px;
-    font-size:2.5rem;
+    letter-spacing:3px;
+    font-size:2rem;
   }
   
   .hero h1 .define{
-    font-size:2rem;
-    margin-top:8px;
+    font-size:1.6rem;
+    margin-top:6px;
   }
   
   .hero p{
-    font-size:1rem;
-    margin-bottom:28px;
+    font-size:0.95rem;
+    margin-bottom:24px;
+    padding:0 8px;
   }
   
   .hero .eyebrow{
-    font-size:0.7rem;
-    letter-spacing:2px;
+    font-size:0.65rem;
+    letter-spacing:1.5px;
   }
   
   .cta, .btn{
-    padding:14px 28px;
+    padding:12px 24px;
     font-size:0.85rem;
-    width:100%;
-    justify-content:center;
+    max-width:90%;
+    margin:0 auto;
+    display:block;
+    text-align:center;
   }
   
   .grid{
     grid-template-columns:1fr;
-    gap:20px;
+    gap:16px;
+    padding:0 8px;
   }
   
   .card{
-    padding:24px;
+    padding:20px;
+    margin:0 4px;
   }
   
   .card h3{
-    font-size:1.4rem;
+    font-size:1.3rem;
+  }
+  
+  .section{
+    padding:40px 0;
   }
   
   .section h2{
-    font-size:2rem;
-    margin-bottom:28px;
+    font-size:1.8rem;
+    margin-bottom:24px;
+    padding:0 12px;
   }
   
   .container{
-    padding:16px;
+    padding:12px;
+    max-width:100%;
   }
   
   /* Keep manifesto visible on mobile */
@@ -1134,6 +1146,13 @@ nav a:hover{
   body::after{
     display:block !important;
     animation:barberPole 2s linear infinite !important;
+    width:6px;
+  }
+  
+  html::after{
+    display:block !important;
+    animation:barberPoleLeft 2s linear infinite !important;
+    width:6px;
   }
   
   .menu-btn, .menu-btn span{
