@@ -308,8 +308,8 @@ html::after{
 .header .container{
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:60px;
+  justify-content:flex-start;
+  gap:30px;
   padding:0;
   max-width:100%;
   margin:0;
@@ -397,6 +397,10 @@ nav a:hover{
   text-decoration:none;
   transition:all 0.3s ease;
   font-size:0.95rem;
+}
+
+.register{
+  margin-left:auto;
 }
 
 .register:hover{
