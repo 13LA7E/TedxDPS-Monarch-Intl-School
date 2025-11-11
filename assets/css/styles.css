@@ -1796,12 +1796,12 @@ small{
 
 .timeline-item:nth-child(odd) .timeline-content {
   /* push right-side cards further away from center line */
-  margin-left: 54%;
+  margin-left: 56%;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
   /* push left-side cards further away from center line */
-  margin-right: 54%;
+  margin-right: 56%;
   margin-left: auto;
   text-align: right;
 }
