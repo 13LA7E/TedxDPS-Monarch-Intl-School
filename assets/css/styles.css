@@ -1067,41 +1067,70 @@ nav a:hover{
   }
   
   body{
-    padding-top:80px;
+    padding-top:90px;
     /* Disable fixed background for performance */
     background-attachment:scroll;
   }
   
   .header{
-    width:calc(100vw - 16px);
-    max-width:calc(100vw - 16px);
-    top:8px;
-    padding:10px 16px;
-    left:8px;
+    width:calc(100vw - 24px);
+    max-width:calc(100vw - 24px);
+    top:12px;
+    left:12px;
+    padding:12px 20px;
     transform:none;
+    border-radius:50px;
   }
   
   .header .container{
     padding:0;
     max-width:100%;
+    justify-content:space-between;
+    gap:12px;
   }
   
   .brand{
     gap:8px;
+    flex-shrink:0;
   }
   
   .brand img{
-    height:36px;
+    height:32px;
   }
   
   .menu-btn{
     width:44px;
     height:44px;
-    padding:8px;
+    padding:10px;
+    flex-shrink:0;
+    border-radius:12px;
+    background:rgba(255, 107, 53, 0.1);
+    border:2px solid rgba(255, 107, 53, 0.3);
+  }
+  
+  .menu-btn:hover{
+    background:rgba(255, 107, 53, 0.2);
+    border-color:var(--vibrant-orange);
   }
   
   .register{
     display:none; /* Hide register button in header on mobile - it's in the nav menu */
+  }
+  
+  /* Mobile nav menu styling */
+  nav{
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
+  }
+  
+  nav ul{
+    padding-top:20px;
+  }
+  
+  nav a{
+    font-size:1.05rem;
+    font-weight:600;
+    letter-spacing:0.5px;
   }
   
   .hero{
