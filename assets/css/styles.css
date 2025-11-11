@@ -288,12 +288,59 @@ html::after{
 
 .header .container{
   display:flex;
-  align-items:center;
-  justify-content:space-between;
+  flex-direction:column;
+  gap:8px;
+  align-items:stretch;
   padding:0;
   max-width:100%;
   margin:0;
 }
+
+.header-top{
+  display:flex;
+  align-items:center;
+  justify-content:center; /* center the logo row */
+  width:100%;
+}
+
+.header-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between; /* nav on left, cta on right */
+  width:100%;
+  gap:12px;
+}
+
+.nav-main{flex:1}
+
+.nav-list{
+  display:flex;
+  gap:10px;
+  list-style:none;
+  margin:0;
+  padding:0;
+  justify-content:flex-start; /* keep tabs starting from the left */
+  align-items:center;
+}
+
+.nav-list li{margin:0}
+
+.nav-cta{margin-left:auto} /* push register to the far right */
+
+.nav-cta .register{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:24px;
+  border:2px solid var(--vibrant-orange);
+  color:var(--vibrant-orange);
+  background:transparent;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-decoration:none;
+}
+
+.nav-cta .register:hover{background:rgba(255,107,53,0.08);color:var(--white)}
 
 @keyframes floatUp{
   0%, 100%{transform:translateY(0)}
