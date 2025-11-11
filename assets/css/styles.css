@@ -239,9 +239,11 @@ html::after{
   border:2px solid rgba(230, 43, 30, 0.3);
   box-shadow:0 8px 32px rgba(0, 0, 0, 0.6);
   border-radius:60px;
-  padding:18px 40px;
-  max-width:calc(var(--maxw) - 48px);
-  width:calc(100% - 48px);
+  /* reduce vertical padding, increase horizontal room */
+  padding:10px 56px;
+  /* make the navbar longer horizontally */
+  max-width:1200px;
+  width:calc(100% - 32px);
   animation:slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   position:relative;
   transition:all 0.3s ease;
