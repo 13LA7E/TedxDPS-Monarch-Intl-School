@@ -240,9 +240,9 @@ html::after{
   box-shadow:0 8px 32px rgba(0, 0, 0, 0.6);
   border-radius:60px;
   /* reduce vertical padding, increase horizontal room */
-  padding:10px 56px;
-  /* make the navbar longer horizontally */
-  max-width:1200px;
+  padding:10px 48px;
+  /* make the navbar span almost full width */
+  max-width:1400px;
   width:calc(100% - 32px);
   animation:slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   position:relative;
@@ -388,7 +388,7 @@ nav a:hover{
 
 .register{
   display:inline-block;
-  padding:12px 28px;
+  padding:10px 24px;
   border-radius:28px;
   border:2px solid var(--vibrant-orange);
   color:var(--vibrant-orange);
@@ -399,6 +399,7 @@ nav a:hover{
   text-decoration:none;
   transition:all 0.3s ease;
   font-size:0.95rem;
+  white-space:nowrap;
 }
 
 .register{
