@@ -1788,7 +1788,7 @@ small{
   border-radius: 15px;
   padding: 36px 44px;
   /* wider cards for better readability */
-  max-width: 42%;
+  max-width: 46%;
   transition: all 0.3s ease;
   position: relative;
   z-index: 1;
@@ -1796,12 +1796,12 @@ small{
 
 .timeline-item:nth-child(odd) .timeline-content {
   /* push right-side cards further away from center line */
-  margin-left: 56%;
+  margin-left: 52%;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
   /* push left-side cards further away from center line */
-  margin-right: 56%;
+  margin-right: 52%;
   margin-left: auto;
   text-align: right;
 }
