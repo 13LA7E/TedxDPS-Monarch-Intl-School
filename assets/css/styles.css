@@ -1787,21 +1787,21 @@ small{
   border: 2px solid rgba(255, 107, 53, 0.3);
   border-radius: 15px;
   padding: 36px 44px;
-  /* wider cards for better readability */
-  max-width: 46%;
+  /* much wider cards so text fits on fewer lines */
+  max-width: 52%;
   transition: all 0.3s ease;
   position: relative;
   z-index: 1;
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
-  /* push right-side cards further away from center line */
-  margin-left: 52%;
+  /* push right-side cards away from center line */
+  margin-left: 50%;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-  /* push left-side cards further away from center line */
-  margin-right: 52%;
+  /* push left-side cards away from center line */
+  margin-right: 50%;
   margin-left: auto;
   text-align: right;
 }
