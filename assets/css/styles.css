@@ -1786,9 +1786,9 @@ small{
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 107, 53, 0.3);
   border-radius: 15px;
-  padding: 30px 36px;
-  /* narrower cards so there's more empty space around the timeline */
-  max-width: 36%;
+  padding: 36px 44px;
+  /* wider cards for better readability */
+  max-width: 42%;
   transition: all 0.3s ease;
   position: relative;
   z-index: 1;
@@ -1796,12 +1796,12 @@ small{
 
 .timeline-item:nth-child(odd) .timeline-content {
   /* push right-side cards further away from center line */
-  margin-left: 62%;
+  margin-left: 58%;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
   /* push left-side cards further away from center line */
-  margin-right: 62%;
+  margin-right: 58%;
   margin-left: auto;
   text-align: right;
 }
