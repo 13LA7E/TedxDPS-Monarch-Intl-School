@@ -132,7 +132,7 @@ function doPost(e) {
    - Click **Allow**
 6. **Copy the Web app URL** - it should look like:
    ```
-   https://script.google.com/macros/s/AKfycby.../exec
+   https://script.google.com/macros/s/AKfycbzVEhtWAYVGelVPn3bET_b0sANHD4Q_fBVtvJdptAZzQeBbXTkcjwJyOihH8IrG4hpZ/exec
    ```
 
 ## Step 4: Update Your Website
@@ -144,7 +144,7 @@ function doPost(e) {
    ```
 3. Replace `'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'` with your actual Web app URL (keep the quotes):
    ```javascript
-   const scriptURL = 'https://script.google.com/macros/s/AKfycby.../exec';
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbzVEhtWAYVGelVPn3bET_b0sANHD4Q_fBVtvJdptAZzQeBbXTkcjwJyOihH8IrG4hpZ/exec';
    ```
 4. Save the file
 
