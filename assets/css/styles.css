@@ -347,6 +347,7 @@ html::after{
 
 nav{
   animation:fadeInRight 0.8s ease-out 0.3s both;
+  margin-left:auto;
 }
 
 @keyframes fadeInRight{
@@ -400,10 +401,6 @@ nav a:hover{
   transition:all 0.3s ease;
   font-size:0.95rem;
   white-space:nowrap;
-}
-
-.register{
-  margin-left:auto;
 }
 
 .register:hover{
