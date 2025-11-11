@@ -84,7 +84,7 @@ body{
   min-height:100vh;
 }
 
-/* Very noticeable animated geometric pattern */
+/* Flowing lines pattern - freedom theme with organic geometric shapes */
 body::before{
   content:'';
   position:fixed;
@@ -93,27 +93,26 @@ body::before{
   width:100%;
   height:100%;
   background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(230, 43, 30, 0.08) 2px, rgba(230, 43, 30, 0.08) 3px),
-    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(230, 43, 30, 0.08) 2px, rgba(230, 43, 30, 0.08) 3px),
-    radial-gradient(circle at 25% 25%, rgba(230, 43, 30, 0.15) 0%, transparent 35%),
-    radial-gradient(circle at 75% 75%, rgba(230, 43, 30, 0.12) 0%, transparent 35%),
-    linear-gradient(135deg, transparent 30%, rgba(230, 43, 30, 0.08) 50%, transparent 70%);
-  background-size:60px 60px, 60px 60px, 600px 600px, 600px 600px, 100% 100%;
-  background-position:0 0, 0 0, 0 0, 0 0, 0 0;
+    linear-gradient(135deg, transparent 0%, rgba(230, 43, 30, 0.08) 25%, transparent 50%, rgba(230, 43, 30, 0.08) 75%, transparent 100%),
+    repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(230, 43, 30, 0.05) 100px, rgba(230, 43, 30, 0.05) 200px),
+    repeating-linear-gradient(-45deg, transparent, transparent 150px, rgba(230, 43, 30, 0.05) 150px, rgba(230, 43, 30, 0.05) 300px),
+    radial-gradient(circle at 30% 20%, rgba(230, 43, 30, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(230, 43, 30, 0.1) 0%, transparent 50%);
+  background-size:200% 100%, 400px 400px, 600px 600px, 800px 800px, 800px 800px;
   opacity:1;
   z-index:0;
   pointer-events:none;
-  animation:subtleShift 20s ease-in-out infinite;
+  animation:flowingLight 15s ease-in-out infinite;
 }
 
-@keyframes subtleShift{
+@keyframes flowingLight{
   0%, 100%{
-    opacity:1;
-    transform:translateY(0px);
+    background-position:0% 50%, 0 0, 0 0, 30% 20%, 70% 80%;
+    transform:rotate(0deg);
   }
   50%{
-    opacity:0.85;
-    transform:translateY(-8px);
+    background-position:100% 50%, 200px 200px, 300px 300px, 40% 30%, 60% 70%;
+    transform:rotate(2deg);
   }
 }
 
