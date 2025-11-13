@@ -15,8 +15,8 @@ export default function Header() {
       <header className="header">
         <div className="container">
           <div className="brand">
-            <img src={`${basePath}/logo-removebg-preview.webp`} alt="TEDxDPS Monarch Youth" width={80} height={80} />
-            <img src={`${basePath}/logo-white.webp`} alt="TEDxDPS Monarch Youth" width={180} height={80} style={{marginLeft: '8px'}} />
+            <img src={`${basePath}/logo-removebg-preview.webp`} alt="TEDxDPS Monarch Youth" style={{height: '60px', width: 'auto'}} />
+            <img src={`${basePath}/logo-white.webp`} alt="TEDxDPS Monarch Youth" style={{height: '60px', width: 'auto', marginLeft: '8px'}} />
           </div>
           <nav className={menuOpen ? 'active' : ''}>
             <ul>
