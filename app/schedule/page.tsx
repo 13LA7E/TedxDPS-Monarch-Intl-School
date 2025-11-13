@@ -25,16 +25,16 @@ const scheduleItems = [
   { time: '3:15 PM', title: 'Guest & VIP Felicitation', description: 'Honoring our distinguished guests and special dignitaries.', duration: '10 minutes' },
   { time: '3:25 PM', title: 'Address by School President', description: 'Welcome address and vision for the event.', duration: '5 minutes' },
   { time: '3:30 PM', title: 'TEDx Opening Video', description: 'Official TEDx introduction setting the tone for ideas worth spreading.', duration: '1 minute' },
-  { time: '3:31 PM', title: 'Speaker 1: Dipa Swaminathan', description: 'Adolescence Unveiled - Exploring the complex world of teenage development.', duration: '15 minutes' },
-  { time: '3:46 PM', title: 'Speaker 2: Varun Duggirala', description: 'Unfiltered: Building a Media Platform that Respects Your Intelligence.', duration: '15 minutes' },
-  { time: '4:01 PM', title: 'Speaker 3: Abhilasha Bahuguna', description: 'Powering Tomorrow - The future of EV battery technology.', duration: '15 minutes' },
-  { time: '4:16 PM', title: 'Refreshment Break', description: 'Time to network, refresh, and reflect on the ideas shared so far.', duration: '10 minutes' },
-  { time: '4:26 PM', title: 'Speaker 4: Anoushka Jolly', description: 'Breaking Barriers, Building Bridges - Creating connections through innovation.', duration: '15 minutes' },
-  { time: '4:41 PM', title: 'Speaker 5: Snigdha Kumar', description: 'A Story of Leadership Beyond Titles - Student perspective on authentic leadership.', duration: '15 minutes' },
-  { time: '4:56 PM', title: 'Speaker 6: Sudhanshu Ranjan', description: 'The Power of Voice in the Digital Age - Reshaping communication through technology.', duration: '15 minutes' },
-  { time: '5:11 PM', title: 'Speaker 7: Aishani Soni', description: 'Redefining Ambition: Beyond the Checklist - A fresh take on success.', duration: '10 minutes' },
-  { time: '5:21 PM', title: 'Speaker 8: Dhruv Nair', description: 'Leveling Up: Lessons from the Gaming World - Insights from professional gaming.', duration: '10 minutes' },
-  { time: '5:31 PM', title: 'Speaker 9: Dushyant Vikram Khosla', description: 'AI and the Future We\'re Building - Exploring the transformative potential of AI.', duration: '10 minutes' },
+  { time: '3:31 PM', title: 'Speaker 1', description: 'First inspiring speaker of the day shares their groundbreaking ideas.', duration: '20 minutes' },
+  { time: '3:50 PM', title: 'Speaker 2', description: 'Continuing the journey of inspiration with our second speaker.', duration: '20 minutes' },
+  { time: '4:10 PM', title: 'Refreshment Break', description: 'Time to relax, network, and discuss the inspiring talks. Light refreshments will be served.', duration: '5-10 minutes' },
+  { time: '4:20 PM', title: 'Music Performance', description: 'Live musical performance to energize and inspire.', duration: '5-6 minutes' },
+  { time: '4:25 PM', title: 'Speaker 3', description: 'Third speaker brings fresh perspectives and innovative ideas.', duration: '20 minutes' },
+  { time: '4:45 PM', title: 'Speaker 4', description: 'Fourth speaker continues to challenge and inspire with their unique vision.', duration: '20 minutes' },
+  { time: '5:05 PM', title: 'Student Speaker', description: 'Our student speaker shares their perspective on defying conventions and defining tomorrow.', duration: '20 minutes' },
+  { time: '5:25 PM', title: 'Vote of Thanks by Principal', description: 'Closing remarks and gratitude from the school principal.', duration: '3-5 minutes' },
+  { time: '5:30 PM', title: 'Team Reveal & Speeches', description: 'Meet the incredible team behind TEDxDPS Monarch and hear from our organizers.', duration: '10 minutes' },
+  { time: '5:40 PM', title: 'Dispersal', description: 'Event concludes. Thank you for being part of this inspiring journey. Continue the conversations!', duration: '' },
 ];
 
 export default function SchedulePage() {
@@ -64,18 +64,33 @@ export default function SchedulePage() {
                 </div>
                 <h3 style={{color: 'var(--vibrant-orange)', fontSize: '1.3rem', marginBottom: '12px', fontWeight: '600'}}>{item.title}</h3>
                 <p style={{color: 'var(--light-blue)', lineHeight: '1.7', marginBottom: '10px'}}>{item.description}</p>
-                <p style={{color: 'var(--off-white-dark)', fontSize: '0.9rem', fontStyle: 'italic'}}>Duration: {item.duration}</p>
+                {item.duration && <p style={{color: 'var(--off-white-dark)', fontSize: '0.9rem', fontStyle: 'italic'}}>Duration: {item.duration}</p>}
               </div>
             </div>
           ))}
         </div>
 
         <div style={{marginTop: '80px', textAlign: 'center', padding: '60px 40px', background: 'linear-gradient(135deg, rgba(235,0,40,0.1) 0%, rgba(235,0,40,0.05) 100%)', borderRadius: '20px', border: '2px solid rgba(235,0,40,0.3)'}}>
-          <h2 style={{fontSize: '2rem', marginBottom: '20px', color: 'var(--vibrant-orange)'}}>Secure Your Seat</h2>
+          <h2 style={{fontSize: '2rem', marginBottom: '20px', color: 'var(--vibrant-orange)'}}>Important Information</h2>
+          <ul style={{color: 'var(--light-blue)', lineHeight: '2', paddingLeft: '20px', textAlign: 'left', maxWidth: '700px', margin: '0 auto 30px', fontSize: '1.05rem'}}>
+            <li>Please arrive by 2:50 PM for a prompt 3:00 PM start</li>
+            <li>Total event duration: 2 hours and 40 minutes (3:00 PM - 5:40 PM)</li>
+            <li>Dress code: Smart casual / Formal attire</li>
+            <li>Light refreshments will be provided during the 4:10 PM break</li>
+            <li>Photography and recording will take place throughout the event</li>
+            <li>The schedule may be subject to minor adjustments</li>
+            <li>Please silence your mobile devices during all sessions</li>
+            <li>Be present for the national anthems at 3:05 PM</li>
+          </ul>
+        </div>
+
+        <div style={{marginTop: '60px', textAlign: 'center', padding: '60px 40px', background: 'linear-gradient(135deg, rgba(235,0,40,0.1) 0%, rgba(235,0,40,0.05) 100%)', borderRadius: '20px', border: '2px solid rgba(235,0,40,0.3)'}}>
+          <h2 style={{fontSize: '2rem', marginBottom: '20px', color: 'var(--vibrant-orange)'}}>Ready to Join Us?</h2>
           <p style={{color: 'var(--light-blue)', fontSize: '1.15rem', marginBottom: '30px', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto'}}>
-            Limited to 100 seats. Free entry. Register now to be part of this inspiring event.
+            Secure your spot for this incredible day of inspiration and innovation.
           </p>
           <Link href="/apply" className="cta cta-pulse">Register Now</Link>
+          <p style={{color: 'var(--off-white)', marginTop: '15px', fontSize: '0.95rem'}}>Limited to 100 seats</p>
         </div>
       </section>
     </div>
