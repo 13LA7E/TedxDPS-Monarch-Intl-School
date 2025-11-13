@@ -15,7 +15,18 @@ export const metadata: Metadata = {
 
 export default function SponsorsPage() {
   // Placeholder sponsors - to be updated with actual sponsors
-  const sponsors = {
+  interface Sponsor {
+    name: string;
+    logo: string;
+    website: string;
+  }
+
+  const sponsors: {
+    platinum: Sponsor[];
+    gold: Sponsor[];
+    silver: Sponsor[];
+    community: Sponsor[];
+  } = {
     platinum: [
       // { name: 'Sponsor Name', logo: '/sponsors/logo.png', website: 'https://example.com' }
     ],
