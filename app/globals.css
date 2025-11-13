@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:ital@1&display=swap');
 
 :root{
-  --primary-red:#E62B1E;
-  --ted-red:#E62B1E;
-  --vibrant-orange:#E62B1E;
+  --primary-red:#EB0028;
+  --ted-red:#EB0028;
+  --vibrant-orange:#EB0028;
   --dark-bg:#0A0E1A;
   --darker:#050812;
   --glass-bg:rgba(20, 20, 30, 0.6);
@@ -74,9 +74,9 @@ body{
   color:var(--ted-red); 
   background:var(--darker);
   background-image:
-    linear-gradient(180deg, rgba(230, 43, 30, 0.03) 0%, transparent 100%),
-    radial-gradient(ellipse at 15% 10%, rgba(230, 43, 30, 0.08) 0%, transparent 40%),
-    radial-gradient(ellipse at 85% 90%, rgba(230, 43, 30, 0.06) 0%, transparent 40%);
+    linear-gradient(180deg, rgba(235, 0, 40, 0.03) 0%, transparent 100%),
+    radial-gradient(ellipse at 15% 10%, rgba(235, 0, 40, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 85% 90%, rgba(235, 0, 40, 0.06) 0%, transparent 40%);
   background-attachment:fixed;
   padding-top:75px;
   position:relative;
@@ -93,11 +93,11 @@ body::before{
   width:100%;
   height:100%;
   background-image:
-    linear-gradient(135deg, transparent 0%, rgba(230, 43, 30, 0.08) 25%, transparent 50%, rgba(230, 43, 30, 0.08) 75%, transparent 100%),
-    repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(230, 43, 30, 0.05) 100px, rgba(230, 43, 30, 0.05) 200px),
-    repeating-linear-gradient(-45deg, transparent, transparent 150px, rgba(230, 43, 30, 0.05) 150px, rgba(230, 43, 30, 0.05) 300px),
-    radial-gradient(circle at 30% 20%, rgba(230, 43, 30, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 70% 80%, rgba(230, 43, 30, 0.1) 0%, transparent 50%);
+    linear-gradient(135deg, transparent 0%, rgba(235, 0, 40, 0.08) 25%, transparent 50%, rgba(235, 0, 40, 0.08) 75%, transparent 100%),
+    repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(235, 0, 40, 0.05) 100px, rgba(235, 0, 40, 0.05) 200px),
+    repeating-linear-gradient(-45deg, transparent, transparent 150px, rgba(235, 0, 40, 0.05) 150px, rgba(235, 0, 40, 0.05) 300px),
+    radial-gradient(circle at 30% 20%, rgba(235, 0, 40, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(235, 0, 40, 0.1) 0%, transparent 50%);
   background-size:200% 100%, 400px 400px, 600px 600px, 800px 800px, 800px 800px;
   opacity:1;
   z-index:0;
@@ -135,7 +135,7 @@ body::after{
   opacity:1;
   z-index:1000;
   pointer-events:none;
-  box-shadow:-3px 0 15px rgba(230, 43, 30, 0.7);
+  box-shadow:-3px 0 15px rgba(235, 0, 40, 0.7);
   animation:barberPole 2s linear infinite, stripeGlowRight 3s ease-in-out infinite;
 }
 
@@ -158,7 +158,7 @@ html::after{
   opacity:1;
   z-index:1000;
   pointer-events:none;
-  box-shadow:3px 0 15px rgba(230, 43, 30, 0.7);
+  box-shadow:3px 0 15px rgba(235, 0, 40, 0.7);
   animation:barberPoleLeft 2s linear infinite, stripeGlowLeft 3s ease-in-out infinite;
 }
 

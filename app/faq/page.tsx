@@ -79,13 +79,13 @@ export default function FAQPage() {
 
         {faqData.map((category, catIndex) => (
           <div key={catIndex} className="fade-in-up" style={{marginBottom: '50px'}}>
-            <h2 style={{color: 'var(--vibrant-orange)', fontSize: '1.8rem', marginBottom: '25px', paddingBottom: '10px', borderBottom: '2px solid rgba(230, 43, 30, 0.3)'}}>
+            <h2 style={{color: 'var(--vibrant-orange)', fontSize: '1.8rem', marginBottom: '25px', paddingBottom: '10px', borderBottom: '2px solid rgba(235, 0, 40, 0.3)'}}>
               {category.category}
             </h2>
             <div style={{display: 'grid', gap: '20px'}}>
               {category.questions.map((item, qIndex) => (
                 <div key={qIndex} className="faq-item card" style={{padding: '0', overflow: 'hidden'}}>
-                  <div className="faq-question" style={{padding: '20px 24px', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(230, 43, 30, 0.05)', transition: 'all 0.3s ease'}}>
+                  <div className="faq-question" style={{padding: '20px 24px', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(235, 0, 40, 0.05)', transition: 'all 0.3s ease'}}>
                     <span style={{fontWeight: '600', color: 'var(--off-white)', fontSize: '1.1rem', flex: 1}}>{item.q}</span>
                     <span className="faq-toggle" style={{color: 'var(--vibrant-orange)', fontSize: '1.5rem', fontWeight: '700', marginLeft: '20px', transition: 'transform 0.3s ease'}}>+</span>
                   </div>
@@ -98,8 +98,8 @@ export default function FAQPage() {
           </div>
         ))}
 
-        <div style={{marginTop: '80px', textAlign: 'center', padding: '60px 40px', background: 'linear-gradient(135deg, rgba(230,43,30,0.1) 0%, rgba(230,43,30,0.05) 100%)', borderRadius: '20px', border: '2px solid rgba(230,43,30,0.3)'}}>
-          <h2 style={{fontSize: '2rem', marginBottom: '20px', color: 'var(--vibrant-orange)'}}>Still Have Questions?</h2>
+        <div style={{marginTop: '80px', textAlign: 'center', padding: '60px 40px', background: 'linear-gradient(135deg, rgba(235,0,40,0.1) 0%, rgba(235,0,40,0.05) 100%)', borderRadius: '20px', border: '2px solid rgba(235,0,40,0.3)'}}>
+          <h2 style={{fontSize: '2.2rem', marginBottom: '20px', color: 'var(--vibrant-orange)'}}>Still Have Questions?</h2>
           <p style={{color: 'var(--light-blue)', fontSize: '1.15rem', marginBottom: '30px', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto'}}>
             Can\'t find what you\'re looking for? Get in touch with us directly.
           </p>

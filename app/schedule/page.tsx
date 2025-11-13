@@ -58,8 +58,8 @@ export default function SchedulePage() {
         <div className="timeline" style={{position: 'relative', maxWidth: '900px', margin: '60px auto'}}>
           {scheduleItems.map((item, index) => (
             <div key={index} className={`timeline-item fade-in-up ${index % 2 === 0 ? '' : 'even'}`} style={{position: 'relative', marginBottom: '60px'}}>
-              <div style={{background: 'linear-gradient(135deg, rgba(20, 20, 30, 0.95) 0%, rgba(10, 10, 20, 0.98) 100%)', padding: '25px 30px', borderRadius: '12px', border: '1px solid rgba(230, 43, 30, 0.2)', transition: 'all 0.3s ease', position: 'relative'}}>
-                <div style={{position: 'absolute', top: '20px', background: 'var(--vibrant-orange)', color: 'white', padding: '8px 16px', borderRadius: '20px', fontWeight: '700', fontSize: '0.9rem', whiteSpace: 'nowrap', boxShadow: '0 4px 12px rgba(230, 43, 30, 0.4)', right: index % 2 === 0 ? '-85px' : 'auto', left: index % 2 === 1 ? '-85px' : 'auto'}}>
+              <div style={{background: 'linear-gradient(135deg, rgba(20, 20, 30, 0.95) 0%, rgba(10, 10, 20, 0.98) 100%)', padding: '25px 30px', borderRadius: '12px', border: '1px solid rgba(235, 0, 40, 0.2)', transition: 'all 0.3s ease', position: 'relative'}}>
+                <div style={{position: 'absolute', top: '20px', background: 'var(--vibrant-orange)', color: 'white', padding: '8px 16px', borderRadius: '20px', fontWeight: '700', fontSize: '0.9rem', whiteSpace: 'nowrap', boxShadow: '0 4px 12px rgba(235, 0, 40, 0.4)', right: index % 2 === 0 ? '-85px' : 'auto', left: index % 2 === 1 ? '-85px' : 'auto'}}>
                   {item.time}
                 </div>
                 <h3 style={{color: 'var(--vibrant-orange)', fontSize: '1.3rem', marginBottom: '12px', fontWeight: '600'}}>{item.title}</h3>
@@ -70,7 +70,7 @@ export default function SchedulePage() {
           ))}
         </div>
 
-        <div style={{marginTop: '80px', textAlign: 'center', padding: '60px 40px', background: 'linear-gradient(135deg, rgba(230,43,30,0.1) 0%, rgba(230,43,30,0.05) 100%)', borderRadius: '20px', border: '2px solid rgba(230,43,30,0.3)'}}>
+        <div style={{marginTop: '80px', textAlign: 'center', padding: '60px 40px', background: 'linear-gradient(135deg, rgba(235,0,40,0.1) 0%, rgba(235,0,40,0.05) 100%)', borderRadius: '20px', border: '2px solid rgba(235,0,40,0.3)'}}>
           <h2 style={{fontSize: '2rem', marginBottom: '20px', color: 'var(--vibrant-orange)'}}>Secure Your Seat</h2>
           <p style={{color: 'var(--light-blue)', fontSize: '1.15rem', marginBottom: '30px', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto'}}>
             Limited to 100 seats. Free entry. Register now to be part of this inspiring event.
