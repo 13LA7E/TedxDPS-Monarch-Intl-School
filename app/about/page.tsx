@@ -104,10 +104,31 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <h2 style={{marginTop: '60px'}}>About TED<span style={{textTransform: 'none'}}>x</span></h2>
-        <p style={{color: 'var(--light-blue)', lineHeight: '1.8'}}>
-          TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDxDPS Monarch Intl School Youth, where x = independently organized TED event. We provide a platform for ideas worth spreading—especially those that challenge, provoke, and inspire.
-        </p>
+        {/* Official TEDx Content - Required */}
+        <div style={{marginTop: '80px', padding: '50px', background: 'rgba(20,20,30,0.6)', borderRadius: '20px', border: '1px solid rgba(235,0,40,0.2)'}}>
+          <h2 style={{fontSize: '2.2rem', marginBottom: '25px'}}>About TED<span style={{textTransform: 'none'}}>x</span>, x = independently organized event</h2>
+          <p style={{color: 'var(--light-blue)', lineHeight: '1.8', marginBottom: '30px'}}>
+            In the spirit of discovering and spreading ideas, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)
+          </p>
+
+          <h2 style={{fontSize: '2.2rem', marginBottom: '25px', marginTop: '50px'}}>About TED</h2>
+          <p style={{color: 'var(--light-blue)', lineHeight: '1.8', marginBottom: '20px'}}>
+            TED is a nonprofit, nonpartisan organization dedicated to discovering, debating and spreading ideas that spark conversation, deepen understanding and drive meaningful change. Our organization is devoted to curiosity, reason, wonder and the pursuit of knowledge — without an agenda. We welcome people from every discipline and culture who seek a deeper understanding of the world and connection with others, and we invite everyone to engage with ideas and activate them in your community.
+          </p>
+          
+          <p style={{color: 'var(--light-blue)', lineHeight: '1.8', marginBottom: '20px'}}>
+            TED began in 1984 as a conference where Technology, Entertainment and Design converged, but today it spans a multitude of worldwide communities and initiatives exploring everything from science and business to education, arts and global issues. In addition to the TED Talks curated from our annual conferences and published on TED.com, we produce original podcasts, short video series, animated educational lessons (TED-Ed) and TV programs that are translated into more than 100 languages and distributed via partnerships around the world. Each year, thousands of independently run TEDx events bring people together to share ideas and bridge divides in communities on every continent. Through the Audacious Project, TED has helped catalyze $6.6 billion in funding for projects that support bold solutions to the world&apos;s most urgent challenges — working to make the world more beautiful, sustainable and just. In 2020, TED launched Countdown, an initiative to accelerate solutions to the climate crisis and mobilize a movement for a net-zero future, and in 2023 TED launched TED Democracy to spark a new kind of conversation focused on realistic pathways towards a more vibrant and equitable future. View a full list of TED&apos;s many programs and initiatives.
+          </p>
+
+          <p style={{color: 'var(--light-blue)', lineHeight: '1.8'}}>
+            Follow TED on{' '}
+            <a href="https://www.facebook.com/TED" target="_blank" rel="noopener noreferrer" style={{color: 'var(--vibrant-orange)', textDecoration: 'none'}}>Facebook</a>,{' '}
+            <a href="https://www.instagram.com/ted" target="_blank" rel="noopener noreferrer" style={{color: 'var(--vibrant-orange)', textDecoration: 'none'}}>Instagram</a>,{' '}
+            <a href="https://www.linkedin.com/company/ted-conferences" target="_blank" rel="noopener noreferrer" style={{color: 'var(--vibrant-orange)', textDecoration: 'none'}}>LinkedIn</a>,{' '}
+            <a href="https://www.tiktok.com/@ted" target="_blank" rel="noopener noreferrer" style={{color: 'var(--vibrant-orange)', textDecoration: 'none'}}>TikTok</a>, and{' '}
+            <a href="https://twitter.com/TEDTalks" target="_blank" rel="noopener noreferrer" style={{color: 'var(--vibrant-orange)', textDecoration: 'none'}}>X</a>.
+          </p>
+        </div>
       </section>
     </div>
   );

@@ -62,6 +62,38 @@ export default function Home() {
         </p>
         <Link href="/contact" className="cta">Get Updates</Link>
       </section>
+
+      {/* What is TEDx Section - Required Content */}
+      <section className="section" style={{marginTop: '80px'}}>
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(235,0,40,0.1) 0%, rgba(235,0,40,0.05) 100%)',
+          padding: '60px 50px',
+          borderRadius: '20px',
+          border: '2px solid rgba(235,0,40,0.3)'
+        }}>
+          <h2 style={{fontSize: '2.5rem', marginBottom: '25px', textAlign: 'center'}}>What is TEDx?</h2>
+          <p style={{color: 'var(--light-blue)', fontSize: '1.05rem', lineHeight: '1.9', maxWidth: '900px', margin: '0 auto'}}>
+            In the spirit of discovering and spreading ideas, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called <strong style={{color: 'var(--vibrant-orange)'}}>TEDxDPS Monarch Intl School Youth</strong>, where x = independently organized TED event. At our TEDxDPS Monarch Intl School Youth event, TED Talks video and live speakers will combine to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.
+          </p>
+          <div style={{textAlign: 'center', marginTop: '35px'}}>
+            <Link 
+              href="https://www.ted.com/about/programs-initiatives/tedx-program" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                color: 'var(--vibrant-orange)',
+                textDecoration: 'none',
+                fontSize: '1.1rem',
+                fontWeight: 600,
+                borderBottom: '2px solid var(--vibrant-orange)',
+                paddingBottom: '4px'
+              }}
+            >
+              Learn More About TEDx →
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

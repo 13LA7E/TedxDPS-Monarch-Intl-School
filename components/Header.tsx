@@ -25,6 +25,7 @@ export default function Header() {
               <li><Link href="/speakers" className={pathname === '/speakers' ? 'active' : ''}>Speakers</Link></li>
               <li><Link href="/schedule" className={pathname === '/schedule' ? 'active' : ''}>Schedule</Link></li>
               <li><Link href="/gallery" className={pathname === '/gallery' ? 'active' : ''}>Gallery</Link></li>
+              <li><Link href="/sponsors" className={pathname === '/sponsors' ? 'active' : ''}>Sponsors</Link></li>
               <li><Link href="/contact" className={pathname === '/contact' ? 'active' : ''}>Contact</Link></li>
             </ul>
           </nav>
