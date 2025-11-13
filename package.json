@@ -1,13 +1,26 @@
 {
-  "name": "tedx-dps-monarch-youth-site",
-  "version": "1.0.0",
-  "description": "Static website scaffold for TEDxDPS Monarch Intl School Youth",
+  "name": "tedxdps-monarch-youth",
+  "version": "2.0.0",
+  "description": "TEDxDPS Monarch Intl School Youth - Next.js Website",
   "scripts": {
-    "start": "npx serve -l 8000",
-    "build": "node build.js",
-    "prebuild": "echo Building with cache-busting..."
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "author": "Your Name",
-  "license": "MIT",
-  "devDependencies": {}
+  "dependencies": {
+    "next": "^14.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.0"
+  },
+  "author": "TEDxDPS Monarch",
+  "license": "MIT"
 }
