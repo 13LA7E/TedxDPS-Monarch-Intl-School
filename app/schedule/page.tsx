@@ -58,7 +58,7 @@ export default function SchedulePage() {
         <div className="timeline" style={{position: 'relative', maxWidth: '900px', margin: '60px auto'}}>
           {scheduleItems.map((item, index) => (
             <div key={index} className={`timeline-item fade-in-up ${index % 2 === 0 ? '' : 'even'}`} style={{position: 'relative', marginBottom: '60px'}}>
-              <div style={{background: 'linear-gradient(135deg, rgba(20, 20, 30, 0.95) 0%, rgba(10, 10, 20, 0.98) 100%)', padding: '25px 30px', borderRadius: '12px', border: '1px solid rgba(235, 0, 40, 0.2)', transition: 'all 0.3s ease', position: 'relative'}}>
+              <div className="card" style={{padding: '25px 30px', position: 'relative'}}>
                 <div style={{position: 'absolute', top: '20px', background: 'var(--vibrant-orange)', color: 'white', padding: '8px 16px', borderRadius: '20px', fontWeight: '700', fontSize: '0.9rem', whiteSpace: 'nowrap', boxShadow: '0 4px 12px rgba(235, 0, 40, 0.4)', right: index % 2 === 0 ? '-85px' : 'auto', left: index % 2 === 1 ? '-85px' : 'auto'}}>
                   {item.time}
                 </div>
