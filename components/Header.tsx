@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
@@ -14,8 +13,8 @@ export default function Header() {
       <header className="header">
         <div className="container">
           <div className="brand">
-            <Image src="/logo-removebg-preview.webp" alt="TEDxDPS Monarch Youth" width={60} height={60} />
-            <Image src="/logo-white.webp" alt="TEDxDPS Monarch Youth" width={60} height={60} style={{marginLeft: '12px'}} />
+            <img src="/logo-removebg-preview.webp" alt="TEDxDPS Monarch Youth" width={60} height={60} />
+            <img src="/logo-white.webp" alt="TEDxDPS Monarch Youth" width={60} height={60} style={{marginLeft: '12px'}} />
           </div>
           <nav className={menuOpen ? 'active' : ''}>
             <ul>
