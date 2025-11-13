@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
+const basePath = process.env.NODE_ENV === 'production' ? '/TedxDPS-Monarch-Intl-School' : '';
+
 export default function Header() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
@@ -13,8 +15,8 @@ export default function Header() {
       <header className="header">
         <div className="container">
           <div className="brand">
-            <img src="/logo-removebg-preview.webp" alt="TEDxDPS Monarch Youth" width={60} height={60} />
-            <img src="/logo-white.webp" alt="TEDxDPS Monarch Youth" width={60} height={60} style={{marginLeft: '12px'}} />
+            <img src={`${basePath}/logo-removebg-preview.webp`} alt="TEDxDPS Monarch Youth" width={60} height={60} />
+            <img src={`${basePath}/logo-white.webp`} alt="TEDxDPS Monarch Youth" width={60} height={60} style={{marginLeft: '12px'}} />
           </div>
           <nav className={menuOpen ? 'active' : ''}>
             <ul>

@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
+const basePath = process.env.NODE_ENV === 'production' ? '/TedxDPS-Monarch-Intl-School' : '';
+
 const images = [
   'IMG_1297.webp', 'IMG_1319.webp', 'IMG_1323.webp', 'IMG_1333.webp', 'IMG_1336.webp',
   'IMG_1338.webp', 'IMG_1340.webp', 'IMG_1341.webp', 'IMG_1343.webp', 'IMG_1345.webp',
@@ -237,7 +239,7 @@ export default function GalleryClient() {
             style={{animationDelay: `${index * 0.05}s`}}
             onClick={() => openLightbox(index)}
           >
-            <img src={`/Gallery/${img}`} alt={`TEDx Event Photo ${index + 1}`} loading="lazy" />
+            <img src={`${basePath}/Gallery/${img}`} alt={`TEDx Event Photo ${index + 1}`} loading="lazy" />
           </div>
         ))}
       </div>
@@ -251,7 +253,7 @@ export default function GalleryClient() {
           &#8249;
         </button>
         <div className="lightbox-content">
-          <img src={`/Gallery/${images[currentImageIndex]}`} alt="Gallery Image" />
+          <img src={`${basePath}/Gallery/${images[currentImageIndex]}`} alt="Gallery Image" />
         </div>
         <button className="lightbox-nav lightbox-next" onClick={showNextImage} aria-label="Next image">
           &#8250;
