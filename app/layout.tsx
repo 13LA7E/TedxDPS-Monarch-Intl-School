@@ -3,6 +3,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ClientScripts from '@/components/ClientScripts'
+import PageTransition from '@/components/PageTransition'
 
 export const metadata: Metadata = {
   title: 'TEDxDPS Monarch Intl School Youth - Defy to Define',
@@ -81,7 +82,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
-        {children}
+        <PageTransition>{children}</PageTransition>
         <Footer />
         <ClientScripts />
       </body>
