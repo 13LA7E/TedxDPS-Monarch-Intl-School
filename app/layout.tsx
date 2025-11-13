@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     url: 'https://13la7e.github.io/TedxDPS-Monarch-Intl-School/',
     title: 'TEDxDPS Monarch Intl School Youth - Defy to Define',
     description: 'Join us on December 13, 2025 for inspiring talks that challenge conventions and spark change. Limited to 100 seats. Ideas worth spreading.',
-    images: ['/logo-removebg-preview.png'],
+    images: ['/logo-removebg-preview.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'TEDxDPS Monarch Intl School Youth - Defy to Define',
     description: 'Join us on December 13, 2025 for inspiring talks that challenge conventions and spark change. Limited to 100 seats.',
-    images: ['/logo-removebg-preview.png'],
+    images: ['/logo-removebg-preview.webp'],
   },
   themeColor: '#050812',
   viewport: 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes',
@@ -57,7 +57,7 @@ export default function RootLayout({
                   "addressCountry": "QA"
                 }
               },
-              "image": "https://13la7e.github.io/TedxDPS-Monarch-Intl-School/logo-removebg-preview.png",
+              "image": "https://13la7e.github.io/TedxDPS-Monarch-Intl-School/logo-removebg-preview.webp",
               "organizer": {
                 "@type": "Organization",
                 "name": "TEDxDPS Monarch Intl School Youth",

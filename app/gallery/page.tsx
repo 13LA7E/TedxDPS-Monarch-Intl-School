@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://13la7e.github.io/TedxDPS-Monarch-Intl-School/Gallery/IMG_1297.JPG',
+        url: 'https://13la7e.github.io/TedxDPS-Monarch-Intl-School/Gallery/IMG_1297.webp',
         width: 1200,
         height: 630,
         alt: 'TEDxDPS Monarch Event Gallery',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Photo Gallery - TEDxDPS Monarch',
     description: 'Explore photos from TEDxDPS Monarch events.',
-    images: ['https://13la7e.github.io/TedxDPS-Monarch-Intl-School/Gallery/IMG_1297.JPG'],
+    images: ['https://13la7e.github.io/TedxDPS-Monarch-Intl-School/Gallery/IMG_1297.webp'],
   },
 };
 

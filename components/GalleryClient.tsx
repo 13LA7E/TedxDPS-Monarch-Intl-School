@@ -4,14 +4,14 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const images = [
-  'IMG_1297.JPG', 'IMG_1319.JPG', 'IMG_1323.JPG', 'IMG_1333.JPG', 'IMG_1336.JPG',
-  'IMG_1338.JPG', 'IMG_1340.JPG', 'IMG_1341.JPG', 'IMG_1343.JPG', 'IMG_1345.JPG',
-  'IMG_1360.JPG', 'IMG_1383.JPG', 'IMG_1387.JPG', 'IMG_1393.JPG', 'IMG_1397.JPG',
-  'IMG_1401.JPG', 'IMG_1405.JPG', 'IMG_1413.JPG', 'IMG_1419.JPG', 'IMG_1431.JPG',
-  'IMG_1432.JPG', 'IMG_1446.JPG', 'IMG_1452.JPG', 'IMG_1453.JPG', 'IMG_1460.JPG',
-  'IMG_1462.JPG', 'IMG_1473.JPG', 'IMG_1477.JPG', 'IMG_1481.JPG', 'IMG_1490.JPG',
-  'IMG_1494.JPG', 'IMG_1497.JPG', 'IMG_1511.JPG', 'IMG_1520.JPG', 'IMG_1524.JPG',
-  'IMG_1531.JPG', 'IMG_1536.JPG', 'IMG_1541.JPG', 'IMG_1546.JPG'
+  'IMG_1297.webp', 'IMG_1319.webp', 'IMG_1323.webp', 'IMG_1333.webp', 'IMG_1336.webp',
+  'IMG_1338.webp', 'IMG_1340.webp', 'IMG_1341.webp', 'IMG_1343.webp', 'IMG_1345.webp',
+  'IMG_1360.webp', 'IMG_1383.webp', 'IMG_1387.webp', 'IMG_1393.webp', 'IMG_1397.webp',
+  'IMG_1401.webp', 'IMG_1405.webp', 'IMG_1413.webp', 'IMG_1419.webp', 'IMG_1431.webp',
+  'IMG_1432.webp', 'IMG_1446.webp', 'IMG_1452.webp', 'IMG_1453.webp', 'IMG_1460.webp',
+  'IMG_1462.webp', 'IMG_1473.webp', 'IMG_1477.webp', 'IMG_1481.webp', 'IMG_1490.webp',
+  'IMG_1494.webp', 'IMG_1497.webp', 'IMG_1511.webp', 'IMG_1520.webp', 'IMG_1524.webp',
+  'IMG_1531.webp', 'IMG_1536.webp', 'IMG_1541.webp', 'IMG_1546.webp'
 ];
 
 export default function GalleryClient() {
