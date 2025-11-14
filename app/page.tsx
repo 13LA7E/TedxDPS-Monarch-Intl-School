@@ -1,9 +1,61 @@
 import Link from 'next/link'
 import CountdownTimer from '@/components/CountdownTimer'
+import { generateEventStructuredData } from '@/lib/data'
+import type { Metadata } from 'next'
+
+// Enhanced metadata with Open Graph
+export const metadata: Metadata = {
+  title: 'TEDxDPS Monarch Intl School Youth - Defy to Define',
+  description: 'Break the mold. Challenge conventions. Join us December 13, 2025 for inspiring TEDx talks from innovators and change-makers.',
+  keywords: 'TEDx, DPS Monarch, Youth Event, Ideas Worth Spreading, Innovation, December 2025, Doha Events',
+  metadataBase: new URL('https://13la7e.github.io'),
+  openGraph: {
+    title: 'TEDxDPS Monarch Intl School Youth - Defy to Define',
+    description: 'Break the mold. Challenge conventions. Join us December 13, 2025 for inspiring TEDx talks.',
+    url: 'https://13la7e.github.io/TedxDPS-Monarch-Intl-School',
+    siteName: 'TEDxDPS Monarch Intl School Youth',
+    images: [
+      {
+        url: '/TedxDPS-Monarch-Intl-School/logo-removebg-preview.webp',
+        width: 1200,
+        height: 630,
+        alt: 'TEDxDPS Monarch Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TEDxDPS Monarch Intl School Youth',
+    description: 'Ideas worth spreading. December 13, 2025.',
+    images: ['/TedxDPS-Monarch-Intl-School/logo-removebg-preview.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
 
 export default function Home() {
+  const structuredData = generateEventStructuredData();
+
   return (
-    <div className="container">
+    <>
+      {/* JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      
+      <div className="container">
       <section className="hero">
         <div>
           <p className="eyebrow">TEDxDPS Monarch Intl School Youth</p>
@@ -95,5 +147,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   )
 }

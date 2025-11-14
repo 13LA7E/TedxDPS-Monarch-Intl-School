@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import OptimizedImage from './OptimizedImage'
 
 const basePath = process.env.NODE_ENV === 'production' ? '/TedxDPS-Monarch-Intl-School' : '';
 
@@ -15,8 +16,22 @@ export default function Header() {
       <header className="header">
         <div className="container">
           <div className="brand">
-            <img src={`${basePath}/logo-removebg-preview.webp`} alt="TEDxDPS Monarch Youth" style={{height: '60px', width: 'auto'}} />
-            <img src={`${basePath}/logo-white.webp`} alt="TEDxDPS Monarch Youth" style={{height: '60px', width: 'auto', marginLeft: '8px'}} />
+            <OptimizedImage 
+              src={`${basePath}/logo-removebg-preview.webp`} 
+              alt="TEDxDPS Monarch Youth" 
+              width={60}
+              height={60}
+              priority={true}
+              style={{height: '60px', width: 'auto'}}
+            />
+            <OptimizedImage 
+              src={`${basePath}/logo-white.webp`} 
+              alt="TEDxDPS Monarch Youth" 
+              width={60}
+              height={60}
+              priority={true}
+              style={{height: '60px', width: 'auto', marginLeft: '8px'}}
+            />
           </div>
           <nav className={menuOpen ? 'active' : ''}>
             <ul>
