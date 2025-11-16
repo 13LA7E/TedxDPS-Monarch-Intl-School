@@ -82,25 +82,25 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Video Embed Placeholder */}
+        {/* Event Banner */}
         <div style={{margin: '60px 0'}}>
-          <h2 style={{textAlign: 'center', marginBottom: '30px', fontSize: '2.2rem'}}>Watch Our Vision</h2>
+          <h2 style={{textAlign: 'center', marginBottom: '30px', fontSize: '2.2rem'}}>Defy to Define</h2>
           <div style={{
-            position: 'relative',
             width: '100%',
             maxWidth: '900px',
             margin: '0 auto',
-            aspectRatio: '16/9',
-            background: 'linear-gradient(135deg, rgba(255,107,53,0.2) 0%, rgba(226,49,49,0.2) 100%)',
-            borderRadius: '15px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            border: '2px solid rgba(255,107,53,0.3)'
+            textAlign: 'center'
           }}>
-            <div style={{textAlign: 'center'}}>
-              <p style={{color: 'var(--light-blue)', fontSize: '1.1rem'}}>Event Promo Video Coming Soon</p>
-            </div>
+            <img 
+              src="/TedxDPS-Monarch-Intl-School/banner-defy-to-define.png" 
+              alt="TEDx DPS Monarch - Defy to Define" 
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: '15px',
+                boxShadow: '0 10px 40px rgba(235, 0, 40, 0.3)'
+              }}
+            />
           </div>
         </div>
 
