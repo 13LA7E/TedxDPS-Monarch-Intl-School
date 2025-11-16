@@ -6,12 +6,12 @@ import type { Metadata } from 'next'
 // Enhanced metadata with Open Graph
 export const metadata: Metadata = {
   title: 'TEDxDPS Monarch Intl School Youth - Defy to Define',
-  description: 'Break the mold. Challenge conventions. Join us December 13, 2025 for inspiring TEDx talks from innovators and change-makers.',
+  description: 'Break the mould. Challenge conventions. Join us December 13, 2025 for inspiring TEDx talks from innovators and change-makers.',
   keywords: 'TEDx, DPS Monarch, Youth Event, Ideas Worth Spreading, Innovation, December 2025, Doha Events',
   metadataBase: new URL('https://13la7e.github.io'),
   openGraph: {
     title: 'TEDxDPS Monarch Intl School Youth - Defy to Define',
-    description: 'Break the mold. Challenge conventions. Join us December 13, 2025 for inspiring TEDx talks.',
+    description: 'Break the mould. Challenge conventions. Join us December 13, 2025 for inspiring TEDx talks.',
     url: 'https://13la7e.github.io/TedxDPS-Monarch-Intl-School',
     siteName: 'TEDxDPS Monarch Intl School Youth',
     images: [
@@ -64,7 +64,7 @@ export default function Home() {
             <span className="define">to Define</span>
           </h1>
           <p className="hero-tagline">
-            Break the mold. Challenge conventions. Rewrite the rules.<br/>
+            Break the mould. Challenge conventions. Rewrite the rules.<br/>
             This is where ideas rebel against the ordinary.
           </p>
           
