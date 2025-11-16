@@ -30,9 +30,25 @@ export default function AboutPage() {
         </p>
         
         <h2 style={{marginTop: '48px'}}>Our Movement</h2>
-        <p style={{color: 'var(--light-blue)', lineHeight: '1.8', fontSize: '1.05rem'}}>
-          TEDxDPS Monarch Intl School Youth isn&apos;t just an event—it&apos;s a movement. We&apos;re creating a space where young voices don&apos;t just speak, they <strong style={{color: 'var(--primary-red)'}}>roar</strong>. Where conventional wisdom is questioned, challenged, and often overturned. Where the next generation doesn&apos;t wait for permission to change the world.
-        </p>
+        <div style={{display: 'flex', gap: '40px', alignItems: 'flex-start', flexWrap: 'wrap'}}>
+          <div style={{flex: '1', minWidth: '300px'}}>
+            <p style={{color: 'var(--light-blue)', lineHeight: '1.8', fontSize: '1.05rem'}}>
+              TEDxDPS Monarch Intl School Youth isn&apos;t just an event—it&apos;s a movement. We&apos;re creating a space where young voices don&apos;t just speak, they <strong style={{color: 'var(--primary-red)'}}>roar</strong>. Where conventional wisdom is questioned, challenged, and often overturned. Where the next generation doesn&apos;t wait for permission to change the world.
+            </p>
+          </div>
+          <div style={{flex: '0 0 350px', minWidth: '280px'}}>
+            <img 
+              src="/TedxDPS-Monarch-Intl-School/banner-defy-to-define.png" 
+              alt="TEDx DPS Monarch - Defy to Define" 
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: '15px',
+                boxShadow: '0 10px 40px rgba(235, 0, 40, 0.3)'
+              }}
+            />
+          </div>
+        </div>
 
         <h2 style={{marginTop: '80px'}}>What Does It Mean to Defy?</h2>
         <div className="grid" style={{marginTop: '24px'}}>
@@ -84,26 +100,10 @@ export default function AboutPage() {
 
         {/* Official TEDx Content - Required */}
         <div style={{marginTop: '80px', padding: '50px', background: 'rgba(20,20,30,0.6)', borderRadius: '20px', border: '1px solid rgba(235,0,40,0.2)'}}>
-          <div style={{display: 'flex', gap: '40px', alignItems: 'flex-start', flexWrap: 'wrap'}}>
-            <div style={{flex: '1', minWidth: '300px'}}>
-              <h2 style={{fontSize: '2.2rem', marginBottom: '25px'}}>About TED<span style={{textTransform: 'none'}}>x</span>, x = independently organized event</h2>
-              <p style={{color: 'var(--light-blue)', lineHeight: '1.8', marginBottom: '30px'}}>
-                In the spirit of discovering and spreading ideas, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)
-              </p>
-            </div>
-            <div style={{flex: '0 0 350px', minWidth: '280px'}}>
-              <img 
-                src="/TedxDPS-Monarch-Intl-School/banner-defy-to-define.png" 
-                alt="TEDx DPS Monarch - Defy to Define" 
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  borderRadius: '15px',
-                  boxShadow: '0 10px 40px rgba(235, 0, 40, 0.3)'
-                }}
-              />
-            </div>
-          </div>
+          <h2 style={{fontSize: '2.2rem', marginBottom: '25px'}}>About TED<span style={{textTransform: 'none'}}>x</span>, x = independently organized event</h2>
+          <p style={{color: 'var(--light-blue)', lineHeight: '1.8', marginBottom: '30px'}}>
+            In the spirit of discovering and spreading ideas, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)
+          </p>
 
           <h2 style={{fontSize: '2.2rem', marginBottom: '25px', marginTop: '50px'}}>About TED</h2>
           <p style={{color: 'var(--light-blue)', lineHeight: '1.8', marginBottom: '20px'}}>
