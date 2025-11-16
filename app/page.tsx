@@ -57,17 +57,22 @@ export default function Home() {
       
       <div className="container">
       <section className="hero">
+        <div style={{marginBottom: '40px', textAlign: 'center'}}>
+          <img 
+            src="/TedxDPS-Monarch-Intl-School/banner-defy-to-define.png" 
+            alt="TEDx DPS Monarch - Defy to Define" 
+            style={{
+              width: '100%',
+              maxWidth: '800px',
+              height: 'auto',
+              borderRadius: '15px',
+              boxShadow: '0 10px 40px rgba(235, 0, 40, 0.3)',
+              margin: '0 auto',
+              display: 'block'
+            }}
+          />
+        </div>
         <div>
-          <p className="eyebrow">TEDxDPS Monarch Intl School Youth</p>
-          <h1>
-            <span className="defy">DEFY</span> 
-            <span className="define">to Define</span>
-          </h1>
-          <p className="hero-tagline">
-            Break the mold. Challenge conventions. Rewrite the rules.<br/>
-            This is where ideas rebel against the ordinary.
-          </p>
-          
           <CountdownTimer />
 
           <div className="manifesto">
