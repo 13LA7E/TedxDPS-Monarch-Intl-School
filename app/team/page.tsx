@@ -20,70 +20,57 @@ export const metadata: Metadata = {
 const teamMembers = [
   {
     name: 'Hardik Sukhnandan',
-    role: 'Student Organizer',
-    type: 'Lead',
-    photo: '/team/HARDIK SUKHNANDAN.jpg',
+    role: 'Student Organizer Lead',
+    photo: '/team/HARDIK%20SUKHNANDAN.jpg',
   },
   {
     name: 'Ritvik Sinha',
-    role: 'Ex. Production',
-    type: 'Lead',
-    photo: '/team/RITVIK SINHA.jpg',
+    role: 'Ex. Production Lead',
+    photo: '/team/RITVIK%20SINHA.jpg',
   },
   {
     name: 'Akriti Rana',
-    role: 'Design',
-    type: 'Lead',
-    photo: '/team/AKRITI RANA.jpg',
+    role: 'Design Lead',
+    photo: '/team/AKRITI%20RANA.jpg',
   },
   {
     name: 'Irteza',
-    role: 'Website',
-    type: 'Lead',
+    role: 'Website Lead',
     photo: '/team/IRTEZA.jpg',
   },
   {
     name: 'Vishva Trivedi',
-    role: 'Event Management',
-    type: 'Lead',
-    photo: '/team/VISHVA TRIVEDI.jpg',
+    role: 'Event Management Lead',
+    photo: '/team/VISHVA%20TRIVEDI.jpg',
   },
   {
     name: 'Aastha Yeotkar',
-    role: 'Marketing',
-    type: 'Lead',
+    role: 'Marketing Lead',
     photo: '/team/AASTHA.jpg',
   },
   {
     name: 'Dipanwita Singh',
-    role: 'Video Production',
-    type: 'Lead',
-    photo: '/team/DIPANWITA SINGH.png',
+    role: 'Video Production Lead',
+    photo: '/team/DIPANWITA%20SINGH.png',
   },
   {
     name: 'Thraya Vivin',
-    role: 'Budget & Sponsorship',
-    type: 'Lead',
-    photo: '/team/THRAYA VIVEN.png',
+    role: 'Budget & Sponsorship Lead',
+    photo: '/team/THRAYA%20VIVEN.png',
   },
   {
     name: 'Anushka Bhatt',
     role: 'Student Organizer',
-    type: 'Team',
-    photo: '/team/ANUSHKA BHATT.jpg',
+    photo: '/team/ANUSHKA%20BHATT.jpg',
   },
   {
     name: 'Anushree Bane',
     role: 'Student Organizer',
-    type: 'Team',
-    photo: '/team/ANUSHREE BANE.jpg',
+    photo: '/team/ANUSHREE%20BANE.jpg',
   },
 ];
 
 export default function TeamPage() {
-  const leads = teamMembers.filter(member => member.type === 'Lead');
-  const team = teamMembers.filter(member => member.type === 'Team');
-
   return (
     <div className="container">
       <section className="section">
@@ -94,9 +81,9 @@ export default function TeamPage() {
           Meet the passionate individuals organizing TEDxDPS Monarch Youth.
         </p>
 
-        <h2 style={{marginBottom: '32px'}}>Department Heads</h2>
-        <div className="grid" style={{marginBottom: '60px'}}>
-          {leads.map((member) => (
+        <h2 style={{marginBottom: '32px'}}>Organizers and Heads</h2>
+        <div className="grid">
+          {teamMembers.map((member) => (
             <div key={member.name} className="card center">
               <img
                 src={member.photo}
@@ -112,39 +99,11 @@ export default function TeamPage() {
               />
               <h3 style={{marginBottom: '8px'}}>{member.name}</h3>
               <p style={{color: 'var(--vibrant-orange)', fontStyle: 'italic', fontWeight: '600', marginBottom: '4px'}}>
-                {member.role} Lead
+                {member.role}
               </p>
             </div>
           ))}
         </div>
-
-        {team.length > 0 && (
-          <>
-            <h2 style={{marginBottom: '32px'}}>Team Members</h2>
-            <div className="grid">
-              {team.map((member) => (
-                <div key={member.name} className="card center">
-                  <img
-                    src={member.photo}
-                    alt={member.name}
-                    style={{
-                      width: '120px',
-                      height: '120px',
-                      borderRadius: '50%',
-                      objectFit: 'cover',
-                      margin: '0 auto 16px',
-                      border: '3px solid var(--light-blue)',
-                    }}
-                  />
-                  <h3 style={{marginBottom: '8px'}}>{member.name}</h3>
-                  <p style={{color: 'var(--light-blue)', fontStyle: 'italic', fontWeight: '600', marginBottom: '4px'}}>
-                    {member.role}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </>
-        )}
       </section>
     </div>
   );
