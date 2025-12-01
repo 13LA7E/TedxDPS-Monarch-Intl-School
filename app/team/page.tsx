@@ -21,17 +21,17 @@ const teamMembers = [
   {
     name: 'Hardik Sukhnandan',
     role: 'Student Organizer Lead',
-    photo: '/team/HARDIK%20SUKHNANDAN.jpg',
+    photo: '/team/HARDIK-SUKHNANDAN.jpg',
   },
   {
     name: 'Ritvik Sinha',
     role: 'Ex. Production Lead',
-    photo: '/team/RITVIK%20SINHA.jpg',
+    photo: '/team/RITVIK-SINHA.jpg',
   },
   {
     name: 'Akriti Rana',
     role: 'Design Lead',
-    photo: '/team/AKRITI%20RANA.jpg',
+    photo: '/team/AKRITI-RANA.jpg',
   },
   {
     name: 'Irteza',
@@ -41,7 +41,7 @@ const teamMembers = [
   {
     name: 'Vishva Trivedi',
     role: 'Event Management Lead',
-    photo: '/team/VISHVA%20TRIVEDI.jpg',
+    photo: '/team/VISHVA-TRIVEDI.jpg',
   },
   {
     name: 'Aastha Yeotkar',
@@ -51,22 +51,22 @@ const teamMembers = [
   {
     name: 'Dipanwita Singh',
     role: 'Video Production Lead',
-    photo: '/team/DIPANWITA%20SINGH.png',
+    photo: '/team/DIPANWITA-SINGH.png',
   },
   {
     name: 'Thraya Vivin',
     role: 'Budget & Sponsorship Lead',
-    photo: '/team/THRAYA%20VIVEN.png',
+    photo: '/team/THRAYA-VIVIN.png',
   },
   {
     name: 'Anushka Bhatt',
     role: 'Student Organizer',
-    photo: '/team/ANUSHKA%20BHATT.jpg',
+    photo: '/team/ANUSHKA-BHATT.jpg',
   },
   {
     name: 'Anushree Bane',
     role: 'Student Organizer',
-    photo: '/team/ANUSHREE%20BANE.jpg',
+    photo: '/team/ANUSHREE-BANE.jpg',
   },
 ];
 

@@ -1,14 +1,14 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js",
-  "/schedule/page": "app/schedule/page.js",
-  "/faq/page": "app/faq/page.js",
-  "/about/page": "app/about/page.js",
-  "/apply/page": "app/apply/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/speakers/page": "app/speakers/page.js",
   "/gallery/page": "app/gallery/page.js",
-  "/team/page": "app/team/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/schedule/page": "app/schedule/page.js",
+  "/contact/page": "app/contact/page.js",
   "/talks/page": "app/talks/page.js",
-  "/sponsors/page": "app/sponsors/page.js"
+  "/sponsors/page": "app/sponsors/page.js",
+  "/page": "app/page.js",
+  "/team/page": "app/team/page.js",
+  "/speakers/page": "app/speakers/page.js",
+  "/about/page": "app/about/page.js",
+  "/apply/page": "app/apply/page.js"
 }
