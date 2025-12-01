@@ -21,52 +21,52 @@ const teamMembers = [
   {
     name: 'Hardik Sukhnandan',
     role: 'Student Organizer Lead',
-    photo: '/team/HARDIK-SUKHNANDAN.jpg',
+    photo: '/TedxDPS-Monarch-Intl-School/team/HARDIK-SUKHNANDAN.jpg',
   },
   {
     name: 'Ritvik Sinha',
     role: 'Ex. Production Lead',
-    photo: '/team/RITVIK-SINHA.jpg',
+    photo: '/TedxDPS-Monarch-Intl-School/team/RITVIK-SINHA.jpg',
   },
   {
     name: 'Akriti Rana',
     role: 'Design Lead',
-    photo: '/team/AKRITI-RANA.jpg',
+    photo: '/TedxDPS-Monarch-Intl-School/team/AKRITI-RANA.jpg',
   },
   {
     name: 'Irteza',
     role: 'Website Lead',
-    photo: '/team/IRTEZA.jpg',
+    photo: '/TedxDPS-Monarch-Intl-School/team/IRTEZA.jpg',
   },
   {
     name: 'Vishva Trivedi',
     role: 'Event Management Lead',
-    photo: '/team/VISHVA-TRIVEDI.jpg',
+    photo: '/TedxDPS-Monarch-Intl-School/team/VISHVA-TRIVEDI.jpg',
   },
   {
     name: 'Aastha Yeotkar',
     role: 'Marketing Lead',
-    photo: '/team/AASTHA.jpg',
+    photo: '/TedxDPS-Monarch-Intl-School/team/AASTHA.jpg',
   },
   {
     name: 'Dipanwita Singh',
     role: 'Video Production Lead',
-    photo: '/team/DIPANWITA-SINGH.png',
+    photo: '/TedxDPS-Monarch-Intl-School/team/DIPANWITA-SINGH.png',
   },
   {
     name: 'Thraya Vivin',
     role: 'Budget & Sponsorship Lead',
-    photo: '/team/THRAYA-VIVIN.png',
+    photo: '/TedxDPS-Monarch-Intl-School/team/THRAYA-VIVIN.png',
   },
   {
     name: 'Anushka Bhatt',
     role: 'Student Organizer',
-    photo: '/team/ANUSHKA-BHATT.jpg',
+    photo: '/TedxDPS-Monarch-Intl-School/team/ANUSHKA-BHATT.jpg',
   },
   {
     name: 'Anushree Bane',
     role: 'Student Organizer',
-    photo: '/team/ANUSHREE-BANE.jpg',
+    photo: '/TedxDPS-Monarch-Intl-School/team/ANUSHREE-BANE.jpg',
   },
 ];
 
