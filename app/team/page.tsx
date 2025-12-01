@@ -17,7 +17,73 @@ export const metadata: Metadata = {
   },
 };
 
+const teamMembers = [
+  {
+    name: 'Hardik Sukhnandan',
+    role: 'Student Organizer',
+    type: 'Lead',
+    photo: '/team/HARDIK SUKHNANDAN.jpg',
+  },
+  {
+    name: 'Ritvik Sinha',
+    role: 'Ex. Production',
+    type: 'Lead',
+    photo: '/team/RITVIK SINHA.jpg',
+  },
+  {
+    name: 'Akriti Rana',
+    role: 'Design',
+    type: 'Lead',
+    photo: '/team/AKRITI RANA.jpg',
+  },
+  {
+    name: 'Irteza',
+    role: 'Website',
+    type: 'Lead',
+    photo: '/team/IRTEZA.jpg',
+  },
+  {
+    name: 'Vishva Trivedi',
+    role: 'Event Management',
+    type: 'Lead',
+    photo: '/team/VISHVA TRIVEDI.jpg',
+  },
+  {
+    name: 'Aastha Yeotkar',
+    role: 'Marketing',
+    type: 'Lead',
+    photo: '/team/AASTHA.jpg',
+  },
+  {
+    name: 'Dipanwita Singh',
+    role: 'Video Production',
+    type: 'Lead',
+    photo: '/team/DIPANWITA SINGH.png',
+  },
+  {
+    name: 'Thraya Vivin',
+    role: 'Budget & Sponsorship',
+    type: 'Lead',
+    photo: '/team/THRAYA VIVEN.png',
+  },
+  {
+    name: 'Anushka Bhatt',
+    role: 'Student Organizer',
+    type: 'Team',
+    photo: '/team/ANUSHKA BHATT.jpg',
+  },
+  {
+    name: 'Anushree Bane',
+    role: 'Student Organizer',
+    type: 'Team',
+    photo: '/team/ANUSHREE BANE.jpg',
+  },
+];
+
 export default function TeamPage() {
+  const leads = teamMembers.filter(member => member.type === 'Lead');
+  const team = teamMembers.filter(member => member.type === 'Team');
+
   return (
     <div className="container">
       <section className="section">
@@ -28,92 +94,57 @@ export default function TeamPage() {
           Meet the passionate individuals organizing TEDxDPS Monarch Youth.
         </p>
 
-        <h2>Organizers</h2>
-        <div className="grid">
-          <div className="card center">
-            <div style={{
-              width: '100px',
-              height: '100px',
-              background: 'linear-gradient(135deg, var(--vibrant-orange), var(--light-blue))',
-              borderRadius: '50%',
-              margin: '0 auto 16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '2rem'
-            }}>
-              ▲
+        <h2 style={{marginBottom: '32px'}}>Department Heads</h2>
+        <div className="grid" style={{marginBottom: '60px'}}>
+          {leads.map((member) => (
+            <div key={member.name} className="card center">
+              <img
+                src={member.photo}
+                alt={member.name}
+                style={{
+                  width: '120px',
+                  height: '120px',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  margin: '0 auto 16px',
+                  border: '3px solid var(--vibrant-orange)',
+                }}
+              />
+              <h3 style={{marginBottom: '8px'}}>{member.name}</h3>
+              <p style={{color: 'var(--vibrant-orange)', fontStyle: 'italic', fontWeight: '600', marginBottom: '4px'}}>
+                {member.role} Lead
+              </p>
             </div>
-            <h3>Your Name</h3>
-            <p style={{color: 'var(--cool-gray)', fontStyle: 'italic'}}>Lead Organizer</p>
-            <p style={{fontSize: '0.95rem', color: 'var(--light-blue)'}}>
-              Passionate about bringing ideas to life.
-            </p>
-          </div>
-          
-          <div className="card center">
-            <div style={{
-              width: '100px',
-              height: '100px',
-              background: 'linear-gradient(135deg, var(--vibrant-orange), var(--light-blue))',
-              borderRadius: '50%',
-              margin: '0 auto 16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '2rem'
-            }}>
-              ▲
-            </div>
-            <h3>Team Member</h3>
-            <p style={{color: 'var(--cool-gray)', fontStyle: 'italic'}}>Curator</p>
-            <p style={{fontSize: '0.95rem', color: 'var(--light-blue)'}}>
-              Finding the best speakers and topics.
-            </p>
-          </div>
-          
-          <div className="card center">
-            <div style={{
-              width: '100px',
-              height: '100px',
-              background: 'linear-gradient(135deg, var(--vibrant-orange), var(--light-blue))',
-              borderRadius: '50%',
-              margin: '0 auto 16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '2rem'
-            }}>
-              ▲
-            </div>
-            <h3>Team Member</h3>
-            <p style={{color: 'var(--cool-gray)', fontStyle: 'italic'}}>Marketing Lead</p>
-            <p style={{fontSize: '0.95rem', color: 'var(--light-blue)'}}>
-              Spreading the word about our event.
-            </p>
-          </div>
-          
-          <div className="card center">
-            <div style={{
-              width: '100px',
-              height: '100px',
-              background: 'linear-gradient(135deg, var(--vibrant-orange), var(--light-blue))',
-              borderRadius: '50%',
-              margin: '0 auto 16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '2rem'
-            }}>
-              ▲
-            </div>
-            <h3>Team Member</h3>
-            <p style={{color: 'var(--cool-gray)', fontStyle: 'italic'}}>Tech & Design</p>
-            <p style={{fontSize: '0.95rem', color: 'var(--light-blue)'}}>
-              Creating amazing experiences online and offline.
-            </p>
-          </div>
+          ))}
         </div>
+
+        {team.length > 0 && (
+          <>
+            <h2 style={{marginBottom: '32px'}}>Team Members</h2>
+            <div className="grid">
+              {team.map((member) => (
+                <div key={member.name} className="card center">
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    style={{
+                      width: '120px',
+                      height: '120px',
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      margin: '0 auto 16px',
+                      border: '3px solid var(--light-blue)',
+                    }}
+                  />
+                  <h3 style={{marginBottom: '8px'}}>{member.name}</h3>
+                  <p style={{color: 'var(--light-blue)', fontStyle: 'italic', fontWeight: '600', marginBottom: '4px'}}>
+                    {member.role}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
       </section>
     </div>
   );
