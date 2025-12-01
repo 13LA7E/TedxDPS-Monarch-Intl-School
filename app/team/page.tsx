@@ -144,17 +144,16 @@ export default function TeamPage() {
           {teamMembers.map((member) => (
             <div 
               key={member.name} 
+              className="card"
               style={{
                 background: 'linear-gradient(145deg, rgba(30,30,30,0.9) 0%, rgba(15,15,15,0.95) 100%)',
                 borderRadius: '20px',
                 padding: '40px 30px',
                 textAlign: 'center',
                 border: '1px solid rgba(255,255,255,0.1)',
-                transition: 'all 0.4s ease',
                 position: 'relative',
                 overflow: 'hidden'
               }}
-              className="team-card"
             >
               {/* Decorative gradient overlay */}
               <div style={{
@@ -207,7 +206,7 @@ export default function TeamPage() {
               <h3 style={{
                 fontSize: '1.4rem',
                 fontWeight: '700',
-                marginBottom: '8px',
+                marginBottom: '12px',
                 color: '#ffffff',
                 fontFamily: "'Playfair Display', serif",
                 letterSpacing: '1px'
@@ -218,7 +217,7 @@ export default function TeamPage() {
               {/* Role */}
               <p style={{
                 color: 'var(--vibrant-orange)',
-                fontSize: '0.95rem',
+                fontSize: '0.85rem',
                 fontWeight: '500',
                 textTransform: 'uppercase',
                 letterSpacing: '2px',
@@ -234,13 +233,6 @@ export default function TeamPage() {
           ))}
         </div>
       </section>
-      
-      <style jsx>{`
-        .team-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 20px 40px rgba(235, 77, 75, 0.2);
-        }
-      `}</style>
     </div>
   );
 }
