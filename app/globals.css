@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:ital@1&display=swap');
 
 :root{
-  --primary-red:#EB0028;
-  --ted-red:#EB0028;
-  --vibrant-orange:#EB0028;
+  --primary-red:#CC0000;
+  --ted-red:#CC0000;
+  --vibrant-orange:#CC0000;
   --dark-bg:#0A0E1A;
   --darker:#050812;
   --glass-bg:rgba(20, 20, 30, 0.6);
@@ -29,14 +29,13 @@
   -webkit-touch-callout:none;
 }
 
-/* Hardware acceleration for animations */
+/* Hardware acceleration for animations - removed will-change for better performance */
 *[class*="hero"],
 *[class*="card"],
 *[class*="cta"],
 *[class*="btn"]{
   -webkit-transform:translateZ(0);
   transform:translateZ(0);
-  will-change:transform;
 }
 
 /* Smooth scrolling */
@@ -102,7 +101,7 @@ body::before{
   opacity:1;
   z-index:0;
   pointer-events:none;
-  animation:flowingLight 15s ease-in-out infinite;
+  animation:flowingLight 40s ease-in-out infinite;
 }
 
 @keyframes flowingLight{
@@ -111,8 +110,8 @@ body::before{
     transform:rotate(0deg);
   }
   50%{
-    background-position:100% 50%, 200px 200px, 300px 300px, 40% 30%, 60% 70%;
-    transform:rotate(2deg);
+    background-position:100% 50%, 100px 100px, 150px 150px, 35% 25%, 65% 75%;
+    transform:rotate(0.5deg);
   }
 }
 
@@ -483,17 +482,11 @@ nav a:hover{
 @keyframes morphBlob{
   0%, 100%{
     border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
-    transform:rotate(0deg) scale(1);
-  }
-  25%{
-    border-radius:58% 42% 75% 25% / 76% 46% 54% 24%;
+    transform:scale(1);
   }
   50%{
     border-radius:50% 50% 33% 67% / 55% 27% 73% 45%;
-    transform:rotate(180deg) scale(1.1);
-  }
-  75%{
-    border-radius:33% 67% 58% 42% / 63% 68% 32% 37%;
+    transform:scale(1.05);
   }
 }
 
@@ -1006,13 +999,21 @@ nav a:hover{
     display:flex;
   }
   
-  nav{
+  /* Hide desktop nav, use mobile side menu instead */
+  header nav{
+    display:none !important;
+  }
+  
+  /* Mobile side navigation */
+  .mobile-nav{
     position:fixed;
     top:0;
     right:-100%;
     width:280px;
     height:100vh;
     background:rgba(10, 14, 26, 0.98);
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
     border-left:2px solid var(--vibrant-orange);
     padding:80px 0 20px 0;
     transition:right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1021,30 +1022,55 @@ nav a:hover{
     box-shadow:-10px 0 30px rgba(0, 0, 0, 0.8);
   }
   
-  nav.active{
+  .mobile-nav.active{
     right:0;
   }
   
-  nav ul{
+  .mobile-nav ul{
     display:flex;
     flex-direction:column;
     gap:0;
+    list-style:none;
+    padding-top:20px;
   }
   
-  nav a{
+  .mobile-nav a{
     display:block;
     padding:18px 28px;
-    clip-path:none;
-    border-radius:0;
-    background:transparent;
+    color:var(--off-white);
+    text-decoration:none;
+    font-weight:600;
+    font-family:'Inter', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
     border-bottom:1px solid rgba(255, 107, 53, 0.2);
-    font-size:1rem;
+    font-size:1.05rem;
+    letter-spacing:0.5px;
     transition:all 0.3s ease;
+    min-height:48px;
   }
   
-  nav a:hover, nav a:active{
+  .mobile-nav a:hover, .mobile-nav a:active, .mobile-nav a.active{
     background:rgba(255, 107, 53, 0.15);
+    color:var(--vibrant-orange);
     padding-left:36px;
+  }
+  
+  .mobile-nav .mobile-register{
+    margin:20px 28px;
+    padding:14px 24px !important;
+    background:var(--vibrant-orange);
+    color:var(--white) !important;
+    border-radius:28px;
+    text-align:center;
+    font-weight:700;
+    border:none;
+    border-bottom:none !important;
+  }
+  
+  .mobile-nav .mobile-register:hover{
+    background:var(--primary-red);
+    padding-left:24px !important;
   }
   
   /* Mobile overlay */
@@ -1114,23 +1140,7 @@ nav a:hover{
   }
   
   .register{
-    display:none; /* Hide register button in header on mobile - it's in the nav menu */
-  }
-  
-  /* Mobile nav menu styling */
-  nav{
-    backdrop-filter:blur(30px);
-    -webkit-backdrop-filter:blur(30px);
-  }
-  
-  nav ul{
-    padding-top:20px;
-  }
-  
-  nav a{
-    font-size:1.05rem;
-    font-weight:600;
-    letter-spacing:0.5px;
+    display:none !important; /* Hide register button in header on mobile - it's in the nav menu */
   }
   
   .hero{

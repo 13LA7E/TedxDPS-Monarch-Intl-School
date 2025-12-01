@@ -2,13 +2,30 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const basePath = process.env.NODE_ENV === 'production' ? '/TedxDPS-Monarch-Intl-School' : '';
 
 export default function Header() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
+
+  // Close menu when route changes
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [pathname])
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
 
   return (
     <>
@@ -26,7 +43,7 @@ export default function Header() {
               style={{height: '60px', width: 'auto', marginLeft: '8px'}}
             />
           </div>
-          <nav className={menuOpen ? 'active' : ''}>
+          <nav>
             <ul>
               <li><Link href="/" className={pathname === '/' ? 'active' : ''}>Home</Link></li>
               <li><Link href="/about" className={pathname === '/about' ? 'active' : ''}>About</Link></li>
@@ -39,7 +56,7 @@ export default function Header() {
           </nav>
           <Link href="/apply" className="register" aria-label="Register">Register</Link>
           <button 
-            className="menu-btn" 
+            className={`menu-btn ${menuOpen ? 'active' : ''}`}
             aria-label="Toggle menu"
             onClick={() => setMenuOpen(!menuOpen)}
           >
@@ -49,7 +66,21 @@ export default function Header() {
           </button>
         </div>
       </header>
+      
+      {/* Mobile Side Menu */}
       {menuOpen && <div className="nav-overlay active" onClick={() => setMenuOpen(false)}></div>}
+      <nav className={`mobile-nav ${menuOpen ? 'active' : ''}`}>
+        <ul>
+          <li><Link href="/" className={pathname === '/' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Home</Link></li>
+          <li><Link href="/about" className={pathname === '/about' ? 'active' : ''} onClick={() => setMenuOpen(false)}>About</Link></li>
+          <li><Link href="/speakers" className={pathname === '/speakers' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Speakers</Link></li>
+          <li><Link href="/schedule" className={pathname === '/schedule' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Schedule</Link></li>
+          <li><Link href="/gallery" className={pathname === '/gallery' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Gallery</Link></li>
+          <li><Link href="/sponsors" className={pathname === '/sponsors' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Sponsors</Link></li>
+          <li><Link href="/contact" className={pathname === '/contact' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Contact</Link></li>
+          <li><Link href="/apply" className="mobile-register" onClick={() => setMenuOpen(false)}>Register Now</Link></li>
+        </ul>
+      </nav>
     </>
   )
 }
