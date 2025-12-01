@@ -209,7 +209,8 @@ export default function TeamPage() {
                 marginBottom: '12px',
                 color: '#ffffff',
                 fontFamily: "'Playfair Display', serif",
-                letterSpacing: '1px'
+                letterSpacing: '1px',
+                textAlign: 'center'
               }}>
                 {member.name}
               </h3>
