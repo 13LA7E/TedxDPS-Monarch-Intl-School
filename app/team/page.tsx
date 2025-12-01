@@ -34,7 +34,7 @@ const teamMembers = [
     photo: '/TedxDPS-Monarch-Intl-School/team/AKRITI-RANA.jpg',
   },
   {
-    name: 'Irteza',
+    name: 'Syed Irtiza Jafar',
     role: 'Website Lead',
     photo: '/TedxDPS-Monarch-Intl-School/team/IRTEZA.jpg',
   },
