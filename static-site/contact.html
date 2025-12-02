@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TEDxDPS Monarch Intl School Youth</title>
+    <meta name="description" content="Get in touch with TEDxDPS Monarch. Questions about the event, speaking opportunities, or partnerships? We'd love to hear from you.">
+    <meta name="keywords" content="TEDx Contact, Event Inquiries, Speaker Applications, Partnership Opportunities, DPS Monarch Contact">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+    <!-- Mobile Navigation Menu -->
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="close-btn" id="closeMobileNav">✕</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="talks.html">TEDx 2024</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="apply.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo-container">
+                <img src="assets/images/logo-removebg-preview.webp" alt="TEDxDPS Monarch Logo" class="logo">
+                <div class="logo-text">
+                    <span class="logo-brand">TEDx</span><span class="logo-school">DPS Monarch</span>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="talks.html">TEDx 2024</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="apply.html" class="cta">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="section">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; font-style: italic;">
+                Join the Movement
+            </h1>
+            <p style="color: var(--vibrant-orange); margin-bottom: 24px; font-size: 1.2rem; font-weight: 700;">
+                Ready to challenge the status quo?
+            </p>
+            <p style="color: var(--light-blue); margin-bottom: 48px; font-size: 1.05rem;">
+                Whether you want to speak, collaborate, or simply be part of the revolution—reach out. Let's defy together.
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Email Us</h3>
+                    <p>
+                        <a href="mailto:tedxyouthdpsmonarchintlschool@gmail.com" style="color: var(--vibrant-orange); text-decoration: none;">
+                            tedxyouthdpsmonarchintlschool@gmail.com
+                        </a>
+                    </p>
+                    <p style="color: var(--light-blue); font-size: 0.95rem;">
+                        For general inquiries and event information
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Visit Us</h3>
+                    <p style="color: var(--white);">DPS Monarch International School</p>
+                    <p style="margin-top: 8px;">
+                        <a 
+                            href="https://maps.app.goo.gl/HrsLyatVDvd28BvXA" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            style="color: var(--vibrant-orange); text-decoration: none; font-weight: 600;"
+                        >
+                            View on Google Maps
+                        </a>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Follow Us</h3>
+                    <p style="margin: 12px 0;">
+                        <a 
+                            href="https://www.instagram.com/TEDxdpsmonarchintlschool/" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style="color: var(--vibrant-orange); margin-right: 16px; text-decoration: none; font-weight: 600;"
+                        >
+                            Instagram
+                        </a>
+                        <a href="#" style="color: var(--vibrant-orange); text-decoration: none; font-weight: 600;">
+                            LinkedIn
+                        </a>
+                    </p>
+                    <p style="color: var(--light-blue); font-size: 0.95rem;">
+                        Stay updated on event news
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top: 64px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <h2>Send a Message</h2>
+                <form style="display: flex; flex-direction: column;">
+                    <div class="form-row">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" name="name">
+                    </div>
+                    <div class="form-row">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" name="email">
+                    </div>
+                    <div class="form-row">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn cta">Send Message</button>
+                    <small style="margin-top: 12px;">
+                        Note: To enable this form, connect it to a backend service like Formspree or EmailJS.
+                    </small>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TEDxDPS Monarch</h4>
+                    <p>Ideas Worth Spreading. Defying Conventions. Defining Tomorrow.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/TEDxdpsmonarchintlschool/" target="_blank">Instagram</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TEDxDPS Monarch International School Youth. All rights reserved.</p>
+                <p style="font-size: 0.85rem; color: var(--cool-gray);">TEDx is a registered trademark of TED Conferences LLC.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

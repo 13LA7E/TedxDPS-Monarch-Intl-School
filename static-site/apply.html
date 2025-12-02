@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register to Attend - TEDxDPS Monarch Intl School Youth</title>
+    <meta name="description" content="Register for TEDxDPS Monarch Intl School Youth on December 13, 2025. Limited to 100 seats. Secure your spot to experience ideas worth spreading and join the movement.">
+    <meta name="keywords" content="TEDx Registration, TEDxDPS Tickets, Event Registration, Youth Conference, Doha Events, December 2025">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .form-row {
+            margin-bottom: 20px;
+        }
+        .form-row label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--light-blue);
+        }
+        .form-row input,
+        .form-row textarea,
+        .form-row select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.05);
+            color: white;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .form-row input:focus,
+        .form-row textarea:focus,
+        .form-row select:focus {
+            outline: none;
+            border-color: var(--vibrant-orange);
+            background: rgba(255,255,255,0.08);
+        }
+        .form-row input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+        .required {
+            color: var(--vibrant-orange);
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+    <!-- Mobile Navigation Menu -->
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="close-btn" id="closeMobileNav">✕</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="talks.html">TEDx 2024</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="apply.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo-container">
+                <img src="assets/images/logo-removebg-preview.webp" alt="TEDxDPS Monarch Logo" class="logo">
+                <div class="logo-text">
+                    <span class="logo-brand">TEDx</span><span class="logo-school">DPS Monarch</span>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="talks.html">TEDx 2024</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="apply.html" class="active cta">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="section">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; font-style: italic;">
+                Register to Attend
+            </h1>
+            <p style="color: var(--vibrant-orange); margin-bottom: 24px; font-size: 1.2rem; font-weight: 700;">
+                Be part of the revolution.
+            </p>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div style="background: linear-gradient(135deg, rgba(235,0,40,0.1) 0%, rgba(235,0,40,0.05) 100%); padding: 40px; border-radius: 20px; border: 2px solid rgba(235,0,40,0.3); margin-bottom: 40px;">
+                    <h2 style="color: var(--vibrant-orange); font-size: 1.5rem; margin-bottom: 15px;">December 13, 2025</h2>
+                    <p style="color: var(--light-blue); margin-bottom: 10px;"><strong>Time:</strong> 3:00 PM - 5:40 PM</p>
+                    <p style="color: var(--light-blue); margin-bottom: 10px;"><strong>Location:</strong> DPS Monarch International School, Doha, Qatar</p>
+                    <p style="color: var(--vibrant-orange); font-weight: 600;">Limited to 100 seats</p>
+                </div>
+
+                <form style="display: flex; flex-direction: column;">
+                    <div class="form-row">
+                        <label for="fullname">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+974 XXXX XXXX" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="school">School/Organization</label>
+                        <input type="text" id="school" name="school" placeholder="Your school or organization">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="grade">Grade/Level <span class="required">*</span></label>
+                        <select id="grade" name="grade" required>
+                            <option value="">Select your grade...</option>
+                            <option value="9">Grade 9</option>
+                            <option value="10">Grade 10</option>
+                            <option value="11">Grade 11</option>
+                            <option value="12">Grade 12</option>
+                            <option value="college">College/University</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="interest">What interests you most? <span class="required">*</span></label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select a topic...</option>
+                            <option value="adolescence">Adolescence</option>
+                            <option value="media">Media</option>
+                            <option value="ev">Electric Vehicles</option>
+                            <option value="social">Social Impact</option>
+                            <option value="leadership">Leadership</option>
+                            <option value="voice">Voice & Expression</option>
+                            <option value="ambition">Ambition</option>
+                            <option value="gaming">Gaming & Tech</option>
+                            <option value="ai">AI & Future</option>
+                            <option value="all">All Topics</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="hear">How did you hear about us?</label>
+                        <input type="text" id="hear" name="hear" placeholder="Social media, friend, school, etc.">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="special">Any special requirements or dietary restrictions?</label>
+                        <textarea id="special" name="special" rows="3" placeholder="Let us know if you have any special needs..."></textarea>
+                    </div>
+
+                    <div style="background: rgba(235,0,40,0.1); padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--vibrant-orange);">
+                        <p style="color: var(--light-blue); font-size: 0.9rem; margin: 0;">
+                            <strong>Note:</strong> Please arrive by 2:50 PM. Dress code: Smart casual or formal attire. Light refreshments will be provided.
+                        </p>
+                    </div>
+
+                    <button type="submit" class="btn cta" style="padding: 15px 40px; font-size: 1.1rem;">Secure Your Seat</button>
+                    <small style="margin-top: 15px; color: var(--cool-gray);">
+                        Note: To fully enable this form, connect it to a backend service like Formspree, Netlify Forms, or EmailJS.
+                    </small>
+                </form>
+
+                <div style="margin-top: 60px; padding: 40px; background: linear-gradient(135deg, rgba(235,0,40,0.1) 0%, rgba(235,0,40,0.05) 100%); border-radius: 20px; border: 2px solid rgba(235,0,40,0.3); text-align: center;">
+                    <h3 style="color: var(--vibrant-orange); font-size: 1.3rem; margin-bottom: 15px;">Questions?</h3>
+                    <p style="color: var(--light-blue); margin-bottom: 15px;">
+                        Contact us at <a href="mailto:tedxyouthdpsmonarchintlschool@gmail.com" style="color: var(--vibrant-orange); text-decoration: none;">tedxyouthdpsmonarchintlschool@gmail.com</a>
+                    </p>
+                    <p style="color: var(--light-blue);">
+                        <a href="contact.html" style="color: var(--vibrant-orange); text-decoration: none;">Learn more about the event</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TEDxDPS Monarch</h4>
+                    <p>Ideas Worth Spreading. Defying Conventions. Defining Tomorrow.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/TEDxdpsmonarchintlschool/" target="_blank">Instagram</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TEDxDPS Monarch International School Youth. All rights reserved.</p>
+                <p style="font-size: 0.85rem; color: var(--cool-gray);">TEDx is a registered trademark of TED Conferences LLC.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

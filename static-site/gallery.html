@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - TEDxDPS Monarch Intl School Youth</title>
+    <meta name="description" content="Explore photos from TEDxDPS Monarch events. Capturing the energy, passion, and ideas that define our movement.">
+    <meta name="keywords" content="TEDx Photos, Event Gallery, TEDxDPS Images, Youth Event Photos, DPS Monarch Gallery">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            aspect-ratio: 1;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+        }
+        .modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 10px;
+        }
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .modal-nav:hover {
+            background: rgba(255,255,255,0.4);
+        }
+        .modal-prev {
+            left: 20px;
+        }
+        .modal-next {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+    <!-- Mobile Navigation Menu -->
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="close-btn" id="closeMobileNav">✕</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="talks.html">TEDx 2024</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="apply.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo-container">
+                <img src="assets/images/logo-removebg-preview.webp" alt="TEDxDPS Monarch Logo" class="logo">
+                <div class="logo-text">
+                    <span class="logo-brand">TEDx</span><span class="logo-school">DPS Monarch</span>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="talks.html">TEDx 2024</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="apply.html" class="cta">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="section">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; text-align: center;">
+                Event Gallery
+            </h1>
+            <p style="color: var(--light-blue); margin-bottom: 48px; font-size: 1.15rem; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Capturing moments of inspiration, innovation, and ideas worth spreading from our TEDx events.
+            </p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal(0)">
+                    <img src="assets/images/Gallery/IMG_1297.webp" alt="TEDx Event Photo 1">
+                </div>
+                <div class="gallery-item" onclick="openModal(1)">
+                    <img src="assets/images/Gallery/IMG_1319.webp" alt="TEDx Event Photo 2">
+                </div>
+                <div class="gallery-item" onclick="openModal(2)">
+                    <img src="assets/images/Gallery/IMG_1323.webp" alt="TEDx Event Photo 3">
+                </div>
+                <div class="gallery-item" onclick="openModal(3)">
+                    <img src="assets/images/Gallery/IMG_1333.webp" alt="TEDx Event Photo 4">
+                </div>
+                <div class="gallery-item" onclick="openModal(4)">
+                    <img src="assets/images/Gallery/IMG_1336.webp" alt="TEDx Event Photo 5">
+                </div>
+                <div class="gallery-item" onclick="openModal(5)">
+                    <img src="assets/images/Gallery/IMG_1338.webp" alt="TEDx Event Photo 6">
+                </div>
+                <div class="gallery-item" onclick="openModal(6)">
+                    <img src="assets/images/Gallery/IMG_1340.webp" alt="TEDx Event Photo 7">
+                </div>
+                <div class="gallery-item" onclick="openModal(7)">
+                    <img src="assets/images/Gallery/IMG_1341.webp" alt="TEDx Event Photo 8">
+                </div>
+                <div class="gallery-item" onclick="openModal(8)">
+                    <img src="assets/images/Gallery/IMG_1343.webp" alt="TEDx Event Photo 9">
+                </div>
+                <div class="gallery-item" onclick="openModal(9)">
+                    <img src="assets/images/Gallery/IMG_1345.webp" alt="TEDx Event Photo 10">
+                </div>
+                <div class="gallery-item" onclick="openModal(10)">
+                    <img src="assets/images/Gallery/IMG_1360.webp" alt="TEDx Event Photo 11">
+                </div>
+                <div class="gallery-item" onclick="openModal(11)">
+                    <img src="assets/images/Gallery/IMG_1383.webp" alt="TEDx Event Photo 12">
+                </div>
+                <div class="gallery-item" onclick="openModal(12)">
+                    <img src="assets/images/Gallery/IMG_1387.webp" alt="TEDx Event Photo 13">
+                </div>
+                <div class="gallery-item" onclick="openModal(13)">
+                    <img src="assets/images/Gallery/IMG_1393.webp" alt="TEDx Event Photo 14">
+                </div>
+                <div class="gallery-item" onclick="openModal(14)">
+                    <img src="assets/images/Gallery/IMG_1397.webp" alt="TEDx Event Photo 15">
+                </div>
+                <div class="gallery-item" onclick="openModal(15)">
+                    <img src="assets/images/Gallery/IMG_1401.webp" alt="TEDx Event Photo 16">
+                </div>
+                <div class="gallery-item" onclick="openModal(16)">
+                    <img src="assets/images/Gallery/IMG_1405.webp" alt="TEDx Event Photo 17">
+                </div>
+                <div class="gallery-item" onclick="openModal(17)">
+                    <img src="assets/images/Gallery/IMG_1413.webp" alt="TEDx Event Photo 18">
+                </div>
+                <div class="gallery-item" onclick="openModal(18)">
+                    <img src="assets/images/Gallery/IMG_1419.webp" alt="TEDx Event Photo 19">
+                </div>
+                <div class="gallery-item" onclick="openModal(19)">
+                    <img src="assets/images/Gallery/IMG_1431.webp" alt="TEDx Event Photo 20">
+                </div>
+                <div class="gallery-item" onclick="openModal(20)">
+                    <img src="assets/images/Gallery/IMG_1432.webp" alt="TEDx Event Photo 21">
+                </div>
+                <div class="gallery-item" onclick="openModal(21)">
+                    <img src="assets/images/Gallery/IMG_1446.webp" alt="TEDx Event Photo 22">
+                </div>
+                <div class="gallery-item" onclick="openModal(22)">
+                    <img src="assets/images/Gallery/IMG_1452.webp" alt="TEDx Event Photo 23">
+                </div>
+                <div class="gallery-item" onclick="openModal(23)">
+                    <img src="assets/images/Gallery/IMG_1453.webp" alt="TEDx Event Photo 24">
+                </div>
+                <div class="gallery-item" onclick="openModal(24)">
+                    <img src="assets/images/Gallery/IMG_1460.webp" alt="TEDx Event Photo 25">
+                </div>
+                <div class="gallery-item" onclick="openModal(25)">
+                    <img src="assets/images/Gallery/IMG_1462.webp" alt="TEDx Event Photo 26">
+                </div>
+                <div class="gallery-item" onclick="openModal(26)">
+                    <img src="assets/images/Gallery/IMG_1473.webp" alt="TEDx Event Photo 27">
+                </div>
+                <div class="gallery-item" onclick="openModal(27)">
+                    <img src="assets/images/Gallery/IMG_1477.webp" alt="TEDx Event Photo 28">
+                </div>
+                <div class="gallery-item" onclick="openModal(28)">
+                    <img src="assets/images/Gallery/IMG_1481.webp" alt="TEDx Event Photo 29">
+                </div>
+                <div class="gallery-item" onclick="openModal(29)">
+                    <img src="assets/images/Gallery/IMG_1490.webp" alt="TEDx Event Photo 30">
+                </div>
+                <div class="gallery-item" onclick="openModal(30)">
+                    <img src="assets/images/Gallery/IMG_1494.webp" alt="TEDx Event Photo 31">
+                </div>
+                <div class="gallery-item" onclick="openModal(31)">
+                    <img src="assets/images/Gallery/IMG_1497.webp" alt="TEDx Event Photo 32">
+                </div>
+                <div class="gallery-item" onclick="openModal(32)">
+                    <img src="assets/images/Gallery/IMG_1511.webp" alt="TEDx Event Photo 33">
+                </div>
+                <div class="gallery-item" onclick="openModal(33)">
+                    <img src="assets/images/Gallery/IMG_1520.webp" alt="TEDx Event Photo 34">
+                </div>
+                <div class="gallery-item" onclick="openModal(34)">
+                    <img src="assets/images/Gallery/IMG_1524.webp" alt="TEDx Event Photo 35">
+                </div>
+                <div class="gallery-item" onclick="openModal(35)">
+                    <img src="assets/images/Gallery/IMG_1531.webp" alt="TEDx Event Photo 36">
+                </div>
+                <div class="gallery-item" onclick="openModal(36)">
+                    <img src="assets/images/Gallery/IMG_1536.webp" alt="TEDx Event Photo 37">
+                </div>
+                <div class="gallery-item" onclick="openModal(37)">
+                    <img src="assets/images/Gallery/IMG_1541.webp" alt="TEDx Event Photo 38">
+                </div>
+                <div class="gallery-item" onclick="openModal(38)">
+                    <img src="assets/images/Gallery/IMG_1546.webp" alt="TEDx Event Photo 39">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Image Modal -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <button class="modal-nav modal-prev" onclick="prevImage()">❮</button>
+            <img id="modalImage" src="" alt="Full size image">
+            <button class="modal-nav modal-next" onclick="nextImage()">❯</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>TEDxDPS Monarch</h4>
+                    <p>Ideas Worth Spreading. Defying Conventions. Defining Tomorrow.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/TEDxdpsmonarchintlschool/" target="_blank">Instagram</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TEDxDPS Monarch International School Youth. All rights reserved.</p>
+                <p style="font-size: 0.85rem; color: var(--cool-gray);">TEDx is a registered trademark of TED Conferences LLC.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        const galleryImages = [
+            'assets/images/Gallery/IMG_1297.webp',
+            'assets/images/Gallery/IMG_1319.webp',
+            'assets/images/Gallery/IMG_1323.webp',
+            'assets/images/Gallery/IMG_1333.webp',
+            'assets/images/Gallery/IMG_1336.webp',
+            'assets/images/Gallery/IMG_1338.webp',
+            'assets/images/Gallery/IMG_1340.webp',
+            'assets/images/Gallery/IMG_1341.webp',
+            'assets/images/Gallery/IMG_1343.webp',
+            'assets/images/Gallery/IMG_1345.webp',
+            'assets/images/Gallery/IMG_1360.webp',
+            'assets/images/Gallery/IMG_1383.webp',
+            'assets/images/Gallery/IMG_1387.webp',
+            'assets/images/Gallery/IMG_1393.webp',
+            'assets/images/Gallery/IMG_1397.webp',
+            'assets/images/Gallery/IMG_1401.webp',
+            'assets/images/Gallery/IMG_1405.webp',
+            'assets/images/Gallery/IMG_1413.webp',
+            'assets/images/Gallery/IMG_1419.webp',
+            'assets/images/Gallery/IMG_1431.webp',
+            'assets/images/Gallery/IMG_1432.webp',
+            'assets/images/Gallery/IMG_1446.webp',
+            'assets/images/Gallery/IMG_1452.webp',
+            'assets/images/Gallery/IMG_1453.webp',
+            'assets/images/Gallery/IMG_1460.webp',
+            'assets/images/Gallery/IMG_1462.webp',
+            'assets/images/Gallery/IMG_1473.webp',
+            'assets/images/Gallery/IMG_1477.webp',
+            'assets/images/Gallery/IMG_1481.webp',
+            'assets/images/Gallery/IMG_1490.webp',
+            'assets/images/Gallery/IMG_1494.webp',
+            'assets/images/Gallery/IMG_1497.webp',
+            'assets/images/Gallery/IMG_1511.webp',
+            'assets/images/Gallery/IMG_1520.webp',
+            'assets/images/Gallery/IMG_1524.webp',
+            'assets/images/Gallery/IMG_1531.webp',
+            'assets/images/Gallery/IMG_1536.webp',
+            'assets/images/Gallery/IMG_1541.webp',
+            'assets/images/Gallery/IMG_1546.webp'
+        ];
+
+        let currentImageIndex = 0;
+
+        function openModal(index) {
+            currentImageIndex = index;
+            document.getElementById('imageModal').classList.add('active');
+            document.getElementById('modalImage').src = galleryImages[index];
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('active');
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            document.getElementById('modalImage').src = galleryImages[currentImageIndex];
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            document.getElementById('modalImage').src = galleryImages[currentImageIndex];
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('imageModal');
+            if (modal.classList.contains('active')) {
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'Escape') closeModal();
+            }
+        });
+
+        // Close modal on overlay click
+        document.getElementById('imageModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('imageModal')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
