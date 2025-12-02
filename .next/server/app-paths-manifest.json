@@ -1,14 +1,14 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/faq/page": "app/faq/page.js",
+  "/apply/page": "app/apply/page.js",
   "/gallery/page": "app/gallery/page.js",
   "/contact/page": "app/contact/page.js",
-  "/page": "app/page.js",
-  "/apply/page": "app/apply/page.js",
-  "/speakers/page": "app/speakers/page.js",
-  "/sponsors/page": "app/sponsors/page.js",
   "/about/page": "app/about/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/schedule/page": "app/schedule/page.js",
+  "/speakers/page": "app/speakers/page.js",
   "/talks/page": "app/talks/page.js",
   "/team/page": "app/team/page.js",
-  "/schedule/page": "app/schedule/page.js"
+  "/page": "app/page.js",
+  "/sponsors/page": "app/sponsors/page.js"
 }
