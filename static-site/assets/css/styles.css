@@ -2375,7 +2375,7 @@ main, .container {
 }
 
 /* Desktop Navigation */
-.nav ul {
+.nav > ul {
   display: flex;
   gap: 8px;
   list-style: none;
@@ -2458,6 +2458,8 @@ main, .container {
   transition: all 0.3s ease;
   z-index: 100;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  display: block;
+  flex-direction: column;
 }
 
 .nav-dropdown:hover .dropdown-menu {
@@ -2468,6 +2470,7 @@ main, .container {
 
 .dropdown-menu li {
   list-style: none;
+  display: block;
 }
 
 .dropdown-menu a {
