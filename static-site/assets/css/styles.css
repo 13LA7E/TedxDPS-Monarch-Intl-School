@@ -104,57 +104,83 @@ body::before{
   pointer-events:none;
 }
 
-/* Animated barber pole stripe on RIGHT - classic 45 degree diagonal */
+/* Barber pole animations */
 @keyframes barberPole{
   0%{background-position:0 0}
-  100%{background-position:0 28px}
+  100%{background-position:0 28.28px}
 }
 
+@keyframes barberPoleLeft{
+  0%{background-position:0 0}
+  100%{background-position:0 -28.28px}
+}
+
+@keyframes stripeGlowRight{
+  0%, 100%{
+    box-shadow:-3px 0 15px rgba(230, 43, 30, 0.7);
+    opacity:0.8;
+  }
+  50%{
+    box-shadow:-6px 0 25px rgba(230, 43, 30, 1), -12px 0 50px rgba(230, 43, 30, 0.6);
+    opacity:1;
+  }
+}
+
+@keyframes stripeGlowLeft{
+  0%, 100%{
+    box-shadow:3px 0 15px rgba(230, 43, 30, 0.7);
+    opacity:0.8;
+  }
+  50%{
+    box-shadow:6px 0 25px rgba(230, 43, 30, 1), 12px 0 50px rgba(230, 43, 30, 0.6);
+    opacity:1;
+  }
+}
+
+/* Add rebellious warning stripes accent - Barber pole style on RIGHT */
 body::after{
   content:'';
   position:fixed;
   top:0;
   right:0;
-  width:14px;
+  width:10px;
   height:100%;
   background:
     repeating-linear-gradient(
-      -45deg,
-      #CC0000 0px,
-      #CC0000 7px,
-      #0A0E1A 7px,
-      #0A0E1A 14px
+      135deg,
+      var(--primary-red),
+      var(--primary-red) 10px,
+      #0A0E1A 10px,
+      #0A0E1A 20px
     );
-  background-size:14px 28px;
   opacity:1;
   z-index:1000;
   pointer-events:none;
-  box-shadow:-3px 0 15px rgba(204, 0, 0, 0.6);
-  animation:barberPole 0.8s linear infinite;
+  box-shadow:-3px 0 15px rgba(235, 0, 40, 0.7);
+  animation:barberPole 2s linear infinite, stripeGlowRight 3s ease-in-out infinite;
 }
 
-/* Animated barber pole stripe on LEFT side - classic 45 degree diagonal */
+/* Barber pole on LEFT side - using html element */
 html::after{
   content:'';
   position:fixed;
   top:0;
   left:0;
-  width:14px;
+  width:10px;
   height:100%;
   background:
     repeating-linear-gradient(
       45deg,
-      #CC0000 0px,
-      #CC0000 7px,
-      #0A0E1A 7px,
-      #0A0E1A 14px
+      var(--primary-red),
+      var(--primary-red) 10px,
+      #0A0E1A 10px,
+      #0A0E1A 20px
     );
-  background-size:14px 28px;
   opacity:1;
   z-index:1000;
   pointer-events:none;
-  box-shadow:3px 0 15px rgba(204, 0, 0, 0.6);
-  animation:barberPole 0.8s linear infinite;
+  box-shadow:3px 0 15px rgba(235, 0, 40, 0.7);
+  animation:barberPoleLeft 2s linear infinite, stripeGlowLeft 3s ease-in-out infinite;
 }
 
 /* Remove grid overlay - keep it clean and rebellious */
@@ -1257,13 +1283,17 @@ nav a:hover{
     transition:none !important;
   }
   
-  /* Hide barber pole stripes on mobile */
+  /* Keep barber pole animations on mobile but thinner */
   body::after{
-    display:none !important;
+    display:block !important;
+    width:6px;
+    animation:barberPole 2s linear infinite !important;
   }
   
   html::after{
-    display:none !important;
+    display:block !important;
+    width:6px;
+    animation:barberPoleLeft 2s linear infinite !important;
   }
   
   .menu-btn, .menu-btn span{
