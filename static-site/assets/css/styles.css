@@ -107,7 +107,7 @@ body::before{
 /* Animated barber pole stripe on RIGHT */
 @keyframes barberPole{
   0%{background-position:0 0}
-  100%{background-position:0 40px}
+  100%{background-position:0 20px}
 }
 
 body::after{
@@ -115,22 +115,22 @@ body::after{
   position:fixed;
   top:0;
   right:0;
-  width:8px;
+  width:6px;
   height:100%;
   background:
     repeating-linear-gradient(
-      135deg,
-      var(--primary-red),
+      180deg,
+      var(--primary-red) 0px,
       var(--primary-red) 10px,
-      #0A0E1A 10px,
-      #0A0E1A 20px
+      #1a0508 10px,
+      #1a0508 20px
     );
-  background-size:20px 40px;
-  opacity:0.9;
+  background-size:6px 20px;
+  opacity:1;
   z-index:1000;
   pointer-events:none;
-  box-shadow:-2px 0 10px rgba(235, 0, 40, 0.5);
-  animation:barberPole 2s linear infinite;
+  box-shadow:-2px 0 15px rgba(204, 0, 0, 0.6);
+  animation:barberPole 1s linear infinite;
 }
 
 /* Animated barber pole stripe on LEFT side */
@@ -139,22 +139,22 @@ html::after{
   position:fixed;
   top:0;
   left:0;
-  width:8px;
+  width:6px;
   height:100%;
   background:
     repeating-linear-gradient(
-      45deg,
-      var(--primary-red),
+      180deg,
+      var(--primary-red) 0px,
       var(--primary-red) 10px,
-      #0A0E1A 10px,
-      #0A0E1A 20px
+      #1a0508 10px,
+      #1a0508 20px
     );
-  background-size:20px 40px;
-  opacity:0.9;
+  background-size:6px 20px;
+  opacity:1;
   z-index:1000;
   pointer-events:none;
-  box-shadow:2px 0 10px rgba(235, 0, 40, 0.5);
-  animation:barberPole 2s linear infinite reverse;
+  box-shadow:2px 0 15px rgba(204, 0, 0, 0.6);
+  animation:barberPole 1s linear infinite reverse;
 }
 
 /* Remove grid overlay - keep it clean and rebellious */
