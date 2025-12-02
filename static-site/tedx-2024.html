@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - TEDxDPS Monarch Intl School Youth</title>
-    <meta name="description" content="Explore photos from TEDxDPS Monarch events. Capturing the energy, passion, and ideas that define our movement.">
-    <meta name="keywords" content="TEDx Photos, Event Gallery, TEDxDPS Images, Youth Event Photos, DPS Monarch Gallery">
+    <title>TEDx 2024 Gallery - TEDxDPS Monarch Intl School Youth</title>
+    <meta name="description" content="Explore photos from TEDx 2024 at DPS Monarch. Capturing the energy, passion, and ideas that defined our event.">
+    <meta name="keywords" content="TEDx 2024 Photos, Event Gallery, TEDxDPS Images, Youth Event Photos, DPS Monarch Gallery">
     <meta name="author" content="TEDxDPS Monarch Intl School Youth">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Gallery - TEDxDPS Monarch">
-    <meta property="og:description" content="Explore photos from TEDxDPS Monarch events. Capturing the energy, passion, and ideas that define our movement.">
-    <meta property="og:url" content="https://13la7e.github.io/TedxDPS-Monarch-Intl-School/gallery.html">
+    <meta property="og:title" content="TEDx 2024 Gallery - TEDxDPS Monarch">
+    <meta property="og:description" content="Explore photos from TEDx 2024 at DPS Monarch. Capturing moments of inspiration and innovation.">
+    <meta property="og:url" content="https://13la7e.github.io/TedxDPS-Monarch-Intl-School/tedx-2024.html">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://13la7e.github.io/TedxDPS-Monarch-Intl-School/assets/images/logo-removebg-preview.webp">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gallery - TEDxDPS Monarch">
-    <meta name="twitter:description" content="Photos from our TEDx events">
+    <meta name="twitter:title" content="TEDx 2024 Gallery - TEDxDPS Monarch">
+    <meta name="twitter:description" content="Photos from TEDx 2024 event">
     <meta name="twitter:image" content="https://13la7e.github.io/TedxDPS-Monarch-Intl-School/assets/images/logo-removebg-preview.webp">
     
     <link rel="icon" type="image/webp" href="assets/images/logo-removebg-preview.webp">
     <link rel="apple-touch-icon" href="assets/images/logo-removebg-preview.webp">
-        <link rel="canonical" href="https://13la7e.github.io/TedxDPS-Monarch-Intl-School/gallery.html">
+        <link rel="canonical" href="https://13la7e.github.io/TedxDPS-Monarch-Intl-School/tedx-2024.html">
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
         .gallery-grid {
@@ -119,9 +119,13 @@
             <li><a href="about.html">About</a></li>
             <li><a href="speakers.html">Speakers</a></li>
             <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="team.html">Our Team</a></li>
-            <li><a href="talks.html">TEDx 2024</a></li>
+            <li class="mobile-dropdown">
+              <a href="#" class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(event)">Gallery</a>
+              <ul class="mobile-dropdown-menu">
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="tedx-2024.html">TEDx 2024</a></li>
+              </ul>
+            </li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="apply.html">Register</a></li>
         </ul>
@@ -143,9 +147,13 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="speakers.html">Speakers</a></li>
                     <li><a href="schedule.html">Schedule</a></li>
-                    <li><a href="gallery.html" class="active">Gallery</a></li>
-                    <li><a href="team.html">Our Team</a></li>
-                    <li><a href="talks.html">TEDx 2024</a></li>
+                    <li class="nav-dropdown">
+                      <a href="#" class="active">Gallery</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="tedx-2024.html" class="active">TEDx 2024</a></li>
+                      </ul>
+                    </li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="apply.html" class="cta">Register</a></li>
                 </ul>
@@ -157,10 +165,10 @@
     <main class="container">
         <section class="section">
             <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; text-align: center;">
-                Event Gallery
+                TEDx 2024 Gallery
             </h1>
             <p style="color: var(--light-blue); margin-bottom: 48px; font-size: 1.15rem; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Capturing moments of inspiration, innovation, and ideas worth spreading from our TEDx events.
+                Relive the moments of inspiration, innovation, and ideas worth spreading from our TEDx 2024 event.
             </p>
 
             <div class="gallery-grid">

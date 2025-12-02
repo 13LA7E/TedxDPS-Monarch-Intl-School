@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileNav = document.getElementById('mobileNav');
   const mobileNavOverlay = document.getElementById('mobileNavOverlay');
   const closeMobileNav = document.getElementById('closeMobileNav');
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav a:not(.mobile-dropdown-toggle)');
 
   function openMenu() {
     if (mobileNav) mobileNav.classList.add('active');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileNavOverlay.addEventListener('click', closeMenu);
   }
 
-  // Close menu when clicking a link
+  // Close menu when clicking a link (not dropdown toggle)
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
   });
@@ -55,6 +55,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Mobile Dropdown Toggle Function
+function toggleMobileDropdown(event) {
+  event.preventDefault();
+  const toggle = event.currentTarget;
+  const dropdownMenu = toggle.nextElementSibling;
+  
+  // Toggle the open class
+  toggle.classList.toggle('open');
+  if (dropdownMenu) {
+    dropdownMenu.classList.toggle('open');
+  }
+}
 
 // Countdown Timer
 function initCountdown() {
