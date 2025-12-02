@@ -1257,17 +1257,13 @@ nav a:hover{
     transition:none !important;
   }
   
-  /* Keep animated barber pole stripes on mobile */
+  /* Hide barber pole stripes on mobile */
   body::after{
-    display:block !important;
-    width:6px;
-    animation:barberPole 2s linear infinite !important;
+    display:none !important;
   }
   
   html::after{
-    display:block !important;
-    width:6px;
-    animation:barberPole 2s linear infinite reverse !important;
+    display:none !important;
   }
   
   .menu-btn, .menu-btn span{
