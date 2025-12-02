@@ -1,35 +1,47 @@
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
-  const menuBtn = document.querySelector('.menu-btn');
-  const mobileNav = document.querySelector('.mobile-nav');
-  const navOverlay = document.querySelector('.nav-overlay');
+  const menuToggle = document.getElementById('mobileMenuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+  const closeMobileNav = document.getElementById('closeMobileNav');
   const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
 
-  function toggleMenu() {
-    menuBtn.classList.toggle('active');
-    mobileNav.classList.toggle('active');
-    navOverlay.classList.toggle('active');
-    document.body.style.overflow = menuBtn.classList.contains('active') ? 'hidden' : '';
+  function openMenu() {
+    if (mobileNav) mobileNav.classList.add('active');
+    if (mobileNavOverlay) mobileNavOverlay.classList.add('active');
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
-    menuBtn.classList.remove('active');
-    mobileNav.classList.remove('active');
-    navOverlay.classList.remove('active');
+    if (mobileNav) mobileNav.classList.remove('active');
+    if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
 
-  if (menuBtn) {
-    menuBtn.addEventListener('click', toggleMenu);
+  if (menuToggle) {
+    menuToggle.addEventListener('click', openMenu);
   }
 
-  if (navOverlay) {
-    navOverlay.addEventListener('click', closeMenu);
+  if (closeMobileNav) {
+    closeMobileNav.addEventListener('click', closeMenu);
+  }
+
+  if (mobileNavOverlay) {
+    mobileNavOverlay.addEventListener('click', closeMenu);
   }
 
   // Close menu when clicking a link
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
+  });
+
+  // Close menu on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('active')) {
+      closeMenu();
+    }
   });
 
   // Highlight active page in navigation

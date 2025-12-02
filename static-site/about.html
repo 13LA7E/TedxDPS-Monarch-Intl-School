@@ -7,6 +7,8 @@
   <meta name="description" content="Learn about TEDxDPS Monarch Intl School Youth - a movement where young voices roar and ideas challenge the status quo. Discover our mission to defy conventions and define tomorrow.">
   <meta name="keywords" content="About TEDx, TEDxDPS Mission, Youth Movement, Ideas Worth Spreading, Innovation, Student Leadership, Doha Qatar">
   <meta name="author" content="TEDxDPS Monarch Intl School Youth">
+  <link rel="icon" type="image/webp" href="assets/images/logo-removebg-preview.webp">
+  <link rel="apple-touch-icon" href="assets/images/logo-removebg-preview.webp">
   
   <!-- Open Graph -->
   <meta property="og:title" content="About TEDxDPS Monarch - Our Movement to Defy and Define">
@@ -21,52 +23,54 @@
   <meta name="twitter:description" content="A movement where young voices roar and ideas challenge the status quo.">
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+      <link rel="canonical" href="https://13la7e.github.io/TedxDPS-Monarch-Intl-School/about.html">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+  <!-- Mobile Navigation Menu -->
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="close-btn" id="closeMobileNav" aria-label="Close navigation menu">✕</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="team.html">Our Team</a></li>
+      <li><a href="talks.html">TEDx 2024</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="apply.html">Register</a></li>
+    </ul>
+  </nav>
+
   <!-- Header -->
   <header class="header">
-    <div class="container">
-      <div class="brand">
-        <img src="assets/images/logo-removebg-preview.webp" alt="TEDxDPS Monarch Youth" style="height: 60px; width: auto;">
-        <img src="assets/images/logo-white.webp" alt="TEDxDPS Monarch Youth" style="height: 60px; width: auto; margin-left: 8px;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="logo-container">
+        <img src="assets/images/logo-removebg-preview.webp" alt="TEDxDPS Monarch Logo" class="logo">
+        <div class="logo-text">
+          <span class="logo-brand">TEDx</span><span class="logo-school">DPS Monarch</span>
+        </div>
       </div>
-      <nav>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <nav class="nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html" class="active">About</a></li>
           <li><a href="speakers.html">Speakers</a></li>
           <li><a href="schedule.html">Schedule</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="sponsors.html">Sponsors</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="talks.html">TEDx 2024</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="apply.html" class="cta">Register</a></li>
         </ul>
       </nav>
-      <a href="apply.html" class="register" aria-label="Register">Register</a>
-      <button class="menu-btn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </header>
-
-  <!-- Mobile Navigation Overlay -->
-  <div class="nav-overlay"></div>
-  
-  <!-- Mobile Side Menu -->
-  <nav class="mobile-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="speakers.html">Speakers</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="sponsors.html">Sponsors</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="apply.html" class="mobile-register">Register Now</a></li>
-    </ul>
-  </nav>
 
   <!-- Main Content -->
   <div class="container">
@@ -112,7 +116,7 @@
 
       <!-- Mission Statement Enhancement -->
       <div style="margin: 80px 0; padding: 60px; background: linear-gradient(135deg, var(--dark-gray) 0%, rgba(20,20,30,0.95) 100%); border-radius: 20px; text-align: center; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at top right, rgba(255,107,53,0.1) 0%, transparent 50%), radial-gradient(circle at bottom left, rgba(226,49,49,0.1) 0%, transparent 50%); pointer-events: none;" />
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at top right, rgba(255,107,53,0.1) 0%, transparent 50%), radial-gradient(circle at bottom left, rgba(226,49,49,0.1) 0%, transparent 50%); pointer-events: none;"></div>
         <div style="position: relative; z-index: 1;">
           <h2 style="font-size: 2.5rem; margin-bottom: 25px; color: white;">Our Mission</h2>
           <p style="font-size: 1.2rem; line-height: 2; color: var(--light-blue); max-width: 800px; margin: 0 auto;">
@@ -155,14 +159,34 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer center">
+  <footer class="footer">
     <div class="container">
-      <p>This independent TEDx event is operated under license from TED.<br>© 2025 TEDxDPS Monarch Intl School Youth</p>
-      <p style="margin-top: 15px;">
-        <a href="team.html" style="color: var(--vibrant-orange); text-decoration: none; font-size: 0.9rem;">Meet Our Team</a>
-        •
-        <a href="faq.html" style="color: var(--vibrant-orange); text-decoration: none; font-size: 0.9rem;">FAQ</a>
-      </p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>TEDxDPS Monarch</h4>
+          <p>Ideas Worth Spreading. Defying Conventions. Defining Tomorrow.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="team.html">Our Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/TEDxdpsmonarchintlschool/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TEDxDPS Monarch International School Youth. All rights reserved.</p>
+        <p style="font-size: 0.85rem; color: var(--cool-gray);">TEDx is a registered trademark of TED Conferences LLC.</p>
+      </div>
     </div>
   </footer>
 
