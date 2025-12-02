@@ -69,36 +69,44 @@ function toggleMobileDropdown(event) {
   }
 }
 
-// Countdown Timer
+// Countdown Timer - Optimized to reduce DOM thrashing
 function initCountdown() {
   const countdownContainer = document.getElementById('countdown');
   if (!countdownContainer) return;
 
   const countdownDate = new Date('December 13, 2025 15:00:00').getTime();
+  
+  // Create elements once, then just update text content
+  const daysEl = document.createElement('div');
+  const hoursEl = document.createElement('div');
+  const minsEl = document.createElement('div');
+  const secsEl = document.createElement('div');
+  
+  [daysEl, hoursEl, minsEl, secsEl].forEach((el, i) => {
+    el.className = 'countdown-item';
+    el.innerHTML = `<span class="countdown-number">00</span><span class="countdown-label">${['Days', 'Hours', 'Minutes', 'Seconds'][i]}</span>`;
+  });
+  
+  countdownContainer.innerHTML = '';
+  countdownContainer.appendChild(daysEl);
+  countdownContainer.appendChild(hoursEl);
+  countdownContainer.appendChild(minsEl);
+  countdownContainer.appendChild(secsEl);
+  
+  const daysNum = daysEl.querySelector('.countdown-number');
+  const hoursNum = hoursEl.querySelector('.countdown-number');
+  const minsNum = minsEl.querySelector('.countdown-number');
+  const secsNum = secsEl.querySelector('.countdown-number');
 
   function updateCountdown() {
-    const now = new Date().getTime();
+    const now = Date.now();
     const distance = countdownDate - now;
 
     if (distance < 0) {
-      countdownContainer.innerHTML = `
-        <div class="countdown-item">
-          <span class="countdown-number">00</span>
-          <span class="countdown-label">Days</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number">00</span>
-          <span class="countdown-label">Hours</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number">00</span>
-          <span class="countdown-label">Minutes</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number">00</span>
-          <span class="countdown-label">Seconds</span>
-        </div>
-      `;
+      daysNum.textContent = '00';
+      hoursNum.textContent = '00';
+      minsNum.textContent = '00';
+      secsNum.textContent = '00';
       return;
     }
 
@@ -107,24 +115,10 @@ function initCountdown() {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    countdownContainer.innerHTML = `
-      <div class="countdown-item">
-        <span class="countdown-number">${String(days).padStart(2, '0')}</span>
-        <span class="countdown-label">Days</span>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-number">${String(hours).padStart(2, '0')}</span>
-        <span class="countdown-label">Hours</span>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-number">${String(minutes).padStart(2, '0')}</span>
-        <span class="countdown-label">Minutes</span>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-number">${String(seconds).padStart(2, '0')}</span>
-        <span class="countdown-label">Seconds</span>
-      </div>
-    `;
+    daysNum.textContent = String(days).padStart(2, '0');
+    hoursNum.textContent = String(hours).padStart(2, '0');
+    minsNum.textContent = String(minutes).padStart(2, '0');
+    secsNum.textContent = String(seconds).padStart(2, '0');
   }
 
   updateCountdown();

@@ -2,6 +2,15 @@
 /* Optimized font loading - only load essential weights */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:ital@1&display=swap');
 
+/* GLOBAL PERFORMANCE: Respect user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 :root{
   --primary-red:#CC0000;
   --ted-red:#CC0000;
@@ -72,18 +81,14 @@ body{
   margin:0; 
   color:var(--ted-red); 
   background:var(--darker);
-  background-image:
-    linear-gradient(180deg, rgba(235, 0, 40, 0.03) 0%, transparent 100%),
-    radial-gradient(ellipse at 15% 10%, rgba(235, 0, 40, 0.08) 0%, transparent 40%),
-    radial-gradient(ellipse at 85% 90%, rgba(235, 0, 40, 0.06) 0%, transparent 40%);
-  background-attachment:fixed;
+  /* Simplified background - removed background-attachment:fixed which causes heavy repainting */
   padding-top:75px;
   position:relative;
   overflow-x:hidden;
   min-height:100vh;
 }
 
-/* Flowing lines pattern - freedom theme with organic geometric shapes */
+/* Simplified static background pattern - NO ANIMATIONS for performance */
 body::before{
   content:'';
   position:fixed;
@@ -92,36 +97,21 @@ body::before{
   width:100%;
   height:100%;
   background-image:
-    linear-gradient(135deg, transparent 0%, rgba(235, 0, 40, 0.08) 25%, transparent 50%, rgba(235, 0, 40, 0.08) 75%, transparent 100%),
-    repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(235, 0, 40, 0.05) 100px, rgba(235, 0, 40, 0.05) 200px),
-    repeating-linear-gradient(-45deg, transparent, transparent 150px, rgba(235, 0, 40, 0.05) 150px, rgba(235, 0, 40, 0.05) 300px),
-    radial-gradient(circle at 30% 20%, rgba(235, 0, 40, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 70% 80%, rgba(235, 0, 40, 0.1) 0%, transparent 50%);
-  background-size:200% 100%, 400px 400px, 600px 600px, 800px 800px, 800px 800px;
+    radial-gradient(circle at 30% 20%, rgba(235, 0, 40, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(235, 0, 40, 0.08) 0%, transparent 50%);
   opacity:1;
   z-index:0;
   pointer-events:none;
-  animation:flowingLight 40s ease-in-out infinite;
+  /* NO animation - static background */
 }
 
-@keyframes flowingLight{
-  0%, 100%{
-    background-position:0% 50%, 0 0, 0 0, 30% 20%, 70% 80%;
-    transform:rotate(0deg);
-  }
-  50%{
-    background-position:100% 50%, 100px 100px, 150px 150px, 35% 25%, 65% 75%;
-    transform:rotate(0.5deg);
-  }
-}
-
-/* Add rebellious warning stripes accent - Barber pole style on RIGHT */
+/* Static stripe accent on RIGHT - NO animation */
 body::after{
   content:'';
   position:fixed;
   top:0;
   right:0;
-  width:10px;
+  width:8px;
   height:100%;
   background:
     repeating-linear-gradient(
@@ -131,20 +121,20 @@ body::after{
       #0A0E1A 10px,
       #0A0E1A 20px
     );
-  opacity:1;
+  opacity:0.9;
   z-index:1000;
   pointer-events:none;
-  box-shadow:-3px 0 15px rgba(235, 0, 40, 0.7);
-  animation:barberPole 2s linear infinite, stripeGlowRight 3s ease-in-out infinite;
+  box-shadow:-2px 0 10px rgba(235, 0, 40, 0.5);
+  /* NO animation */
 }
 
-/* Barber pole on LEFT side - using html element */
+/* Static stripe on LEFT side */
 html::after{
   content:'';
   position:fixed;
   top:0;
   left:0;
-  width:10px;
+  width:8px;
   height:100%;
   background:
     repeating-linear-gradient(
@@ -154,49 +144,14 @@ html::after{
       #0A0E1A 10px,
       #0A0E1A 20px
     );
-  opacity:1;
+  opacity:0.9;
   z-index:1000;
   pointer-events:none;
-  box-shadow:3px 0 15px rgba(235, 0, 40, 0.7);
-  animation:barberPoleLeft 2s linear infinite, stripeGlowLeft 3s ease-in-out infinite;
+  box-shadow:2px 0 10px rgba(235, 0, 40, 0.5);
+  /* NO animation */
 }
 
-@keyframes barberPole{
-  0%{background-position:0 0}
-  100%{background-position:0 28.28px}
-}
-
-@keyframes barberPoleLeft{
-  0%{background-position:0 0}
-  100%{background-position:0 -28.28px}
-}
-
-@keyframes triangleFloat{
-  0%{background-position:0 0, 40px 0, 0 70px}
-  100%{background-position:80px 0, 120px 0, 80px 70px}
-}
-
-@keyframes stripeGlowRight{
-  0%, 100%{
-    box-shadow:-3px 0 15px rgba(230, 43, 30, 0.7);
-    opacity:0.8;
-  }
-  50%{
-    box-shadow:-6px 0 25px rgba(230, 43, 30, 1), -12px 0 50px rgba(230, 43, 30, 0.6);
-    opacity:1;
-  }
-}
-
-@keyframes stripeGlowLeft{
-  0%, 100%{
-    box-shadow:3px 0 15px rgba(230, 43, 30, 0.7);
-    opacity:0.8;
-  }
-  50%{
-    box-shadow:6px 0 25px rgba(230, 43, 30, 1), 12px 0 50px rgba(230, 43, 30, 0.6);
-    opacity:1;
-  }
-}
+/* Removed GPU-heavy keyframes: flowingLight, barberPole, barberPoleLeft, stripeGlowRight, stripeGlowLeft, triangleFloat */
 
 /* Remove grid overlay - keep it clean and rebellious */
 
@@ -232,20 +187,20 @@ html::after{
   left:50%;
   transform:translateX(-50%);
   z-index:1000;
-  background:rgba(10, 14, 26, 0.95);
-  backdrop-filter:blur(20px) saturate(180%);
-  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  background:rgba(10, 14, 26, 0.97);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
   border:2px solid rgba(230, 43, 30, 0.3);
-  box-shadow:0 8px 32px rgba(0, 0, 0, 0.6);
+  box-shadow:0 4px 20px rgba(0, 0, 0, 0.4);
   border-radius:60px;
   /* reduce vertical padding, increase horizontal room */
   padding:10px 48px;
   /* make the navbar span almost full width */
   max-width:1400px;
   width:calc(100% - 32px);
-  animation:slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Removed slideDown animation - one-time animations are fine but this adds complexity */
   position:relative;
-  transition:all 0.3s ease;
+  transition:background 0.3s ease;
   overflow:hidden;
 }
 
@@ -253,12 +208,12 @@ html::after{
   content:'';
   position:absolute;
   top:0;
-  left:-100%;
+  left:0;
   width:100%;
   height:100%;
-  background:linear-gradient(90deg, transparent, rgba(230, 43, 30, 0.12), transparent);
-  animation:headerShine 4s ease-in-out infinite;
+  background:linear-gradient(90deg, transparent, rgba(230, 43, 30, 0.08), transparent);
   pointer-events:none;
+  /* Removed infinite animation */
 }
 
 .header::after{
@@ -271,7 +226,7 @@ html::after{
   background:radial-gradient(circle, rgba(230, 43, 30, 0.05) 0%, transparent 70%);
   border-radius:50%;
   pointer-events:none;
-  filter:blur(15px);
+  /* Removed blur filter - GPU heavy */
 }
 
 @keyframes floatUp{
@@ -438,14 +393,12 @@ nav a:hover{
   width:400px;
   height:400px;
   background:
-    radial-gradient(circle at 30% 30%, rgba(255, 107, 53, 0.04) 0%, transparent 50%),
-    linear-gradient(135deg, transparent 40%, rgba(255, 107, 53, 0.03) 40%, rgba(255, 107, 53, 0.03) 60%, transparent 60%);
+    radial-gradient(circle at 30% 30%, rgba(255, 107, 53, 0.04) 0%, transparent 50%);
   border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
-  animation:morphBlob 8s ease-in-out infinite;
+  /* Removed morphBlob animation and blur filter */
   pointer-events:none;
   z-index:-1;
-  filter:blur(40px);
-  opacity:0.7;
+  opacity:0.5;
 }
 
 .hero::after{
@@ -456,26 +409,15 @@ nav a:hover{
   width:350px;
   height:350px;
   background:
-    radial-gradient(circle at 70% 70%, rgba(230, 43, 30, 0.03) 0%, transparent 50%),
-    linear-gradient(225deg, transparent 40%, rgba(230, 43, 30, 0.025) 40%, rgba(230, 43, 30, 0.025) 60%, transparent 60%);
+    radial-gradient(circle at 70% 70%, rgba(230, 43, 30, 0.03) 0%, transparent 50%);
   border-radius:70% 30% 30% 70% / 70% 70% 30% 30%;
-  animation:morphBlob 10s ease-in-out infinite reverse;
+  /* Removed morphBlob animation and blur filter */
   pointer-events:none;
   z-index:-1;
-  filter:blur(35px);
-  opacity:0.6;
+  opacity:0.4;
 }
 
-@keyframes morphBlob{
-  0%, 100%{
-    border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
-    transform:scale(1);
-  }
-  50%{
-    border-radius:50% 50% 33% 67% / 55% 27% 73% 45%;
-    transform:scale(1.05);
-  }
-}
+/* Removed @keyframes morphBlob - too GPU intensive */
 
 @keyframes pulse{
   0%, 100%{opacity:0.5; transform:translateX(-50%) scale(1)}
@@ -688,7 +630,7 @@ nav a:hover{
   height:200%;
   background:
     conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.3), transparent 30%);
-  animation:ctaRotate 3s linear infinite;
+  /* Removed infinite animation */
   opacity:0;
   transition:opacity 0.3s ease;
 }
@@ -900,7 +842,7 @@ nav a:hover{
   right:0;
   height:1px;
   background:linear-gradient(90deg, transparent, var(--vibrant-orange), transparent);
-  animation:scanlineCard 3s linear infinite;
+  /* Removed infinite animation */
 }
 
 /* Responsive nav */
@@ -1305,22 +1247,20 @@ nav a:hover{
   
   /* AGGRESSIVE PERFORMANCE OPTIMIZATIONS */
   
-  /* Disable ALL animations on mobile except essential ones */
+  /* Disable ALL animations on mobile */
   *, *::before, *::after{
     animation:none !important;
     transition:none !important;
   }
   
-  /* Keep barber pole and hamburger menu animations */
+  /* Keep stripes but static (no animation) */
   body::after{
     display:block !important;
-    animation:barberPole 2s linear infinite !important;
     width:6px;
   }
   
   html::after{
     display:block !important;
-    animation:barberPoleLeft 2s linear infinite !important;
     width:6px;
   }
   
@@ -1687,20 +1627,11 @@ small{
   margin-right:8px;
   font-size:1.2em;
   color:var(--vibrant-orange);
-  animation:iconPulse 2s ease-in-out infinite;
-  text-shadow:0 0 10px var(--vibrant-orange);
+  /* Removed infinite animation */
+  text-shadow:0 0 8px var(--vibrant-orange);
 }
 
-@keyframes iconPulse{
-  0%, 100%{
-    opacity:1;
-    text-shadow:0 0 10px var(--vibrant-orange);
-  }
-  50%{
-    opacity:0.7;
-    text-shadow:0 0 20px var(--vibrant-orange), 0 0 30px var(--primary-red);
-  }
-}
+/* Removed @keyframes iconPulse */
 
 /* ===== NEW ENHANCED FEATURES ===== */
 
@@ -1885,17 +1816,11 @@ small{
 }
 
 /* Pulse Animation for CTA */
-@keyframes pulse-cta {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
-  }
-  50% {
-    box-shadow: 0 0 0 20px rgba(255, 107, 53, 0);
-  }
-}
+/* Removed pulse-cta animation for performance */
 
 .cta-pulse {
-  animation: pulse-cta 2s infinite;
+  /* Static subtle glow instead of infinite animation */
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
 }
 
 /* Image Hover Zoom */
@@ -2200,19 +2125,11 @@ small{
 }
 
 /* Loading Animation */
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
-}
+/* Removed shimmer animation for performance */
 
 .loading-shimmer {
-  background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,107,53,0.2) 50%, rgba(255,255,255,0.1) 75%);
-  background-size: 1000px 100%;
-  animation: shimmer 2s infinite;
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,107,53,0.15) 50%, rgba(255,255,255,0.1) 75%);
+  /* Static gradient instead of infinite animation */
 }
 
 /* Social Proof Styling */
@@ -2245,18 +2162,9 @@ small{
   font-weight: 500;
 }
 
-/* CTA Pulse Animation */
+/* Removed CTA Pulse Animation for performance */
 .cta-pulse {
-  animation: pulseGlow 2s ease-in-out infinite;
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
-  }
-  50% {
-    box-shadow: 0 0 0 15px rgba(255, 107, 53, 0);
-  }
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
 }
 
 /* TEDx Icon Styles - Replace emojis with branded icons */
