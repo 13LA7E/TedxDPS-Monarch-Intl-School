@@ -25,6 +25,24 @@
   <!-- Stylesheet -->
       <link rel="canonical" href="https://13la7e.github.io/TedxDPS-Monarch-Intl-School/speakers.html">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+      /* 3D Tilt Effect for Desktop Only */
+      @media (min-width: 769px) {
+        .speaker-card-3d {
+          perspective: 1000px;
+          transition: transform 0.1s ease-out;
+        }
+        
+        .speaker-card-3d .card {
+          transform-style: preserve-3d;
+          transition: transform 0.1s ease-out;
+        }
+        
+        .speaker-card-3d:hover .card {
+          transform: scale(1.02);
+        }
+      }
+    </style>
 </head>
 <body>
   <!-- Mobile Navigation Overlay -->
@@ -90,6 +108,7 @@
 
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 40px; max-width: 1400px; margin-left: auto; margin-right: auto;">
         <!-- Speaker 1 -->
+        <div class="speaker-card-3d">
         <div class="card" style="padding: 40px;">
           <div style="margin-bottom: 20px;">
             <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--vibrant-orange) 0%, var(--primary-red) 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: bold; color: white; border: 3px solid rgba(230, 43, 30, 0.3); margin-bottom: 15px;">
@@ -107,8 +126,10 @@
             Visionary entrepreneur who transformed Qatar Living into the region's leading community platform, sharing insights on building businesses that connect communities and challenge traditional career trajectories.
           </p>
         </div>
+        </div>
 
         <!-- Speaker 2 -->
+        <div class="speaker-card-3d">
         <div class="card" style="padding: 40px;">
           <div style="margin-bottom: 20px;">
             <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--vibrant-orange) 0%, var(--primary-red) 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: bold; color: white; border: 3px solid rgba(230, 43, 30, 0.3); margin-bottom: 15px;">
@@ -126,8 +147,10 @@
             A unique blend of technical expertise and comedic talent, Chandrashekar proves that engineers can be creative storytellers, combining his work at ABB with a thriving stand-up comedy career that defies stereotypes.
           </p>
         </div>
+        </div>
 
         <!-- Speaker 3 -->
+        <div class="speaker-card-3d">
         <div class="card" style="padding: 40px;">
           <div style="margin-bottom: 20px;">
             <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--vibrant-orange) 0%, var(--primary-red) 100%); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: bold; color: white; border: 3px solid rgba(230, 43, 30, 0.3); margin-bottom: 15px;">
@@ -145,8 +168,10 @@
             Leading climate activist mobilizing Arab youth to take action on environmental challenges, demonstrating how young voices can drive meaningful change in addressing the climate crisis.
           </p>
         </div>
+        </div>
 
         <!-- Speaker 4 - Student Speaker -->
+        <div class="speaker-card-3d">
         <div class="card" style="padding: 40px; border: 3px solid var(--vibrant-orange);">
           <div style="position: absolute; top: 10px; right: 10px; background: var(--vibrant-orange); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; box-shadow: 0 2px 8px rgba(230, 43, 30, 0.4);">
             STUDENT SPEAKER
@@ -166,6 +191,7 @@
           <p style="color: var(--light-blue); line-height: 1.7; margin-top: 15px;">
             As Head Girl and Secretary-General of Monarch MUN 2025, Avika embodies the next generation of leaders, sharing her journey of balancing academic excellence with meaningful student advocacy and diplomacy.
           </p>
+        </div>
         </div>
       </div>
 
@@ -214,5 +240,31 @@
 
   <!-- JavaScript -->
   <script src="assets/js/main.js"></script>
+  <script>
+    // 3D Tilt Effect for Speaker Cards (Desktop Only)
+    if (window.innerWidth > 768) {
+      document.querySelectorAll('.speaker-card-3d').forEach(cardWrapper => {
+        const card = cardWrapper.querySelector('.card');
+        
+        cardWrapper.addEventListener('mousemove', (e) => {
+          const rect = cardWrapper.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = (y - centerY) / 10;
+          const rotateY = (centerX - x) / 10;
+          
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        });
+        
+        cardWrapper.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        });
+      });
+    }
+  </script>
 </body>
 </html>
