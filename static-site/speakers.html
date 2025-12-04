@@ -36,10 +36,13 @@
         .speaker-card-3d .card {
           transform-style: preserve-3d;
           transition: transform 0.1s ease-out;
+          position: relative;
+          z-index: 1;
         }
         
         .speaker-card-3d:hover .card {
           transform: scale(1.02);
+          z-index: 10;
         }
       }
     </style>
