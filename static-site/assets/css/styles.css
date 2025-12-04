@@ -1920,6 +1920,12 @@ small{
   z-index: 1;
 }
 
+/* Remove card decorative circles from timeline */
+.timeline .card::before,
+.timeline .card::after {
+  display: none;
+}
+
 .timeline-content {
   background: rgba(20, 20, 30, 0.8);
   backdrop-filter: blur(10px);
