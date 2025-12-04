@@ -1895,18 +1895,6 @@ small{
   min-height: 600px;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, var(--vibrant-orange), var(--primary-red));
-  transform: translateX(-50%);
-  z-index: 0;
-}
-
 .timeline-item {
   position: relative;
   margin: 48px 0;
