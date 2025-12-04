@@ -1923,7 +1923,8 @@ small{
 /* Remove card decorative circles from timeline */
 .timeline .card::before,
 .timeline .card::after {
-  display: none;
+  display: none !important;
+  content: none !important;
 }
 
 .timeline-content {
