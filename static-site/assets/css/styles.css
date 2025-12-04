@@ -2128,12 +2128,6 @@ small{
     margin: 32px 0;
   }
 
-  .timeline-item::before {
-    left: 20px;
-    width: 16px;
-    height: 16px;
-  }
-
   .timeline-content {
     max-width: 100%;
     margin-left: 0 !important;
