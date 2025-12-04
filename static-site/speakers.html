@@ -31,6 +31,7 @@
         .speaker-card-3d {
           perspective: 1000px;
           transition: transform 0.1s ease-out;
+          overflow: visible;
         }
         
         .speaker-card-3d .card {
@@ -38,6 +39,7 @@
           transition: transform 0.1s ease-out;
           position: relative;
           z-index: 1;
+          overflow: visible;
         }
         
         .speaker-card-3d:hover .card {
@@ -109,7 +111,7 @@
         Meet the visionaries, innovators, and change-makers who will share ideas worth spreading at TEDxDPS Monarch Intl School Youth.
       </p>
 
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 40px; max-width: 1400px; margin-left: auto; margin-right: auto;">
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 40px; max-width: 1400px; margin-left: auto; margin-right: auto; overflow: visible; padding: 20px;">
         <!-- Speaker 1 -->
         <div class="speaker-card-3d">
         <div class="card" style="padding: 40px;">
