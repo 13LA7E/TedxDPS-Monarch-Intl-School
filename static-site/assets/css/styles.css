@@ -736,52 +736,10 @@ nav a:hover{
   margin:8px;
 }
 
-.card:not(.timeline .card)::before{
-  content:'';
-  position:absolute;
-  top:-50%;
-  right:-50%;
-  width:100%;
-  height:100%;
-  background:
-    radial-gradient(circle, rgba(255, 107, 53, 0.08) 0%, transparent 70%);
-  border-radius:50%;
-  transition:all 0.8s ease;
-  opacity:0;
-  filter:blur(20px);
-}
-
-.card:not(.timeline .card)::after{
-  content:'';
-  position:absolute;
-  bottom:-30%;
-  left:-30%;
-  width:60%;
-  height:60%;
-  background:
-    radial-gradient(circle, rgba(230, 43, 30, 0.06) 0%, transparent 70%);
-  border-radius:50%;
-  transition:all 0.8s ease;
-  opacity:0;
-  filter:blur(20px);
-}
-
 .card:nth-child(1){animation-delay:0.2s}
 .card:nth-child(2){animation-delay:0.3s}
 .card:nth-child(3){animation-delay:0.4s}
 .card:nth-child(4){animation-delay:0.5s}
-
-.card:not(.timeline .card):hover::before{
-  opacity:0.8;
-  top:-20%;
-  right:-20%;
-}
-
-.card:not(.timeline .card):hover::after{
-  opacity:0.7;
-  bottom:-10%;
-  left:-10%;
-}
 
 .card:hover{
   transform:translateY(-8px) scale(1.02);
@@ -1918,13 +1876,6 @@ small{
   padding: 0 80px;
   min-height: 100px;
   z-index: 1;
-}
-
-/* Remove card decorative circles from timeline */
-.timeline .card::before,
-.timeline .card::after {
-  display: none !important;
-  content: none !important;
 }
 
 .timeline-content {
