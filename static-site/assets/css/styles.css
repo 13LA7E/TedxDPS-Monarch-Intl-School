@@ -12,12 +12,12 @@
 }
 
 :root{
-  --primary-red:#CC0000;
-  --ted-red:#CC0000;
-  --vibrant-orange:#CC0000;
-  --dark-bg:#0A0E1A;
-  --darker:#050812;
-  --glass-bg:rgba(20, 20, 30, 0.6);
+  --primary-red:#E62B1E;
+  --ted-red:#E62B1E;
+  --vibrant-orange:#E62B1E;
+  --dark-bg:#000000;
+  --darker:#000000;
+  --glass-bg:rgba(0, 0, 0, 0.6);
   --glass-border:rgba(255, 255, 255, 0.1);
   --white:#FFFFFF;
   --off-white:#F5F5F0;
@@ -105,8 +105,8 @@ body::before{
   width:100%;
   height:100%;
   background:
-    radial-gradient(ellipse 100% 80% at 20% 20%, rgba(204, 0, 0, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 60% at 80% 80%, rgba(204, 0, 0, 0.10) 0%, transparent 50%);
+    radial-gradient(ellipse 100% 80% at 20% 20%, rgba(230, 43, 30, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 60% at 80% 80%, rgba(230, 43, 30, 0.10) 0%, transparent 50%);
   background-size:100% 100%, 100% 100%;
   animation:subtleGradientShift 20s ease-in-out infinite;
   opacity:1;
