@@ -74,7 +74,7 @@ function initCountdown() {
   const countdownContainer = document.getElementById('countdown');
   if (!countdownContainer) return;
 
-  const countdownDate = new Date('December 13, 2025 15:00:00').getTime();
+  const countdownDate = new Date('December 13, 2025 16:00:00').getTime();
   
   // Create elements once, then just update text content
   const daysEl = document.createElement('div');
